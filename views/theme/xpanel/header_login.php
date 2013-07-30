@@ -26,29 +26,29 @@ include "config.php"
     <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
 
     <!-- Bootstrap -->
-    <link href="../<?php echo $template_path;?>css/bootstrap.css" rel="stylesheet" type="text/css" />
-    <link href="../<?php echo $template_path;?>css/responsive.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo $template_path;?>css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo $template_path;?>css/responsive.css" rel="stylesheet" type="text/css" />
     <!-- Glyphicons Font Icons -->
-    <link href="../<?php echo $template_path;?>css/glyphicons.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../<?php echo $template_path;?>css/font-awesome.min.css">
-    <!--[if IE 7]><link rel="stylesheet" href="../<?php echo $template_path;?>css/font-awesome-ie7.min.css" ><![endif]-->
+    <link href="<?php echo $template_path;?>css/glyphicons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="<?php echo $template_path;?>css/font-awesome.min.css">
+    <!--[if IE 7]><link rel="stylesheet" href="<?php echo $template_path;?>css/font-awesome-ie7.min.css" ><![endif]-->
     <!-- Uniform Pretty Checkboxes -->
-    <link href="../<?php echo $template_path;?>css/uniform.default.css" rel="stylesheet" />
+    <link href="<?php echo $template_path;?>css/uniform.default.css" rel="stylesheet" />
     <!-- Bootstrap Extended -->
-    <link href="../<?php echo $template_path;?>css/bootstrap-select.css" rel="stylesheet" />
+    <link href="<?php echo $template_path;?>css/bootstrap-select.css" rel="stylesheet" />
     <!-- JQueryUI -->
-    <link href="../<?php echo $template_path;?>css/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" />
+    <link href="<?php echo $template_path;?>css/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" />
     <!-- MiniColors ColorPicker Plugin -->
-    <link href="../<?php echo $template_path;?>css/jquery.miniColors.css"  rel="stylesheet" />
+    <link href="<?php echo $template_path;?>css/jquery.miniColors.css"  rel="stylesheet" />
     <!-- Google Code Prettify Plugin -->
-    <link href="../<?php echo $template_path;?>css/prettify.css"  rel="stylesheet" />
+    <link href="<?php echo $template_path;?>css/prettify.css"  rel="stylesheet" />
     <!-- REVOLUTION BANNER CSS SETTINGS -->
     <link rel="stylesheet" type="text/css" href="./css/settings.css"  media="screen" />
     <!-- Main Theme Stylesheet :: CSS -->
-    <link href="../<?php echo $template_path;?>css/login.css" rel="stylesheet" />
+    <link href="<?php echo $template_path;?>css/login.css" rel="stylesheet" />
 
     <!-- LESS.js Library -->
-    <script src="../<?php echo $template_path;?>js/less.min.js" ></script>
+    <script src="<?php echo $template_path;?>js/less.min.js" ></script>
 </head>
 <body class="login">
 

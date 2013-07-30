@@ -7,6 +7,7 @@
  * Create Date: 3:24 PM - 7/30/13
  * Website: www.xiao.vn
  */
+include "config.php"
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html class="front ie lt-ie9 lt-ie8 lt-ie7 fluid top-full"> <![endif]-->
@@ -25,27 +26,27 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
 
 	<!-- Bootstrap -->
-	<link href="./css/bootstrap.css" rel="stylesheet" type="text/css" />
-	<link href="./css/responsive.css" rel="stylesheet" type="text/css" />
+	<link href="<?php echo $template_path;?>css/bootstrap.css" rel="stylesheet" type="text/css" />
+	<link href="<?php echo $template_path;?>css/responsive.css" rel="stylesheet" type="text/css" />
 	<!-- Glyphicons Font Icons -->
-	<link href="./css/glyphicons.css" rel="stylesheet" />
-	<link rel="stylesheet" href="./css/font-awesome.min.css">
+	<link href="<?php echo $template_path;?>css/glyphicons.css" rel="stylesheet" />
+	<link rel="stylesheet" href="<?php echo $template_path;?>css/font-awesome.min.css">
 	<!--[if IE 7]><link rel="stylesheet" href="font-awesome-ie7.min.css" ><![endif]-->
 	<!-- Uniform Pretty Checkboxes -->
-	<link href="./css/uniform.default.css" rel="stylesheet" />
+	<link href="<?php echo $template_path;?>css/uniform.default.css" rel="stylesheet" />
 	<!-- Bootstrap Extended -->
-	<link href="./css/bootstrap-select.css" rel="stylesheet" />
+	<link href="<?php echo $template_path;?>css/bootstrap-select.css" rel="stylesheet" />
 	<!-- JQueryUI -->
-	<link href="./css/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" />
+	<link href="<?php echo $template_path;?>css/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" />
 	<!-- MiniColors ColorPicker Plugin -->
-	<link href="./css/jquery.miniColors.css"  rel="stylesheet" />
+	<link href="<?php echo $template_path;?>css/jquery.miniColors.css"  rel="stylesheet" />
 	<!-- Google Code Prettify Plugin -->
-	<link href="./css/prettify.css"  rel="stylesheet" />
+	<link href="<?php echo $template_path;?>css/prettify.css"  rel="stylesheet" />
 	<!-- REVOLUTION BANNER CSS SETTINGS -->
-	<link rel="stylesheet" type="text/css" href="./css/settings.css"  media="screen" />
+	<link rel="stylesheet" type="text/css" href="<?php echo $template_path;?>css/settings.css"  media="screen" />
 	<!-- Main Theme Stylesheet :: CSS -->
 
 
   <!-- LESS.js Library -->
-	<script src="./js/less.min.js" ></script>
+	<script src="<?php echo $template_path;?>js/less.min.js" ></script>
 

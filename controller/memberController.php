@@ -27,5 +27,10 @@ Class memberController extends baseController
         $this->view->data['member_heading'] = 'This is the member Login';
         $this->view->show('member_login');
     }
+    public function signup()
+    {
+        $this->view->data['member_heading'] = 'This is the member Signup';
+        $this->view->show('member_signup');
+    }
 
 }

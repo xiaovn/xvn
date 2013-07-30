@@ -93,12 +93,12 @@
 <!-- // Themer END -->
 
 <!-- JQuery -->
-<script src="../<?php echo $template_path;?>js/jquery-1.10.1.min.js" ></script>
-<script src="../<?php echo $template_path;?>js/jquery-migrate-1.2.1.min.js" ></script>
+<script src="<?php echo $template_path;?>js/jquery-1.10.1.min.js" ></script>
+<script src="<?php echo $template_path;?>js/jquery-migrate-1.2.1.min.js" ></script>
 
 <!-- Code Beautify -->
-<script src="../<?php echo $template_path;?>js/beautify.js" ></script>
-<script src="../<?php echo $template_path;?>js/beautify-html.js" ></script>
+<script src="<?php echo $template_path;?>js/beautify.js" ></script>
+<script src="<?php echo $template_path;?>js/beautify-html.js" ></script>
 
 <!-- Global -->
 <script>
@@ -107,53 +107,53 @@
 </script>
 
 <!-- JQueryUI -->
-<script src="../<?php echo $template_path;?>js/jquery-ui-1.9.2.custom.min.js" ></script>
+<script src="<?php echo $template_path;?>js/jquery-ui-1.9.2.custom.min.js" ></script>
 
 <!-- JQueryUI Touch Punch -->
 <!-- small hack that enables the use of touch events on sites using the jQuery UI user interface library -->
-<script src="../<?php echo $template_path;?>js/jquery.ui.touch-punch.min.js"></script>
+<script src="<?php echo $template_path;?>js/jquery.ui.touch-punch.min.js"></script>
 
 
 <!-- jQuery REVOLUTION Slider  -->
-<script type="text/javascript" src="../<?php echo $template_path;?>js/jquery.themepunch.revolution.min.js" ></script>
+<script type="text/javascript" src="<?php echo $template_path;?>js/jquery.themepunch.revolution.min.js" ></script>
 
 <!-- Front Index with Revolution Slider Demo Script -->
-<script src="../<?php echo $template_path;?>js/front_index_revolutionslider.js-1373689170.js"></script>
+<script src="<?php echo $template_path;?>js/front_index_revolutionslider.js-1373689170.js"></script>
 
 <!-- Modernizr -->
-<script src="../<?php echo $template_path;?>js/modernizr.js" ></script>
+<script src="<?php echo $template_path;?>js/modernizr.js" ></script>
 
 <!-- Bootstrap -->
-<script src="../<?php echo $template_path;?>js/bootstrap.min.js" ></script>
+<script src="<?php echo $template_path;?>js/bootstrap.min.js" ></script>
 
 <!-- SlimScroll Plugin -->
-<script src="../<?php echo $template_path;?>js/jquery.slimscroll.min.js" ></script>
+<script src="<?php echo $template_path;?>js/jquery.slimscroll.min.js" ></script>
 
 <!-- Common Demo Script -->
-<script src="../<?php echo $template_path;?>js/common.js" ></script>
+<script src="<?php echo $template_path;?>js/common.js" ></script>
 
 <!-- Holder Plugin -->
-<script src="../<?php echo $template_path;?>js/holder.js" ></script>
+<script src="<?php echo $template_path;?>js/holder.js" ></script>
 <script>
     Holder.add_theme("dark", {background:"#000", foreground:"#aaa", size:9});
     Holder.add_theme("white", {background:"#fff", foreground:"#c9c9c9", size:9});
 </script>
 
 <!-- Uniform Forms Plugin -->
-<script src="../<?php echo $template_path;?>js/jquery.uniform.min.js" ></script>
+<script src="<?php echo $template_path;?>js/jquery.uniform.min.js" ></script>
 
 <!-- Bootstrap Extended -->
-<script src="../<?php echo $template_path;?>js/bootstrap-select.js" ></script>
-<script src="../<?php echo $template_path;?>js/bootbox.js" ></script>
+<script src="<?php echo $template_path;?>js/bootstrap-select.js" ></script>
+<script src="<?php echo $template_path;?>js/bootbox.js" ></script>
 
 <!-- Google Code Prettify -->
-<script src="../<?php echo $template_path;?>js/prettify.js" ></script>
+<script src="<?php echo $template_path;?>js/prettify.js" ></script>
 
 <!-- MiniColors Plugin -->
-<script src="../<?php echo $template_path;?>js/jquery.miniColors.js" ></script>
+<script src="<?php echo $template_path;?>js/jquery.miniColors.js" ></script>
 
 <!-- Cookie Plugin -->
-<script src="../<?php echo $template_path;?>js/jquery.cookie.js"></script>
+<script src="<?php echo $template_path;?>js/jquery.cookie.js"></script>
 
 <!-- Colors -->
 <script>
@@ -168,10 +168,10 @@
 <script>
     var themerPrimaryColor = primaryColor;
 </script>
-<script src="../<?php echo $template_path;?>js/themer.js" ></script>
+<script src="<?php echo $template_path;?>js/themer.js" ></script>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.5&sensor=false"></script>
 <script src="http://maps.gstatic.com/intl/en_us/mapfiles/api-3/11/19/main.js" type="text/javascript"></script>
-<script src="../<?php echo $template_path;?>js/contact.js"></script>
+<script src="<?php echo $template_path;?>js/contact.js"></script>
 
 </body>
 </html>

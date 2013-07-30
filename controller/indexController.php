@@ -10,7 +10,7 @@
 Class indexController Extends baseController {
 	public function index() {
 		/*** set a template variable ***/
-			$this->view->data['welcome'] = 'Hello Developer!';
+			$this->view->data['welcome'] = 'Hello Developerssss!';
 		/*** load the index template ***/
 			$this->view->show('index');
 	}
