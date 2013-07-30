@@ -7,13 +7,23 @@
  * Create Date: 2:28 PM - 7/30/13
  * Website: www.xiao.vn
  */
-define('DB_NAME', 'xdata');
-define('DB_USER', 'root');
-define('DB_PASSWORD', '');
-define('DB_HOST', 'localhost');
+//=============== Custom configuration ==================//
+define('DB_NAME', 'xdata'); //database name
+define('DB_USER', 'root'); //database user
+define('DB_PASSWORD', ''); //database password
+define('DB_HOST', 'localhost'); //sql server
+
 /*** define Theme ***/
-define('ThemeMaster', 'xpanel');
-$template_path = 'http://localhost/xvn/views/theme/xpanel/';
+define('ThemeMaster', 'xpanel'); //Replace xpanel by your theme's name
+
+/*** define site path ***/
+define('XC_URL','http://localhost/xvn');
+//Replace http://localhost/xvn by your site URL on server
+// Note: url start with http:// and not end with /
+
+/*** template path ***/
+$template_path = XC_URL.'/views/theme/'.ThemeMaster.'/'; //Warning: Don't change here
+
+/*** Set Application Name ***/
 $app_name = 'X.E.M - Xiao Education Management';
-//define ('__THEME_PATH',$template_path);
 ?>
