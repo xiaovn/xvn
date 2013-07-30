@@ -86,8 +86,6 @@
         </ul>
         <div id="themer-getcode" class="hide">
             <hr class="separator" />
-            <button class="btn btn-primary btn-small pull-right btn-icon glyphicons download" id="themer-getcode-less"><i></i>Get LESS</button>
-            <button class="btn btn-inverse btn-small pull-right btn-icon glyphicons download" id="themer-getcode-css"><i></i>Get CSS</button>
             <div class="clearfix"></div>
         </div>
     </div>

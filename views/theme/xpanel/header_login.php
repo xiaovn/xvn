@@ -48,7 +48,7 @@ include "config.php"
     <link href="../<?php echo $template_path;?>css/login.css" rel="stylesheet" />
 
     <!-- LESS.js Library -->
-    <script src="./js/less.min.js" ></script>
+    <script src="../<?php echo $template_path;?>js/less.min.js" ></script>
 </head>
 <body class="login">
 

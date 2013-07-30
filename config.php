@@ -13,7 +13,7 @@ define('DB_PASSWORD', '');
 define('DB_HOST', 'localhost');
 /*** define Theme ***/
 define('ThemeMaster', 'xpanel');
-$template_path = './views/theme/xpanel/';
+$template_path = 'views/theme/xpanel/';
 $app_name = 'X.E.M - Xiao Education Management';
 //define ('__THEME_PATH',$template_path);
 ?>
