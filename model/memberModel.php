@@ -9,16 +9,16 @@
  */
 Class memberModel Extends baseModel
 {
-    public function get_blog()
+    public function get_mem()
     {
         global $db;
-        $blog = $db->query('SELECT id, name, content FROM blog');
+        $mem = $db->query('SELECT id, user, email FROM mem');
         return $db->fetch_object();
     }
-    public function get_blog_detail($id)
+    public function get_member_detail($id)
     {
         global $db;
-        $blog = $db->query('SELECT id, name, content FROM blog where id = '.$db->sqlQuote($id));
+        $blog = $db->query('SELECT id, user, email FROM mem where id = '.$db->sqlQuote($id));
         return $db->fetch_object($first_row = true);
     }
 }

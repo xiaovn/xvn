@@ -11,16 +11,20 @@ Class memberController extends baseController
 {
     public function index()
     {
-        $this->view->data['blogs'] =  $this->model->get("blogModel")->get_blogs();
-        $this->view->data['blog_heading'] = 'This is the member Index';
-        $this->view->show('blog_index');
+        $this->view->data['members'] =  $this->model->get("memberModel")->get_mem();
+        $this->view->data['member_heading'] = 'This is the member Index';
+        $this->view->show('member_index');
     }
     public function view($args){
-        $id_blog = $args[1];
-        $blog_detail = $this->model->get('blogModel')->get_blog_detail($id_blog);
-        $this->view->data['blog_heading'] = $blog_detail->name;
-        $this->view->data['blog_content'] = $blog_detail->content;
-        $this->view->show('blog_view');
+        $id_mem = $args[1];
+        $member_info = $this->model->get('memberModel')->get_member_detail($id_mem);
+        $this->view->data['member_heading'] = $member_info->user;
+        $this->view->data['member_info'] = $member_info->email;
+        $this->view->show('member_view');
     }
-
+    public function login()
+    {
+        $this->view->data['member_heading'] = 'This is the member Login';
+        $this->view->show('member_login');
+    }
 }

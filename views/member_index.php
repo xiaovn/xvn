@@ -8,11 +8,11 @@
  * Website: www.xiao.vn
  */
 ?>
-<h1><?php echo $blog_heading; ?></h1>
+<h1><?php echo $member_heading; ?></h1>
 
 <ul>
-    <?php foreach($blogs as $blog) : ?>
-        <li>Blog id <?php echo $blog->id; ?>:
-            <a href="blog/view/<?php echo $blog->id; ?>"><?php echo $blog->name; ?></a></li>
+    <?php foreach($members as $mem) : ?>
+        <li>Member <?php echo $mem->id; ?>:
+            <a href="mem/view/<?php echo $mem->id; ?>"><?php echo $mem->user; ?></a></li>
     <?php endforeach; ?>
 </ul>
