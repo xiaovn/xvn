@@ -12,7 +12,7 @@
 
 <ul>
     <?php foreach($members as $mem) : ?>
-        <li>Member <?php echo $mem->id; ?>:
-            <a href="mem/view/<?php echo $mem->id; ?>"><?php echo $mem->user; ?></a></li>
+        <li>Member <?php echo $mem->xid; ?>:
+            <a href="member/view/<?php echo $mem->xid; ?>"><?php echo $mem->username; ?></a></li>
     <?php endforeach; ?>
 </ul>

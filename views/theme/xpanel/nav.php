@@ -14,7 +14,7 @@
         <div class="container-960">
 
             <!-- Brand -->
-            <a href="http://xem.xiao.vn" class="appbrand pull-left">X.E.M. MemberPanel</a>
+            <a href="<?php echo XC_URL?>" class="appbrand pull-left">X.E.M. MemberPanel</a>
 
             <ul class="topnav pull-right">
 
@@ -22,16 +22,16 @@
                 <li class="hidden-phone"><a href="#themer" data-toggle="collapse" class="glyphicons eyedropper single-icon"><i></i></a></li>
                 <!-- // Themer END -->
 
-                <li class="hidden-phone"><a href="http://xem.xiao.vn/lien-he" class="glyphicons shield"><i></i> Trợ giúp</a></li>
+                <li class="hidden-phone"><a href="<?php echo XC_URL?>/support" class="glyphicons shield"><i></i> Trợ giúp</a></li>
                 <li class="glyphs hidden-phone">
                     <ul>
-                        <li><a href="http://xem.xiao.vn/dang-nhap" class="glyphicons unlock"><i></i> Đăng nhập</a></li>
-                        <li><a href="http://xem.xiao.vn/dang-ky" class="glyphicons user_add"><i></i> Đăng ký</a></li>
+                        <li><a href="<?php echo XC_URL?>/member/login" class="glyphicons unlock"><i></i> Đăng nhập</a></li>
+                        <li><a href="<?php echo XC_URL?>/member/signup" class="glyphicons user_add"><i></i> Đăng ký</a></li>
                     </ul>
                 </li>
                 <li class="glyphs hidden-phone">
                     <ul>
-                        <li class="active single"><a href="http://xem.xiao.vn/admin" class="glyphicons keys"><i></i> Quản trị</a></li>
+                        <li class="active single"><a href="<?php echo XC_URL?>/admin" class="glyphicons keys"><i></i> Quản trị</a></li>
                     </ul>
                 </li>
             </ul>
@@ -51,27 +51,27 @@
         <ul class="topnav pull-left">
 
             <li class="dropdown dd-1 active">
-                <a href="http://xem.xiao.vn" class="glyphicons home"><i></i>Trang chủ </span></a>
+                <a href="<?php echo XC_URL?>" class="glyphicons home"><i></i>Trang chủ </span></a>
             </li>
             <li>
-                <a href="http://xem.xiao.vn/thong-tin" class="glyphicons circle_info"><i></i> Thông tin</a></li>
-            <li><a href="http://xem.xiao.vn/tai-khoan" class="glyphicons credit_card"><i></i> Tài khoản</a></li>
+                <a href="<?php echo XC_URL?>/member" class="glyphicons circle_info"><i></i> Thông tin</a></li>
+            <li><a href="<?php echo XC_URL?>/account" class="glyphicons credit_card"><i></i> Tài khoản</a></li>
             <li class="dropdown dd-1">
                 <a href="" data-toggle="dropdown" class="glyphicons shopping_cart"><i></i>Ứng dụng <span class="caret"></span></a>
                 <ul class="dropdown-menu pull-left">
-                    <li class=""><a href="http://xem.xiao.vn/ung-dung">Danh mục ứng dụng</a></li>
-                    <li class=""><a href="">Product page</a></li>
-                    <li class=""><a href="" >Shopping Cart</a></li>
+                    <li class=""><a href="<?php echo XC_URL?>/application">Danh mục ứng dụng</a></li>
+                    <li class=""><a href="">C</a></li>
+                    <li class=""><a href="">D</a></li>
                 </ul>
             </li>
             <li class="dropdown dd-1">
-                <a href="http://xem.xiao.vn/blog" data-toggle="dropdown" class="glyphicons notes"><i></i>Blog <span class="caret"></span></a>
+                <a href="" data-toggle="dropdown" class="glyphicons notes"><i></i>Blog <span class="caret"></span></a>
                 <ul class="dropdown-menu pull-left">
-                    <li class=""><a href="http://xem.xiao.vn/blog" >Blog Posts</a></li>
-                    <li class=""><a href="http://xem.xiao.vn/blog-ban-be">Blog Timeline</a></li>
+                    <li class=""><a href="<?php echo XC_URL?>/blog/list" >Blog Posts</a></li>
+                    <li class=""><a href="<?php echo XC_URL?>/blog/friend">Blog Timeline</a></li>
                 </ul>
             </li>
-            <li><a href="http://xem.xiao.vn/lien-he" class="glyphicons iphone"><i></i> Liên hệ</a></li>
+            <li><a href="<?php echo XC_URL?>/contact" class="glyphicons iphone"><i></i> Liên hệ</a></li>
 
         </ul>
 

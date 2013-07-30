@@ -18,7 +18,7 @@ Class memberController extends baseController
     public function view($args){
         $id_mem = $args[1];
         $member_info = $this->model->get('memberModel')->get_member_detail($id_mem);
-        $this->view->data['member_heading'] = $member_info->user;
+        $this->view->data['member_heading'] = $member_info->username;
         $this->view->data['member_info'] = $member_info->email;
         $this->view->show('member_view');
     }
