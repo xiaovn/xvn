@@ -57,7 +57,7 @@ public static function getInstance() {
 
 
 function show($name) {
-	$path = __SITE_PATH . '/views' . '/' . $name . '.php';
+	$path = __SITE_PATH . '/views' . '/theme/xpanel/' . $name . '.php';
 
 	if (file_exists($path) == false)
 	{

@@ -16,7 +16,8 @@
 
  /*** include the config.php file ***/
  include 'config.php';
-  
+
+
  /*** include the init.php file ***/
  include 'includes/init.php';
 
