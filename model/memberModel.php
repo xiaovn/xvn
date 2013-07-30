@@ -21,4 +21,10 @@ Class memberModel Extends baseModel
         $blog = $db->query('SELECT id, user, email FROM mem where id = '.$db->sqlQuote($id));
         return $db->fetch_object($first_row = true);
     }
+    public function actionLogin($user,$pass)
+    {
+        global $db;
+        $member = $db->query('SELECT * FROM user where user = '.$user.' and pass='.$pass);
+        $_SESSION['member']['xID'] = $member['id'];
+    }
 }

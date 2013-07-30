@@ -9,10 +9,10 @@
  */
 Class memberloginModel extends baseModel
 {
-    public function check_login()
+    public function check_login($user)
     {
         global $db;
-        $count_mem = $db->query('SELECT count(*) FROM mem');
+        $count_mem = $db->query('SELECT count(*) FROM mem WHERE user='.$user);
         if($count_mem)
         {
             return true;
@@ -20,4 +20,5 @@ Class memberloginModel extends baseModel
         else
             return false;
     }
+
 }
