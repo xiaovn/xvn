@@ -217,7 +217,7 @@ hr.separator.bottom {
   html,
   body {
     height: auto !important;
-    min-height: none !important;
+    /*min-height: none !important;*/
   }
   @page  {
     size: auto;
@@ -6315,7 +6315,7 @@ div.dataTables_filter label {
   -webkit-box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0), inset -1px -1px 1px rgba(0, 0, 0, 0);
   border-color: #ebebeb;
   padding: 10px;
-  background: #fafafa url("pattern1.png")/*tpa=http://demo.mosaicpro.biz/quickadmin/common/theme/images/pattern1.png*/ repeat;
+  background: #fafafa url("pattern1.png") repeat;
 }
 .alert {
   margin: 0 0 15px;

@@ -16,12 +16,14 @@ protected $registry;
 protected $model;
 protected $view;
 protected $redirect;
+protected $mail;
 
 function __construct($registry) {
 	$this->registry = $registry;
 	$this->model = &baseModel::getInstance();
 	$this->view  = &baseView::getInstance();
     $this->redirect = &baseRedirect::getInstance();
+    $this->mail = &baseMailler::getInstance();
 }
 
 
