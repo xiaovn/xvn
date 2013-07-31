@@ -7,6 +7,7 @@
  * Create Date: 2:28 PM - 7/30/13
  * Website: www.xiao.vn
  */
+session_start();
 //=============== Custom configuration ==================//
 define('DB_NAME', 'xiaovn_xem'); //database name
 define('DB_USER', 'xiaovn_xem'); //database user

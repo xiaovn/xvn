@@ -15,11 +15,13 @@ Abstract Class baseController {
 protected $registry;
 protected $model;
 protected $view;
+protected $redirect;
 
 function __construct($registry) {
 	$this->registry = $registry;
 	$this->model = &baseModel::getInstance();
 	$this->view  = &baseView::getInstance();
+    $this->redirect = &baseRedirect::getInstance();
 }
 
 

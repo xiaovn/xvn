@@ -24,10 +24,24 @@
 
                 <li class="hidden-phone"><a href="<?php echo XC_URL?>/support" class="glyphicons shield"><i></i> Trợ giúp</a></li>
                 <li class="glyphs hidden-phone">
+                    <?php
+                        if(isset($_SESSION['LoggedIn']) && $_SESSION['LoggedIn'] == 1)
+                        {
+                    ?>
+                            <ul>
+                                <li><a href="<?php echo XC_URL?>/member" class="glyphicons user"><i></i> <?php echo $_SESSION['xUser']?></a></li>
+                                <li><a href="<?php echo XC_URL?>/member/logout" class="glyphicons lock"><i></i> Thoát</a></li>
+                            </ul>
+                    <?php
+                        }
+                    else
+                    {
+                    ?>
                     <ul>
                         <li><a href="<?php echo XC_URL?>/member/login" class="glyphicons unlock"><i></i> Đăng nhập</a></li>
                         <li><a href="<?php echo XC_URL?>/member/signup" class="glyphicons user_add"><i></i> Đăng ký</a></li>
                     </ul>
+                    <?php }?>
                 </li>
                 <li class="glyphs hidden-phone">
                     <ul>
@@ -55,11 +69,11 @@
             </li>
             <li>
                 <a href="<?php echo XC_URL?>/member" class="glyphicons circle_info"><i></i> Thông tin</a></li>
-            <li><a href="<?php echo XC_URL?>/account" class="glyphicons credit_card"><i></i> Tài khoản</a></li>
+            <li><a href="<?php echo XC_URL?>/member/account" class="glyphicons credit_card"><i></i> Tài khoản</a></li>
             <li class="dropdown dd-1">
                 <a href="" data-toggle="dropdown" class="glyphicons shopping_cart"><i></i>Ứng dụng <span class="caret"></span></a>
                 <ul class="dropdown-menu pull-left">
-                    <li class=""><a href="<?php echo XC_URL?>/application">Danh mục ứng dụng</a></li>
+                    <li class=""><a href="<?php echo XC_URL?>/app">Danh mục ứng dụng</a></li>
                     <li class=""><a href="">C</a></li>
                     <li class=""><a href="">D</a></li>
                 </ul>

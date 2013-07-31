@@ -23,7 +23,7 @@ require_once "header_login.php";
 
             <div class="wrapper">
 
-                <h1 class="glyphicons unlock">Đăng nhập <i></i></h1>
+                <h1 class="glyphicons unlock"><i></i>Đăng nhập</h1>
 
                 <!-- Box -->
                 <div class="widget widget-heading-simple widget-body-gray">
@@ -31,7 +31,7 @@ require_once "header_login.php";
                     <div class="widget-body">
 
                         <!-- Form -->
-                        <form method="post" action="./process/process_account.php?w=6125">
+                        <form method="post" action="">
                             <label>Mã thành viên, email hoặc tài khoản</label>
                             <input type="text" name="username" class="input-block-level" placeholder="Your ID, Username or Email address"/>
                             <label>Mật khẩu <a class="password" href="">Quên mật khẩu?</a></label>
@@ -50,7 +50,8 @@ require_once "header_login.php";
 
                     </div>
                     <div class="widget-footer">
-                        <p class="glyphicons restart"><i></i>Tài khoản được Xiao bảo mật tối đa...</p>
+                        <p class="glyphicons restart"><i></i>Tài khoản được Xiao bảo mật tối đa...
+                        </p>
                     </div>
                 </div>
                 <!-- // Box END -->

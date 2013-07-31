@@ -11,9 +11,17 @@ Class memberController extends baseController
 {
     public function index()
     {
-        $this->view->data['members'] =  $this->model->get("memberModel")->get_mem();
-        $this->view->data['member_heading'] = 'This is the member Index';
-        $this->view->show('member_index');
+        if(isset($_SESSION['LoggedIn']) && $_SESSION['LoggedIn'] == 1)
+        {
+            $this->view->data['members'] =  $this->model->get("memberModel")->get_mem();
+            $this->view->data['member_heading'] = 'This is the member Index';
+            $this->view->show('member_index');
+        }
+        else
+        {
+            $this->redirect->redirect("member","login");
+        }
+
     }
     public function view($args){
         $id_mem = $args[1];
@@ -22,15 +30,45 @@ Class memberController extends baseController
         $this->view->data['member_info'] = $member_info->email;
         $this->view->show('member_view');
     }
+    public function logout()
+    {
+        session_destroy();
+        $this->redirect->redirect("index");
+    }
     public function login()
     {
-        $this->view->data['member_heading'] = 'This is the member Login';
-        $this->view->show('member_login');
+        if(isset($_POST['username']))
+        {
+            $username = mysql_real_escape_string($_POST["username"]);
+            $password = md5(mysql_real_escape_string($_POST["password"]));
+            $member_login = $this->model->get('memberloginModel')->check_login($username,$password);
+            if($member_login)
+            {
+                $this->view->data['member_heading'] = 'This is the member Login with'.$_SESSION['xID'];
+                //$this->view->show('member_index');
+                $this->redirect->redirect("member","index");
+            }
+            else
+            {
+                $this->view->data['member_heading'] = 'Khong thanh cong';
+                $this->view->show('member_login');
+            }
+        }
+        else
+        {
+            $this->view->data['member_heading'] = 'Đăng nhập';
+            $this->view->show('member_login');
+        }
     }
     public function signup()
     {
         $this->view->data['member_heading'] = 'This is the member Signup';
         $this->view->show('member_signup');
+    }
+    public function account()
+    {
+        $this->view->data['member_heading'] = 'This is the member Signup';
+        $this->view->show('member_account');
     }
 
 }

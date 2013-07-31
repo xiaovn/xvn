@@ -15,6 +15,9 @@
  /*** include the template class ***/
  include __SITE_PATH . '/application/' . 'view_base.class.php';
 
+/*** include the template class ***/
+include __SITE_PATH . '/application/' . 'redirect_base.class.php';
+
 
  /*** include the registry class ***/
  include __SITE_PATH . '/application/' . 'registry.class.php';

@@ -74,7 +74,6 @@ function show($name) {
 	include ($path);               
 }
 
-
 }
 
 ?>
