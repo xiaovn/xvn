@@ -11,7 +11,7 @@
 /* Google Maps API */
 if (typeof google != 'undefined')
 {
-	var map_latlng = new google.maps.LatLng(47.06285,21.943721);
+	var map_latlng = new google.maps.LatLng(13.953195,108.654571);
 	var map_options = {
 			zoom: 1,
 			center: map_latlng,
