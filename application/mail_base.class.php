@@ -33,7 +33,7 @@ Class baseMailler {
     public static function getInstance() {
         if (!self::$instance)
         {
-            self::$instance = new baseRedirect();
+            self::$instance = new baseMailler();
         }
         return self::$instance;
     }

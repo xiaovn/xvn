@@ -11,14 +11,18 @@ Class contactController extends baseController
 {
     public function index()
     {
-        $this->view->data['contact_heading'] = 'Liên hệ/Trợ giúp';
-        $this->view->show('contact_index');
         if(isset($_POST['name']))
         {
             $name = $_POST['name'];
             $phone = $_POST['phone'];
             $message = $_POST['message'];
-
+            $this->mail->send("guest@xiao.vn",$name,"support@xiao.vn","Contact from Web",$message.$phone);
+            $this->view->show('contact_index');
+        }
+        else
+        {
+            $this->view->data['contact_heading'] = 'Liên hệ/Trợ giúp';
+            $this->view->show('contact_index');
         }
     }
 }

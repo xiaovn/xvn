@@ -99,7 +99,7 @@ require_once "header.php";
 
             <div class="row-fluid">
                 <div class="span7">
-                    <form class="row-fluid margin-none">
+                    <form name="contactfrm" method="POST" action="" class="row-fluid margin-none">
                         <div class="span6">
                             <input type="text" class="span12" name="name" placeholder="HỌ VÀ TÊN">
                         </div>
