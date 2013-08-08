@@ -21,4 +21,25 @@ Class memberModel Extends baseModel
         $blog = $db->query('SELECT * FROM xdata_account where xid = '.$db->sqlQuote($id));
         return $db->fetch_object($first_row = true);
     }
+    public function set_member_info($xid,$info,$value)
+    {
+        global $db;
+        switch($info)
+        {
+            case "name":
+                $db->query("UPDATE FROM xdata_info");
+                break;
+            case "age":
+                break;
+            case "birthday":
+                break;
+            default:
+                break;
+        }
+
+    }
+    public function get_member_details($xid)
+    {
+
+    }
 }

@@ -8,7 +8,7 @@
  * Website: www.xiao.vn
  */
  /*** error reporting on ***/
- //error_reporting(~E_ALL);
+ error_reporting(~E_ALL);
 
  /*** define the site path ***/
  $site_path = realpath(dirname(__FILE__));
