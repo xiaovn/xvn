@@ -11,16 +11,39 @@ Class blogController Extends baseController {
 
 	public function index() 
 	{
-		$this->view->data['blogs'] = $this->model->get('blogModel')->get_blogs();
-		$this->view->data['blog_heading'] = 'This is the blog Index';
-		$this->view->show('blog_index');
-	}
+		// Get blog categories
+        $this->view->data['cats'] = $this->model->get('catModel')->get_cat();
 
+        // Get blog post
+        $this->view->data['posts'] = $this->model->get('blogModel')->get_blogs();
+
+        // Get blog tags
+        $this->view->data['tags'] = $this->model->get('tagsModel')->get_tags_list();
+
+        // Set blog heading
+        $this->view->data['blog_heading'] = 'This is the blog Index';
+
+        // Get newest feed
+        $feed_detail = $this->model->get('feedModel')->get_newest_feed();
+        $this->view->data['feed_author'] = $feed_detail->feedauthor;
+        $this->view->data['feed_content'] = $feed_detail->feedcontent;
+        $this->view->data['feed_id'] = $feed_detail->feedid;
+
+        // Get member name
+		$this->view->show('blog_index');
+
+	}
+    public function timeline()
+    {
+        //$this->view->data['blogs'] = $this->model->get('blogModel')->get_blogs();
+        $this->view->data['blog_heading'] = 'This is the blog timeline';
+        $this->view->show('blog_timeline');
+    }
 	public function view($args){
 		$id_blog = $args[1];
-		$blog_detail = $this->model->get('blogModel')->get_blog_detail($id_blog);
-		$this->view->data['blog_heading'] = $blog_detail->name;
-		$this->view->data['blog_content'] = $blog_detail->content;
+		//$blog_detail = $this->model->get('blogModel')->get_blog_detail($id_blog);
+		//$this->view->data['blog_heading'] = $blog_detail->name;
+		//$this->view->data['blog_content'] = $blog_detail->content;
 		$this->view->show('blog_view');
 	}
 

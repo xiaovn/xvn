@@ -21,10 +21,4 @@ Class memberModel Extends baseModel
         $blog = $db->query('SELECT * FROM xdata_account where xid = '.$db->sqlQuote($id));
         return $db->fetch_object($first_row = true);
     }
-    public function actionLogin($user,$pass)
-    {
-        global $db;
-        $member = $db->query('SELECT * FROM xdata_account where username = '.$user.' and password='.$pass);
-        $_SESSION['member']['xID'] = $member['xid'];
-    }
 }

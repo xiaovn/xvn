@@ -169,7 +169,7 @@
     var themerPrimaryColor = primaryColor;
 </script>
 <script src="<?php echo $template_path;?>js/themer.js" ></script>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyARi0YZiwE498oj9SgIQGeZeaQ2Auwp8PU&v=3.5&sensor=false"></script>
+<!-- <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyARi0YZiwE498oj9SgIQGeZeaQ2Auwp8PU&v=3.5&sensor=false"></script> -->
 <script src="<?php echo $template_path;?>js/contact.js"></script>
 
 </body>

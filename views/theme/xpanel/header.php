@@ -31,7 +31,7 @@ include "config.php"
 	<!-- Glyphicons Font Icons -->
 	<link href="<?php echo $template_path;?>css/glyphicons.css" rel="stylesheet" />
 	<link rel="stylesheet" href="<?php echo $template_path;?>css/font-awesome.min.css">
-	<!--[if IE 7]><link rel="stylesheet" href="font-awesome-ie7.min.css" ><![endif]-->
+	<!--[if IE 7]><link rel="stylesheet" href="<?php echo $template_path;?>css/font-awesome-ie7.min.css" ><![endif]-->
 	<!-- Uniform Pretty Checkboxes -->
 	<link href="<?php echo $template_path;?>css/uniform.default.css" rel="stylesheet" />
 	<!-- Bootstrap Extended -->

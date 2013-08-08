@@ -81,8 +81,8 @@
             <li class="dropdown dd-1">
                 <a href="" data-toggle="dropdown" class="glyphicons notes"><i></i>Blog <span class="caret"></span></a>
                 <ul class="dropdown-menu pull-left">
-                    <li class=""><a href="<?php echo XC_URL?>/blog/list" >Blog Posts</a></li>
-                    <li class=""><a href="<?php echo XC_URL?>/blog/friend">Blog Timeline</a></li>
+                    <li class=""><a href="<?php echo XC_URL?>/blog" >Blog Posts</a></li>
+                    <li class=""><a href="<?php echo XC_URL?>/blog/timeline">Blog Timeline</a></li>
                 </ul>
             </li>
             <li><a href="<?php echo XC_URL?>/contact" class="glyphicons iphone"><i></i> Liên hệ</a></li>

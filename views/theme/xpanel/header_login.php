@@ -43,7 +43,7 @@ include "config.php"
     <!-- Google Code Prettify Plugin -->
     <link href="<?php echo $template_path;?>css/prettify.css"  rel="stylesheet" />
     <!-- REVOLUTION BANNER CSS SETTINGS -->
-    <link rel="stylesheet" type="text/css" href="./css/settings.css"  media="screen" />
+    <link rel="stylesheet" type="text/css" href="<?php echo $template_path;?>css/settings.css"  media="screen" />
     <!-- Main Theme Stylesheet :: CSS -->
     <link href="<?php echo $template_path;?>css/login.css" rel="stylesheet" />
 

@@ -51,7 +51,7 @@ include "config.php";
     <link href="<?php echo $template_path;?>css/prettify.css" rel="stylesheet" />
 
     <!-- Main Theme Stylesheet :: CSS -->
-    <link href="<?php echo $template_path;?>css/style-default.css-1373689264.css" rel="stylesheet" />
+    <link href="<?php echo $template_path;?>css/style-default.css" rel="stylesheet" />
 
 
 

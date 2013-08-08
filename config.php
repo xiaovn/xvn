@@ -12,7 +12,7 @@ session_start();
 define('DB_NAME', 'xiaovn_xem'); //database name
 define('DB_USER', 'xiaovn_xem'); //database user
 define('DB_PASSWORD', 'xem123.456'); //database password
-define('DB_HOST', '210.211.118.118:3306'); //sql server
+define('DB_HOST', '210.211.118.118'); //sql server
 
 /*** define mailer ***/
 define('MAIL_PROTOCOL', 'SMTP');

@@ -1,14 +1,5 @@
-@import url(css-family=Open+Sans-400,800,700,600&subset=latin,latin-ext.css)/*tpa=http://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600&subset=latin,latin-ext*/;
-/*!
- * QuickAdmin v1.4.0
- *
- * Copyright MosaicPro
- * http://www.mosaicpro.biz
- *
- * Designed and built exclusively for sale @Envato Marketplaces.
- */
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: Tahoma;
   background: #f0f0f0;
   font-size: 13px;
   color: #7c7c7c;
@@ -17,6 +8,9 @@ body {
 *,
 a:focus {
   outline: none !important;
+}
+.content{
+    line-height: 22px;
 }
 button:focus {
   outline: none !important;
@@ -37,7 +31,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: Tahoma;
   margin: 0 0 5px;
   font-weight: 400;
   text-shadow: 0 1px 0 #ffffff;
@@ -217,7 +211,7 @@ hr.separator.bottom {
   html,
   body {
     height: auto !important;
-    min-height: none !important;
+    min-height: none;
   }
   @page  {
     size: auto;
@@ -5042,6 +5036,9 @@ div.glyphicons.glyphicon-primary i:before {
 .btn-default .caret {
   border-top-color: rgba(0, 0, 0, 0.5);
 }
+.sub-comment{
+    margin-left: 50px;
+}
 .btn-warning {
   background-color: #b6895e;
   background-image: -moz-linear-gradient(top, #be946b, #ab7a4b);
@@ -7170,16 +7167,16 @@ div.dataTables_filter label {
 .bwizard-steps a:hover {
   text-decoration: none;
 }
-.bwizard-steps.clickable li:not (.active ) {
+.bwizard-steps.clickable li:not(.active) {
   cursor: pointer;
 }
-.bwizard-steps.clickable li:hover:not (.active ) {
+.bwizard-steps.clickable li:hover:not(.active) {
   background: #ccc;
 }
-.bwizard-steps.clickable li:hover:not (.active ):after {
+.bwizard-steps.clickable li:hover:not(.active):after {
   border-left-color: #ccc;
 }
-.bwizard-steps.clickable li:hover:not (.active ) a {
+.bwizard-steps.clickable li:hover:not(.active) a {
   color: #08c;
 }
 @media (max-width: 480px) {

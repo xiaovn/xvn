@@ -77,7 +77,7 @@ require_once "header.php";
 
         google.maps.event.addDomListener(window, 'load', initialize);
     </script>
-    <link href="<?php echo $template_path;?>css/style-default.css-1373689229.css"  rel="stylesheet" />
+    <link href="<?php echo $template_path;?>css/style-default.css"  rel="stylesheet" />
     </head>
 <body>
 

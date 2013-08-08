@@ -9,7 +9,7 @@
  */
     require_once "header.php";
     ?>
-    <link href="<?php echo $template_path;?>css/style-default.css-1373689170.css" rel="stylesheet" />
+    <link href="<?php echo $template_path;?>css/style-default.css" rel="stylesheet" />
     </head>
 <body>
 

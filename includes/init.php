@@ -22,6 +22,11 @@ include __SITE_PATH . '/application/' . 'redirect_base.class.php';
 /*** include the mail class ***/
 include __SITE_PATH . '/application/' . 'mail_base.class.php';
 
+
+/*** include the member class ***/
+include __SITE_PATH . '/application/' . 'member.class.php';
+
+
  /*** include the registry class ***/
  include __SITE_PATH . '/application/' . 'registry.class.php';
 
