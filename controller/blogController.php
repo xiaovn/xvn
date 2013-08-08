@@ -46,6 +46,21 @@ Class blogController Extends baseController {
 		//$this->view->data['blog_content'] = $blog_detail->content;
 		$this->view->show('blog_view');
 	}
-
+    public function create_blog()
+    {
+        $this->view->show('blog_write');
+    }
+    public function edit_blog($blogid)
+    {
+        $this->view->show('blog_edit');
+    }
+    public function show_cat($catid)
+    {
+        $this->view->show('blog_cat');
+    }
+    public function show_mem_blog($xid)
+    {
+        $this->view->show('blog_mem');
+    }
 }
 ?>
