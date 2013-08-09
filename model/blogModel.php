@@ -26,7 +26,7 @@ Class blogModel extends baseModel{
         global $db;
         $cmdate = "";
         $blog = $db->query('INSERT INTO xdata_blog_comment(comment_blog_id,comment_author,comment_author_email,comment_author_ip,comment_content,comment_approved,comment_date) VALUES('.$blogid.','.$cmauthor.','.$cmemail.','.$cmip.','.$cmcontent.',0,'.$cmdate.')');
-        return $db->fetch_object();
+        //return $db->fetch_object();
     }
 }
 ?>
