@@ -25,7 +25,7 @@ require_once "nav.php";
 ?>
 <!-- Top navbar END --><div class="container-960 innerT">
 
-<h3 class="glyphicons circle_info margin-none"><i></i>Nguyễn Học <span>Thông tin cá nhân.</span></h3>
+<h3 class="glyphicons circle_info margin-none"><i></i><?php echo member::getInstance()->get_member_info($_SESSION['xID'],"name");?> <span>Thông tin cá nhân.</span></h3>
 <div class="separator bottom"></div>
 
 <div class="widget widget-heading-simple widget-body-gray">

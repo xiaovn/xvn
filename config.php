@@ -10,9 +10,9 @@
 session_start();
 //=============== Custom configuration ==================//
 define('DB_NAME', 'xiaovn_xem'); //database name
-define('DB_USER', 'xiaovn_xem'); //database user
-define('DB_PASSWORD', 'xem123.456'); //database password
-define('DB_HOST', '210.211.118.118:3306'); //sql server
+define('DB_USER', 'root'); //database user
+define('DB_PASSWORD', ''); //database password
+define('DB_HOST', 'localhost'); //sql server
 
 /*** define mailer ***/
 define('MAIL_PROTOCOL', 'SMTP');

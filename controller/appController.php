@@ -15,4 +15,15 @@ Class appController extends baseController
         $this->view->data['app_heading'] = 'This is the application area';
         $this->view->show('app_index');
     }
+    public function diemthi()
+    {
+        $this->view->data['a'] = $this->model->get('diemModel')->getdiem();
+        $this->view->show('app_diemthi');
+    }
+    public function tkb()
+    {
+        $this->view->data['a'] = $this->model->get('diemModel')->getdiem();
+        $this->view->show('app_diemthi');
+    }
+
 }

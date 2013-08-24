@@ -55,15 +55,8 @@ Class member{
     public function get_member_info($xid,$xfunc)
     {
         global $db;
-        $blog = $db->query("SELECT * FROM xdata_info WHERE xid=".$xid);
+        $blog = $db->query("SELECT ".$xfunc." FROM xdata_info WHERE xid=".$xid);
         $me = $db->fetch_object($first_row = true);
-        switch($xfunc)
-        {
-            case "name":
-                return $me->name;
-                break;
-            default:
-                break;
-        }
+        return $me->$xfunc;
     }
 }
