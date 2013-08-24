@@ -5943,10 +5943,22 @@ textarea {
   color: #fff;
   border-color: #5a5855;
 }
+.table-app th {
+    padding: 12px 0;
+    background: #4a8bc2;
+    font-size: 14px;
+    color: #fff;
+    border-color: #346d9d;
+}
 .table-pricing-2 .pricing td {
   padding: 12px 10px 10px;
   background: #e5e5e5;
   border-color: #cecece;
+}
+.table-app .pricing td {
+    padding: 12px 10px 10px;
+    background: #e5e5e5;
+    border-color: #cecece;
 }
 div.dataTables_filter label {
   float: none;
