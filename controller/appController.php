@@ -22,12 +22,6 @@ Class appController extends baseController
     }
     public function tkb()
     {
-        $this->view->data['a'] = $this->model->get('diemModel')->getdiem();
-        $this->view->show('app_diemthi');
-    }
-
-    public function tkb()
-    {
         $this->view->data['tkb_list'] = $this->model->get('ShowtkbModel')->get_tkb_student('8226572','2318869');
         $this->view->show('app_tkb');
     }
