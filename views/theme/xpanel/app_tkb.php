@@ -176,10 +176,10 @@ require_once "nav.php";
                         <span>1</span>
                     </td>
                     <td class="center">
-                        <span>Toán</span>
+                        <span><?php echo $tkbs[2][2];?></span>
                     </td>
                     <td class="center">
-                        <span>Lý</span>
+                        <span><?php echo $tkbs[3][2];?><?php //getmon(3, 2, 1,'8226572', '2318869')?></span>
                     </td>
                     <td class="center">
                         <span>Hóa</span>
