@@ -25,6 +25,7 @@ include __SITE_PATH . '/application/' . 'mail_base.class.php';
 
 /*** include the member class ***/
 include __SITE_PATH . '/application/' . 'member.class.php';
+include __SITE_PATH . '/application/' . 'book.class.php';
 
 
  /*** include the registry class ***/

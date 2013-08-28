@@ -125,7 +125,7 @@
 
 <!-- Bootstrap -->
 <script src="<?php echo $template_path;?>js/bootstrap.min.js" ></script>
-
+<script src="<?php echo $template_path;?>js/jquery.toggle.buttons.js"></script>
 <!-- SlimScroll Plugin -->
 <script src="<?php echo $template_path;?>js/jquery.slimscroll.min.js" ></script>
 

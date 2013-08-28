@@ -45,8 +45,7 @@ include "config.php"
 	<!-- REVOLUTION BANNER CSS SETTINGS -->
 	<link rel="stylesheet" type="text/css" href="<?php echo $template_path;?>css/settings.css"  media="screen" />
 	<!-- Main Theme Stylesheet :: CSS -->
-
-
+    <link href="<?php echo $template_path;?>css/bootstrap-toggle-buttons.css" rel="stylesheet" />
   <!-- LESS.js Library -->
 	<script src="<?php echo $template_path;?>js/less.min.js" ></script>
 

@@ -2477,7 +2477,7 @@ html.top-full .navbar.main .topnav:last-of-type li:last-child {
   float: left;
   margin: 0 5px;
   display: block;
-  line-height: 30px;
+  line-height: 21px;
 }
 .filter-bar.border-none {
   border: none;
@@ -5671,77 +5671,77 @@ textarea {
   cursor: pointer;
 }
 .toggle-button {
-  vertical-align: middle;
-  border-color: #bebebe;
+    vertical-align: middle;
+    border-color: #bebebe;
 }
 .toggle-button span.labelLeft,
 .toggle-button span.labelRight {
-  padding: 0;
-  background: #cccccc;
-  text-shadow: 0 1px 0 #fff;
-  color: #444;
-  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2) inset;
-  -moz-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2) inset;
-  -webkit-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2) inset;
+    padding: 0;
+    background: #cccccc;
+    text-shadow: 0 1px 0 #fff;
+    color: #444;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2) inset;
+    -moz-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2) inset;
+    -webkit-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2) inset;
 }
 .toggle-button span.labelLeft {
-  padding-right: 3px;
+    padding-right: 3px;
 }
 .toggle-button span.labelRight {
-  padding-left: 3px;
+    padding-left: 3px;
 }
 .toggle-button label {
-  background-image: none !important;
-  filter: none !important;
-  background: #fff;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+    background-image: none !important;
+    filter: none !important;
+    background: #fff;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
 }
 .toggle-button.primary {
-  border-color: #4a8bc2;
+    border-color: #4a8bc2;
 }
 .toggle-button.primary span {
-  background: #4a8bc2;
-  color: #fff;
-  text-shadow: none;
-  text-shadow: 0 1px 0 #444;
+    background: #4a8bc2;
+    color: #fff;
+    text-shadow: none;
+    text-shadow: 0 1px 0 #444;
 }
 .toggle-button.danger {
-  border-color: #bd362f;
+    border-color: #bd362f;
 }
 .toggle-button.danger span {
-  background: #bd362f;
-  color: #fff;
-  text-shadow: none;
-  text-shadow: 0 1px 0 #444;
+    background: #bd362f;
+    color: #fff;
+    text-shadow: none;
+    text-shadow: 0 1px 0 #444;
 }
 .toggle-button.warning {
-  border-color: #ab7a4b;
+    border-color: #ab7a4b;
 }
 .toggle-button.warning span {
-  background: #ab7a4b;
-  color: #fff;
-  text-shadow: none;
-  text-shadow: 0 1px 0 #444;
+    background: #ab7a4b;
+    color: #fff;
+    text-shadow: none;
+    text-shadow: 0 1px 0 #444;
 }
 .toggle-button.success {
-  border-color: #609450;
+    border-color: #609450;
 }
 .toggle-button.success span {
-  background: #609450;
-  color: #fff;
-  text-shadow: none;
-  text-shadow: 0 1px 0 #444;
+    background: #609450;
+    color: #fff;
+    text-shadow: none;
+    text-shadow: 0 1px 0 #444;
 }
 .toggle-button.inverse {
-  border-color: #45484d;
+    border-color: #45484d;
 }
 .toggle-button.inverse span {
-  background: #45484d;
-  color: #fff;
-  text-shadow: none;
-  text-shadow: 0 1px 0 #444;
+    background: #45484d;
+    color: #fff;
+    text-shadow: none;
+    text-shadow: 0 1px 0 #444;
 }
 .table {
   margin: 0 0 15px;
