@@ -19,7 +19,7 @@ Class diemController extends baseController
     public  function diem()
     {
         $this->view->data['diem'] = $this->model->get('xemdiemModel')->getdiem();
-        $this->view->show('diemthi');
+        $this->view->show('app_diem');
     }
 }
 ?>

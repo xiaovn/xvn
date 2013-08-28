@@ -8,7 +8,7 @@
  * Website: www.xiao.vn
  */
 
-Class appController extends baseController
+Class ungdungController extends baseController
 {
     public function index()
     {
@@ -17,8 +17,8 @@ Class appController extends baseController
     }
     public function diemthi()
     {
-        $this->view->data['a'] = $this->model->get('diemModel')->getdiem();
-        $this->view->show('app_diemthi');
+        //$this->view->data['a'] = $this->model->get('xemdiemModel')->getdiem();
+        $this->view->show('app_diem');
     }
     public function tkb()
     {
