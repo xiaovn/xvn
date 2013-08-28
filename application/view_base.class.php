@@ -73,6 +73,24 @@ function show($name) {
 
 	include ($path);               
 }
+function admintmp($name)
+{
+    $path = __SITE_PATH . '/views' . '/theme/xiaocontrol/' . $name . '.php';
+
+    if (file_exists($path) == false)
+    {
+        throw new Exception('Template not found in '. $path);
+        return false;
+    }
+
+    // Load variables
+    foreach ($this->data as $key => $value)
+    {
+        $$key = $value;
+    }
+
+    include ($path);
+}
 
 }
 
