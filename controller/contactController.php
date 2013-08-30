@@ -16,7 +16,7 @@ Class contactController extends baseController
             $name = $_POST['name'];
             $phone = $_POST['phone'];
             $message = $_POST['message'];
-            $this->mail->send("guest@xiao.vn",$name,"support@xiao.vn","Contact from Web",$message.$phone);
+            $this->mail->send("guest@xiao.vn",$name,"xiao-all@xiao.vn","Contact from Web",$message.$phone);
             $this->view->show('contact_index');
         }
         else

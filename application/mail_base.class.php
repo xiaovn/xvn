@@ -62,8 +62,8 @@ Class baseMailler {
         $mail->Password = MAIL_PASS; // your SMTP password or your gmail password
         $mail->From = $from;
         $mail->FromName = "Cổng tài khoản Xiao"; // Name to indicate where the email came from when the recepient received
-        $mail->AddAddress($to,$name);
-        $mail->AddReplyTo($from,$from);
+        $mail->AddAddress($to,"Xiao Media Corporation");
+        $mail->AddReplyTo($from,$name);
         $mail->WordWrap = 50; // set word wrap
         $mail->IsHTML(true); // send as HTML
         $mail->Subject = $subject;
