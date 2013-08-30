@@ -25,7 +25,9 @@ require_once "header.php";
 
             <h3 class="glyphicons notes"><i></i>DEMO BLOG</h3>
             <div class="separator bottom"></div>
+            <?php
 
+            ?>
             <div class="row-fluid">
                 <div class="span9">
                             <div class="widget widget-heading-simple widget-body-white">

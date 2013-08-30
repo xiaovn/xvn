@@ -93,7 +93,7 @@
 <script src="<?php echo $admintemplate_path;?>asset/js/jquery.slimscroll.min.js"></script>
 
 <!-- Common Demo Script -->
-<script src="<?php echo $admintemplate_path;?>asset/js/common.js-1373690407.js"></script>
+<script src="<?php echo $admintemplate_path;?>asset/js/common.js"></script>
 
 <!-- Holder Plugin -->
 <script src="<?php echo $admintemplate_path;?>asset/js/holder.js"></script>
@@ -163,7 +163,7 @@
 <script src="<?php echo $admintemplate_path;?>asset/js/jquery.ba-resize.js"></script>
 
 <!-- Dashboard Demo Script -->
-<script src="<?php echo $admintemplate_path;?>asset/js/index.js?1377052935"></script>
+<script src="<?php echo $admintemplate_path;?>asset/js/index.js"></script>
 
 	<!-- ColorPicker -->
 	<script src="<?php echo $admintemplate_path;?>asset/js/farbtastic.js" ></script>

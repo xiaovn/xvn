@@ -81,7 +81,7 @@ include_once 'header.php';
 <script src="./asset/js/jquery.slimscroll.min.js"></script>
 
 <!-- Common Demo Script -->
-<script src="./asset/js/common.js?1377074125"></script>
+<script src="./asset/js/common.js"></script>
 
 <!-- Holder Plugin -->
 <script src="./asset/js/holder.js"></script>

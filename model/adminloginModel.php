@@ -16,9 +16,10 @@ Class adminloginModel extends baseModel
         if(mysql_num_rows($cl) == 1)
         {
             $row = $db->fetch_object($first_row = true);
-            $_SESSION['xAID'] = $row->xid;
-            $_SESSION['xAUser'] = $row->username;
-            $_SESSION['xAEmail'] = $row->email;
+            $_SESSION['xID'] = $row->xid;
+            $_SESSION['xUser'] = $row->username;
+            $_SESSION['xEmail'] = $row->email;
+            $_SESSION['xGroup'] = $row->xgroup;
             $_SESSION['LoggedIn'] = 1;
             return true;
         }

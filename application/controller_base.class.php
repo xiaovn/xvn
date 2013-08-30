@@ -24,6 +24,7 @@ function __construct($registry) {
 	$this->view  = &baseView::getInstance();
     $this->redirect = &baseRedirect::getInstance();
     $this->mail = &baseMailler::getInstance();
+    $this->member = &member::getInstance();
 }
 
 

@@ -30,7 +30,7 @@
 
     <!-- Profile / Logout menu -->
     <li class="account dropdown dd-1">
-        <a data-toggle="dropdown" href="<?php echo XC_URL?>/admin/myaccount" class="glyphicons logout lock"><span class="hidden-tablet hidden-phone hidden-desktop-1"><?php echo $_SESSION['xAUser']?></span><i></i></a>
+        <a data-toggle="dropdown" href="<?php echo XC_URL?>/admin/myaccount" class="glyphicons logout lock"><span class="hidden-tablet hidden-phone hidden-desktop-1"><?php echo $_SESSION['xUser']?></span><i></i></a>
         <ul class="dropdown-menu pull-right">
             <li><a href="#" class="glyphicons cogwheel">Settings<i></i></a></li>
             <li><a href="#" class="glyphicons camera">My Photos<i></i></a></li>
@@ -39,8 +39,8 @@
 								<span class="heading">Profile <a href="<?php echo XC_URL?>/admin/myaccount/?view=edit" class="pull-right">edit</a></span>
 								<span class="img"></span>
 								<span class="details">
-									<a href="<?php echo XC_URL."/member/".$_SESSION['xAUser']?>"><?php echo $_SESSION['xAUser'];?></a>
-                                    <br><?php echo $_SESSION['xAEmail'];?>
+									<a href="<?php echo XC_URL."/member/".$_SESSION['xUser']?>"><?php echo $_SESSION['xUser'];?></a>
+                                    <br><?php echo $_SESSION['xEmail'];?>
 								</span>
 								<span class="clearfix"></span>
 							</span>

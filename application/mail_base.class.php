@@ -77,11 +77,6 @@ Class baseMailler {
             return true;
         }
     }
-    public function show_exm()
-    {
-        return "aaaaaaaaaaa";
-    }
-
 }
 
 ?>

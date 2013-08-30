@@ -73,16 +73,20 @@
             <li class="dropdown dd-1">
                 <a href="" data-toggle="dropdown" class="glyphicons shopping_cart"><i></i>Ứng dụng <span class="caret"></span></a>
                 <ul class="dropdown-menu pull-left">
-                    <li class=""><a href="<?php echo XC_URL?>/app">Danh mục ứng dụng</a></li>
-                    <li class=""><a href="">C</a></li>
-                    <li class=""><a href="">D</a></li>
+                    <li class=""><a href="<?php echo XC_URL?>/ungdung/thoikhoabieu">Thời khóa biểu</a></li>
+                    <li class=""><a href="<?php echo XC_URL?>/ungdung/diemthi">Điểm thi</a></li>
+                    <li class=""><a href="<?php echo XC_URL?>/ungdung/thuvien">Thư viện</a></li>
+                    <li class=""><a href="<?php echo XC_URL?>/ungdung/tracnghiem">Ôn thi trắc nghiệm</a></li>
+                    <li class=""><a href="<?php echo XC_URL?>/ungdung/hoctructuyen">Học trực tuyến</a></li>
+                    <li class=""><a href="<?php echo XC_URL?>/ungdung/hoctructuyen">Hộp thư</a></li>
+                    <li class=""><a href="<?php echo XC_URL?>/ungdung/hoctructuyen">Bạn bè</a></li>
                 </ul>
             </li>
             <li class="dropdown dd-1">
                 <a href="" data-toggle="dropdown" class="glyphicons notes"><i></i>Blog <span class="caret"></span></a>
                 <ul class="dropdown-menu pull-left">
-                    <li class=""><a href="<?php echo XC_URL?>/blog" >Blog Posts</a></li>
-                    <li class=""><a href="<?php echo XC_URL?>/blog/timeline">Blog Timeline</a></li>
+                    <li class=""><a href="<?php echo XC_URL?>/blog" >Tất cả</a></li>
+                    <li class=""><a href="<?php echo XC_URL?>/blog/timeline">Dòng thời gian</a></li>
                 </ul>
             </li>
             <li><a href="<?php echo XC_URL?>/contact" class="glyphicons iphone"><i></i> Liên hệ</a></li>

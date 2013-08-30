@@ -11,7 +11,7 @@ Class adminController extends baseController
 {
     public function index()
     {
-        if(isset($_SESSION['xAID']) && $_SESSION['xAID'] != "")
+        if(isset($_SESSION['xID']) && $_SESSION['xID'] != "" && $_SESSION['xGroup'] == "2261010")
         {
             $this->view->admintmp('index');
         }
@@ -41,10 +41,6 @@ Class adminController extends baseController
         }
         $this->view->admintmp('login');
 
-    }
-    public function test()
-    {
-        $this->view->admintmp('bedit');
     }
     public function logout()
     {

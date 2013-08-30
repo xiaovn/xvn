@@ -83,4 +83,14 @@ Class book{
         }
         return $bt;
     }
+    public function book($bookid,$info)
+    {
+        if(isset($bookid) && $bookid != "" && isset($info) && $info != "")
+        {
+            global $db;
+            $db->query("SELECT ".$info." FROM xiaob_book WHERE bookid = ".$bookid);
+            $book = $db->fetch_object($first_row = true);
+            return $book->$info;
+        }
+    }
 }

@@ -48,9 +48,27 @@ Class member{
      * @return void
      *
      */
-    public function show_exm()
+    public function sex($sex)
     {
-        return "aaaaaaaaaaab";
+        if(isset($sex) && $sex != "")
+        {
+            if($sex == 1)
+            {
+                return "Nam";
+            }
+            elseif($sex == 0)
+            {
+                return "Nữ";
+            }
+            else
+            {
+                return "Khác";
+            }
+        }
+        else
+        {
+            return "";
+        }
     }
     public function get_member_info($xid,$xfunc)
     {
@@ -58,5 +76,33 @@ Class member{
         $blog = $db->query("SELECT ".$xfunc." FROM xdata_info WHERE xid=".$xid);
         $me = $db->fetch_object($first_row = true);
         return $me->$xfunc;
+    }
+    public function account($xid,$info)
+    {
+        if(isset($xid) && $xid != "" && isset($info) && $info != "")
+        {
+            global $db;
+            $db->query("SELECT ".$info." FROM xdata_account WHERE xid = ".$xid);
+            $acc = $db->fetch_object($first_row = true);
+            return $acc->$info;
+        }
+        else
+        {
+            return "";
+        }
+    }
+    public function info($xid,$info)
+    {
+        if(isset($xid) && $xid != "" && isset($info) && $info != "")
+        {
+            global $db;
+            $db->query("SELECT ".$info." FROM xdata_info WHERE xid = ".$xid);
+            $ifo = $db->fetch_object($first_row = true);
+            return $ifo->$info;
+        }
+        else
+        {
+            return "";
+        }
     }
 }

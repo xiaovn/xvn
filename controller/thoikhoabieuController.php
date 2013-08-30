@@ -14,6 +14,10 @@ Class thoikhoabieuController extends baseController
     {
         $lop ='8226572';
         $dstkb = $this->model->get('tkbModel')->gettkb($lop);
+        $xid = "a";
+        $a = $this->member->get_member_info($xid,"name");
+        $lop = $this->member->getlop($xid);
+        school::getInstance()->tenlop($lop);
         $t = "";
         foreach($dstkb as $tkb)
         {
