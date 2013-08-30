@@ -14,14 +14,6 @@ define('DB_USER', 'root'); //database user
 define('DB_PASSWORD', ''); //database password
 define('DB_HOST', 'localhost'); //sql server
 
-/*** define mailer ***/
-define('MAIL_PROTOCOL', 'SMTP');
-define('MAIL_HOST', 'smtp.gmail.com');
-define('MAIL_ACC', 'passport@xiao.vn');
-define('MAIL_PASS', 'anhmaiyeuem123');
-define('MAIL_PORT', 465);
-define('MAIL_AUTH', true);
-define('MAIL_SECURE', 'ssl');
 /*** define Theme ***/
 define('ThemeMaster', 'xpanel'); //Replace xpanel by your theme's name
 
