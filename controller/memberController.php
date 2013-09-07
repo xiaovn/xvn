@@ -15,6 +15,7 @@ Class memberController extends baseController
         {
             $this->view->data['members'] =  $this->model->get("memberModel")->get_mem();
             $this->view->data['member_heading'] = 'This is the member Index';
+            $this->view->data['hoctap'] = school::getInstance()->get_learning_year($_SESSION['xID'],date("Y"));
             $this->view->show('member_index');
         }
         else

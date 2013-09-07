@@ -46,12 +46,15 @@ require_once "nav.php";
                 <img src="<?php echo $template_path;?>images/avatar-large.jpg"  alt="100%x200 Image Holder" />
                 <div class="caption">
                     <h4><?php echo $_SESSION['xUser']?></h4>
-                    <p>Nhẹ nhàng, trầm lặng, thích khám phá và không ngại thử thách.</p>
+                    <p><?php echo member::getInstance()->get_member_info($_SESSION['xID'],"slogan");?></p>
 
                     <!-- Social Icons -->
-                    <a href="" class="glyphicons standard primary facebook"><i></i></a>
-                    <a href="" class="glyphicons standard twitter"><i></i></a>
-                    <a href="" class="glyphicons standard linked_in"><i></i></a>
+                    <a href="<?php echo member::getInstance()->get_member_info($_SESSION['xID'],"facebook")?>" class="glyphicons standard <?php if(member::getInstance()->get_member_info($_SESSION['xID'],"facebook") != ""){echo "primary";}?> facebook"><i></i></a>
+                    <a href="<?php echo member::getInstance()->get_member_info($_SESSION['xID'],"twitter")?>" class="glyphicons standard <?php if(member::getInstance()->get_member_info($_SESSION['xID'],"twitter") != ""){echo "primary";}?> twitter"><i></i></a>
+                    <a href="<?php echo member::getInstance()->get_member_info($_SESSION['xID'],"yahoo")?>" class="glyphicons standard <?php if(member::getInstance()->get_member_info($_SESSION['xID'],"yahoo") != ""){echo "primary";}?> yahoo"><i></i></a>
+                    <a href="<?php echo member::getInstance()->get_member_info($_SESSION['xID'],"didong")?>" class="glyphicons standard <?php if(member::getInstance()->get_member_info($_SESSION['xID'],"didong") != ""){echo "primary";}?> iphone"><i></i></a>
+                    <a href="<?php echo member::getInstance()->get_member_info($_SESSION['xID'],"skype")?>" class="glyphicons standard <?php if(member::getInstance()->get_member_info($_SESSION['xID'],"skype") != ""){echo "primary";}?> skype"><i></i></a>
+                    <a href="<?php echo member::getInstance()->account($_SESSION['xID'],"email")?>" class="glyphicons standard <?php if(member::getInstance()->account($_SESSION['xID'],"email") != ""){echo "primary";}?> e-mail"><i></i></a>
                     <div class="clearfix"></div>
                     <!-- // Social Icons END -->
                 </div>
@@ -73,8 +76,8 @@ require_once "nav.php";
                             <div class="separator bottom"></div>
                             <div class="glyphicons glyphicon-large group">
                                 <i></i>
-                                <h4>Trường THPT Nguyễn Trãi</h4>
-                                <p>Lớp 12A1 - Năm học 2008 - 2009<br> <a href="">Chi tiết</a></p>
+                                <h4>Lớp <?php echo school::getInstance()->lop($hoctap->class,"tenlop");?> - <?php echo school::getInstance()->truong($hoctap->school,"tentruong");?></h4>
+                                <p>Năm: <?php echo $hoctap->year;?><br> <a href="">Chi tiết</a></p>
                             </div>
                             <div class="separator bottom"></div>
                             <div class="glyphicons glyphicon-large group">
@@ -82,9 +85,9 @@ require_once "nav.php";
                                 <h4>Thông tin cá nhân</h4>
                                 <p>
                                 <ul>
-                                    <li>Ngày sinh: 10 - 01 - 1991</li>
+                                    <li>Ngày sinh: </li>
                                     <li>Giới tính: Nam</li>
-                                    <li>Tình trạng hôn nhân: Độc thân</li>
+                                    <li>Tình tình trạng hôn nhân: độc thân</li>
                                 </ul>
                                 </p>
                             </div>
@@ -114,12 +117,20 @@ require_once "nav.php";
                     <div class="separator bottom"></div>
                     <div class="glyphicons glyphicon-large shield">
                         <i></i>
-                        <h4>Thông tin liên hệ</h4>
+                        <h4>Thông tin cá nhân</h4>
                         <p>
                         <ul>
-                            <li>Di động: 0938-600-656</li>
-                            <li>Email: nguyenhoc@xiao.vn</li>
-                            <li>Yahoo: hsnoval</li>
+                            <li>Họ tên: <?php echo member::getInstance()->get_member_info($_SESSION['xID'],"name");?></li>
+                            <li>Tên khác: <?php echo member::getInstance()->get_member_info($_SESSION['xID'],"othername");?></li>
+                            <li>Ngày sinh: <?php echo member::getInstance()->get_member_info($_SESSION['xID'],"birthday");?></li>
+
+                            <li>Giới tính: <?php echo member::getInstance()->sex(member::getInstance()->get_member_info($_SESSION['xID'],"sex"));?></li>
+                            <li>Tình trạng hôn nhân: <?php echo member::getInstance()->get_member_info($_SESSION['xID'],"honnhan");?></li>
+                            <li>Chứng minh nhân dân: <?php echo member::getInstance()->get_member_info($_SESSION['xID'],"cmnd");?></li>
+                            <li>Nơi cấp CMND: <?php echo member::getInstance()->get_member_info($_SESSION['xID'],"birthday");?></li>
+                            <li>Ngày cấp CMND: <?php echo member::getInstance()->get_member_info($_SESSION['xID'],"ngaycapcmnd");?></li>
+
+                            <li>Dân tộc: <?php echo member::getInstance()->get_member_info($_SESSION['xID'],"dantoc");?></li>
                         </ul>
                         </p>
                     </div>
@@ -127,21 +138,17 @@ require_once "nav.php";
                     <div class="glyphicons glyphicon-large group">
                         <i></i>
                         <h4>Bạn bè</h4>
-                        <div class="span2" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-5" data-delegate="#gallery-5">
-                            <a class="thumb" href="<?php echo $template_path;?>images/avatar-large-girl.jpg" data-gallery="gallery"><img src="<?php echo $template_path;?>images/avatar-large-girl.jpg" alt="photo"></a>
-                        </div>
-                        <div class="span2" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-5" data-delegate="#gallery-5">
-                            <a class="thumb" href="<?php echo $template_path;?>images/avatar-large.jpg" data-gallery="gallery"><img src="<?php echo $template_path;?>images/avatar-large.jpg" alt="photo"></a>
-                        </div>
-                        <div class="span2" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-5" data-delegate="#gallery-5">
-                            <a class="thumb" href="<?php echo $template_path;?>images/avatar-large-girl.jpg" data-gallery="gallery"><img src="<?php echo $template_path;?>images/avatar-large-girl.jpg" alt="photo"></a>
-                        </div>
-                        <div class="span2" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-5" data-delegate="#gallery-5">
-                            <a class="thumb" href="<?php echo $template_path;?>images/avatar-large.jpg" data-gallery="gallery"><img src="<?php echo $template_path;?>images/avatar-large.jpg" alt="photo"></a>
-                        </div>
-                        <div class="span2" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-5" data-delegate="#gallery-5">
-                            <a class="thumb" href="<?php echo $template_path;?>images/avatar-large-girl.jpg" data-gallery="gallery"><img src="<?php echo $template_path;?>images/avatar-large-girl.jpg" alt="photo"></a>
-                        </div>
+                        <?php
+                        $dsbb = member::getInstance()->get_banbe($_SESSION['xID']);
+                        foreach($dsbb as $bb)
+                        {
+                        ?>
+                            <div class="span2" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-5" data-delegate="#gallery-5">
+                                <a class="thumb" href="<?php echo $template_path;?>images/avatar-large-girl.jpg" alt="<?php echo member::getInstance()->info($bb->xid2,"name");?>" data-gallery="gallery"><img src="<?php echo $template_path;?>images/avatar-large-girl.jpg" alt="<?php echo member::getInstance()->account($bb->xid2,"username");?>" title="<?php echo member::getInstance()->account($bb->xid2,"username");?>"></a>
+                            </div>
+                            <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -152,51 +159,43 @@ require_once "nav.php";
             <div class="widget-body">
                 <div class="carousel carousel-1 slide" id="myCarousel2">
                     <div class="carousel-inner">
-                        <!-- Item -->
-                        <div class="item active">
-                            <div class="row-fluid">
-                                <div class="span5 relativeWrap">
-                                    <div class="carousel-caption">
-                                        <h4>Bài viết 1!</h4>
-                                        <p>gày mai (8.7), thí sinh cả nước sẽ đến các hội đồng thi làm thủ tục dự thi ĐH đợt 2 (ngày 9-10.7) với các khối thi: B, C, D và các khối năng khiếu. Theo thống kê của Bộ GD-ĐT, đợt 2...<br/> <a href="" target="_blank">Xem chi tiết...</a></p>
+                        <?php
+                        $dsblog = application::getInstance()->get_blog($_SESSION['xID']);
+                        $i = 1;
+                        $active = "";
+                        foreach($dsblog as $blog)
+                        {
+                            if($i == 1)
+                            {
+                                $active = "active";
+                            }
+                            else
+                            {
+                                $active = "";
+                            }
+                            ?>
+                            <!-- Item -->
+
+                            <div class="item <?php echo $active;?>">
+                                <div class="row-fluid">
+                                    <div class="span5 relativeWrap">
+                                        <div class="carousel-caption">
+                                            <h4><?php echo substr($blog->blogtitle,0,43);?>...</h4>
+                                            <p><?php echo strip_tags(substr($blog->blogcontent,0,180));?><br/> <a href="<?php echo XC_URL;?>/blog/view?id=<?php echo $blog->id;?>" target="_blank">Xem chi tiết...</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="span7">
+                                        <img src="<?php echo $template_path;?>images/8-1.jpg" alt="" />
                                     </div>
                                 </div>
-                                <div class="span7">
-                                    <img src="<?php echo $template_path;?>images/8-1.jpg" alt="" />
-                                </div>
                             </div>
-                        </div>
-                        <!-- // Item END -->
-                        <!-- Item -->
-                        <div class="item">
-                            <div class="row-fluid">
-                                <div class="span5 relativeWrap">
-                                    <div class="carousel-caption">
-                                        <h4>Bài viết 2</h4>
-                                        <p>gày mai (8.7), thí sinh cả nước sẽ đến các hội đồng thi làm thủ tục dự thi ĐH đợt 2 (ngày 9-10.7) với các khối thi: B, C, D và các khối năng khiếu. Theo thống kê của Bộ GD-ĐT, đợt 2...<br/> <a href="" target="_blank">Xem chi tiết...</a></p>
-                                    </div>
-                                </div>
-                                <div class="span7">
-                                    <img src="<?php echo $template_path;?>images/9-1.jpg" alt="" />
-                                </div>
-                            </div>
-                        </div>
-                        <!-- // Item END -->
-                        <!-- Item -->
-                        <div class="item">
-                            <div class="row-fluid">
-                                <div class="span5 relativeWrap">
-                                    <div class="carousel-caption">
-                                        <h4>Bài viết 3</h4>
-                                        <p>gày mai (8.7), thí sinh cả nước sẽ đến các hội đồng thi làm thủ tục dự thi ĐH đợt 2 (ngày 9-10.7) với các khối thi: B, C, D và các khối năng khiếu. Theo thống kê của Bộ GD-ĐT, đợt 2...<br/> <a href="" target="_blank">Xem chi tiết...</a></p>
-                                    </div>
-                                </div>
-                                <div class="span7">
-                                    <img src="<?php echo $template_path;?>images/10-1.jpg" alt="" />
-                                </div>
-                            </div>
-                        </div>
-                        <!-- // Item END -->
+                            <!-- // Item END -->
+                            <?php
+                            $i ++;
+                        }
+                        ?>
+
+
                     </div>
                     <ol class="carousel-indicators">
                         <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
@@ -217,42 +216,29 @@ require_once "nav.php";
                 <div class="separator bottom"></div>
                 <div class="glyphicons glyphicon-large iphone">
                     <i></i>
-                    <div class="span2" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-5" data-delegate="#gallery-5">
-                        <a class="thumb" href="<?php echo $template_path;?>images/avatar-large-girl.jpg" data-gallery="gallery"><img src="<?php echo $template_path;?>images/avatar-large-girl.jpg" alt="photo"></a>
-                    </div>
-                    <div class="span2" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-5" data-delegate="#gallery-5">
-                        <a class="thumb" href="<?php echo $template_path;?>images/avatar-large.jpg" data-gallery="gallery"><img src="<?php echo $template_path;?>images/avatar-large.jpg" alt="photo"></a>
-                    </div>
-                    <div class="span2" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-5" data-delegate="#gallery-5">
-                        <a class="thumb" href="<?php echo $template_path;?>images/avatar-large-girl.jpg" data-gallery="gallery"><img src="<?php echo $template_path;?>images/avatar-large-girl.jpg" alt="photo"></a>
-                    </div>
-                    <div class="span2" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-5" data-delegate="#gallery-5">
-                        <a class="thumb" href="<?php echo $template_path;?>images/avatar-large.jpg" data-gallery="gallery"><img src="<?php echo $template_path;?>images/avatar-large.jpg" alt="photo"></a>
-                    </div>
-                    <div class="span2" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-5" data-delegate="#gallery-5">
-                        <a class="thumb" href="<?php echo $template_path;?>images/avatar-large-girl.jpg" data-gallery="gallery"><img src="<?php echo $template_path;?>images/avatar-large-girl.jpg" alt="photo"></a>
-                    </div>
-                    <div class="span2" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-5" data-delegate="#gallery-5">
-                        <a class="thumb" href="<?php echo $template_path;?>images/avatar-large-girl.jpg" data-gallery="gallery"><img src="<?php echo $template_path;?>images/avatar-large-girl.jpg" alt="photo"></a>
-                    </div>
-                    <div class="span2" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-5" data-delegate="#gallery-5">
-                        <a class="thumb" href="<?php echo $template_path;?>images/avatar-large-girl.jpg" data-gallery="gallery"><img src="<?php echo $template_path;?>images/avatar-large-girl.jpg" alt="photo"></a>
-                    </div>
-                    <div class="span2" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-5" data-delegate="#gallery-5">
-                        <a class="thumb" href="<?php echo $template_path;?>images/avatar-large-girl.jpg" data-gallery="gallery"><img src="<?php echo $template_path;?>images/avatar-large-girl.jpg" alt="photo"></a>
-                    </div>
+                    <?php
+                        $applogs = member::getInstance()->get_app_log($_SESSION['xID']);
+                        foreach($applogs as $ap)
+                        {
+                            ?>
+                            <div class="span2" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-5" data-delegate="#gallery-5">
+                                <a class="thumb" href="<?php XC_URL?>/ungdung/view/?id<?php echo $ap->appid;?>" data-gallery="gallery"><img src="<?php echo $template_path;?>images/avatar-large-girl.jpg" title="<?php echo application::getInstance()->application($ap->appid,"appname");?>" alt="photo"></a>
+                            </div>
+                            <?php
+                        }
+                    ?>
                 </div>
 
                 <div class="separator bottom"></div>
                 <div class="glyphicons glyphicon-large magic group-column">
                     <i></i>
-                    <h4>Thành tích mới nhất</h4>
+                    <h4>Thành tích m?i nh?t</h4>
                     <div class="span2" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-5" data-delegate="#gallery-5">
                         <a class="thumb" href="<?php echo $template_path;?>images/medal/1.png" data-gallery="gallery"><img src="<?php echo $template_path;?>images/medal/1.png" alt="photo"></a>
                     </div>
-                    <p style="padding-left: 70px"> <b>Cao thủ văn chương</b>
+                    <p style="padding-left: 70px"> <b>Cao th? v?n ch??ng</b>
                         <br>
-                        Huy chương dành cho các thành viên có lượng bài viết được yêu thích nhiều nhất trong tháng.
+                        Huy ch??ng dành cho các thành viên có l??ng bài vi?t ???c yêu thích nhi?u nh?t trong tháng.
                     </p>
                 </div>
 
@@ -264,7 +250,17 @@ require_once "nav.php";
                 <h5>Hoạt động mới nhất</h5>
                 <div class="glyphicons circle_info">
                     <i></i>
-                    <p>Kết bạn với.... Ken Zaki</p>
+                    <?php
+                    $acts = member::getInstance()->get_activity($_SESSION['xID']);
+                    foreach($acts as $act)
+                    {
+                    ?>
+                        <p>
+                            <?php echo application::getInstance()->activity($act->active);?> với <b><?php echo member::getInstance()->account($act->with,"username");?></b>
+                        </p>
+                        <?php
+                    }
+                        ?>
                 </div>
             </div>
         </div>
@@ -282,7 +278,15 @@ require_once "nav.php";
                 <section class="twitter-feed">
                     <div class="row-fluid">
                         <div class="span12">
-                            <div class="tweet">Không nghĩ gì lúc này. <span class="label label-inverse">10/07/2013</span></div>
+                            <?php
+                            $feeds = application::getInstance()->get_feed($_SESSION['xID']);
+                            foreach($feeds as $feed)
+                            {
+                                ?>
+                                <div class="tweet"><?php echo $feed->feedcontent;?>. <span class="label label-inverse"><?php echo date("d-m-Y",strtotime($feed->updatetime));?></span></div>
+                            <?php
+                            }
+                            ?>
                         </div>
                         <div class="clearfix"></div>
                     </div>
