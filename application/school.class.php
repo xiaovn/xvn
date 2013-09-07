@@ -122,6 +122,19 @@ Class school{
             return "";
         }
     }
+    public function get_learning_year($xid,$ly)
+    {
+        if(isset($xid) && $xid != "" && isset($ly) && $ly != "")
+        {
+            global $db;
+            $db->query("SELECT * FROM xdata_student_year WHERE xid=".$xid." AND year = ".$ly);
+            return $db->fetch_object($first_row = true);
+        }
+        else
+        {
+            return "";
+        }
+    }
     public function styear($xid,$ly,$info)
     {
         if(isset($xid) && $xid != "" && isset($info) && $info != "" && isset($ly) && $ly != "")

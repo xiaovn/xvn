@@ -32,10 +32,6 @@ Class application{
     // INSERT QUERY CONTROL
     // DELETE QUERY CONTROL
     //07/97/2013_ viet
-    public function show_exm()
-    {
-        return "aaaaaaaaaaab";
-    }
     public function get_subj_name($subj_id)
     {
         if($subj_id != "")
@@ -47,6 +43,39 @@ Class application{
         }
         else return "";
 
+    }
+    public function get_blog($xid)
+    {
+        global $db;
+        $db->query("SELECT * FROM xdata_blog WHERE author=".$xid." ORDER BY id DESC LIMIT 5");
+        return $db->fetch_object();
+    }
+    public function activity($actid)
+    {
+        global $db;
+        $db->query("SELECT * FROM xdata_activity_flat WHERE acti_id = ".$actid);
+        $act = $db->fetch_object($first_row = true);
+        return $act->acti_name;
+    }
+    public function get_feed($xid)
+    {
+        global $db;
+        $db->query("SELECT * FROM xdata_feed WHERE feedauthor = ".$xid);
+        return $db->fetch_object();
+    }
+    public function application($appid,$info)
+    {
+        if(isset($appid) && $appid != "" && isset($info) && $info != "")
+        {
+            global $db;
+            $db->query("SELECT ".$info." FROM xdata_application WHERE appid = ".$appid);
+            $app = $db->fetch_object($first_row = true);
+            return $app->$info;
+        }
+        else
+        {
+            return "";
+        }
     }
     public function get_blog_list($type = "feature")
     {

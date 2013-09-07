@@ -189,4 +189,22 @@ Class member{
             return "";
         }
     }
+    public function get_activity($xid)
+    {
+        global $db;
+        $db->query("SELECT * FROM xdata_activity WHERE xid=".$xid." ORDER BY id DESC LIMIT 5");
+        return $db->fetch_object();
+    }
+    public function get_banbe($xid)
+    {
+        global $db;
+        $db->query("SELECT * FROM xdata_friend WHERE xid1 =".$xid." ORDER BY id DESC LIMIT 5");
+        return $db->fetch_object();
+    }
+    public function get_app_log($xid)
+    {
+        global $db;
+        $db->query("SELECT * FROM xdata_app_log WHERE xid =".$xid." LIMIT 5");
+        return $db->fetch_object();
+    }
 }
