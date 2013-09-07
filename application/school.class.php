@@ -122,4 +122,16 @@ Class school{
             return "";
         }
     }
+    //07/09/2013 _viet
+    public function get_class_name($classid)
+    {
+        if($classid != "")
+        {
+            global $db;
+            $blog = $db->query("SELECT tenlop FROM xdata_lop WHERE malop=".$classid);
+            $me = $db->fetch_object($first_row = true);
+            return $me->tenlop;
+        }
+        else return "";
+    }
 }

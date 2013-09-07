@@ -15,7 +15,7 @@ include "config.php";
 <!--[if gt IE 8]> <html class="front ie gt-ie8 fluid top-full sticky-top"> <![endif]-->
 <!--[if !IE]><!--><html class="front fluid top-full sticky-top"><!-- <![endif]-->
 <head>
-    <title>AAA</title>
+    <title>Xem Thời Khóa Biểu</title>
 
     <!-- Meta -->
     <meta charset="UTF-8" />
@@ -72,7 +72,7 @@ require_once "nav.php";
 <!-- Top navbar END -->
 <div class="container-960 innerT">
 
-<h3 class="glyphicons shopping_cart"><i></i>Application Store</h3>
+<h3 class="glyphicons shopping_cart"><i></i>Thời Khóa Biểu</h3>
 <div class="separator bottom"></div>
 
 <div class="carousel-1 carousel slide" id="myCarousel">
@@ -120,172 +120,410 @@ require_once "nav.php";
 
 <div class="row-fluid">
     <div class="span12">
-        <div class="widget-body">
-            <table class="table table-bordered table-vertical-center table-pricing table-app">
-
-                <!-- Table heading -->
-                <thead>
-                <tr>
-                    <th class="center">Tiết</th>
-                    <th class="center">Thứ 2</th>
-                    <th class="center">Thứ 3</th>
-                    <th class="center">Thứ 4</th>
-                    <th class="center">Thứ 5</th>
-                    <th class="center">Thứ 6</th>
-                    <th class="center">Thứ 7</th>
-                    <th class="center">Chủ nhật</th>
-                </tr>
-                </thead>
-                <!-- // Table heading END -->
-
-                <!-- Table body -->
-                <tbody>
-
-                <!-- Table pricing row -->
-                <tr class="pricing">
-                    <td class="center">
-                        <span>1</span>
-                    </td>
-                    <td class="center">
-                        <span>Toán</span>
-                    </td>
-                    <td class="center">
-                        <span>Lý</span>
-                    </td>
-                    <td class="center">
-                        <span>Hóa</span>
-                    </td>
-                    <td class="center">
-                        <span>Sinh</span>
-                    </td>
-                    <td class="center">
-                        <span>Văn</span>
-                    </td>
-                    <td class="center">
-                        <span>Tiếng Anh</span>
-                    </td>
-                    <td class="center">
-                        <span>CD</span>
-                    </td>
-                </tr>
-                <!-- // Table pricing row END -->
-
-                <!-- Table row -->
-                <tr>
-                    <td class="center">
-                        <span>1</span>
-                    </td>
-                    <td class="center">
-                        <span><?php echo $tkbs[2][2];?></span>
-                    </td>
-                    <td class="center">
-                        <span><?php echo $tkbs[3][2];?><?php //getmon(3, 2, 1,'8226572', '2318869')?></span>
-                    </td>
-                    <td class="center">
-                        <span>Hóa</span>
-                    </td>
-                    <td class="center">
-                        <span>Sinh</span>
-                    </td>
-                    <td class="center">
-                        <span>Văn</span>
-                    </td>
-                    <td class="center">
-                        <span>Tiếng Anh</span>
-                    </td>
-                    <td class="center">
-                        <span>CD</span>
-                    </td>
-
-                </tr>
-                <tr class="pricing">
-                    <td class="center">
-                        <span>1</span>
-                    </td>
-                    <td class="center">
-                        <span>Toán</span>
-                    </td>
-                    <td class="center">
-                        <span>Lý</span>
-                    </td>
-                    <td class="center">
-                        <span>Hóa</span>
-                    </td>
-                    <td class="center">
-                        <span>Sinh</span>
-                    </td>
-                    <td class="center">
-                        <span>Văn</span>
-                    </td>
-                    <td class="center">
-                        <span>Tiếng Anh</span>
-                    </td>
-                    <td class="center">
-                        <span>CD</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="center">
-                        <span>1</span>
-                    </td>
-                    <td class="center">
-                        <span>Toán</span>
-                    </td>
-                    <td class="center">
-                        <span>Lý</span>
-                    </td>
-                    <td class="center">
-                        <span>Hóa</span>
-                    </td>
-                    <td class="center">
-                        <span>Sinh</span>
-                    </td>
-                    <td class="center">
-                        <span>Văn</span>
-                    </td>
-                    <td class="center">
-                        <span>Tiếng Anh</span>
-                    </td>
-                    <td class="center">
-                        <span>CD</span>
-                    </td>
-
-                </tr>
-                <tr class="pricing">
-                    <td class="center">
-                        <span>1</span>
-                    </td>
-                    <td class="center">
-                        <span>Toán</span>
-                    </td>
-                    <td class="center">
-                        <span>Lý</span>
-                    </td>
-                    <td class="center">
-                        <span>Hóa</span>
-                    </td>
-                    <td class="center">
-                        <span>Sinh</span>
-                    </td>
-                    <td class="center">
-                        <span>Văn</span>
-                    </td>
-                    <td class="center">
-                        <span>Tiếng Anh</span>
-                    </td>
-                    <td class="center">
-                        <span>CD</span>
-                    </td>
-                </tr>
-                <!-- // Table row END -->
-
-                </tbody>
-                <!-- // Table body END -->
-
-            </table>
+        <div class="widget widget-body-white" data-toggle="collapse-widget">
+            <div class="widget-head">
+                <h4 class="heading glyphicons settings"><i></i>Tùy chọn nâng cao</h4>
+            </div>
+            <div class="widget-body">s
+                <div class="span9 center">
+                    <label for="inputTitle">Account</label>
+                    <select class="selected span4" data-style="btn-primary">
+                        <option>---Select---</option>
+                        <option>Ketchup</option>
+                        <option>Relish</option>
+                        <option>Mustard</option>
+                        <option>Ketchup</option>
+                        <option>Relish</option>
+                        <option>Mustard</option>
+                    </select>
+                </div>
+                <div class="span9 center">
+                    <label for="inputTitle">Tên Giáo Viên</label>
+                    <select class="selected span4" data-style="btn-primary">
+                        <option>---Select---</option>
+                        <option>Ketchup</option>
+                        <option>Relish</option>
+                        <option>Mustard</option>
+                        <option>Ketchup</option>
+                    </select>
+                </div>
+                <div class="span9 center">
+                    <label for="inputTitle">Thời Khóa Biểu</label>
+                    <select class="selected span4" data-style="btn-primary">
+                        <option>---Select---</option>
+                        <option>Ketchup</option>
+                        <option>Relish</option>
+                        <option>Mustard</option>
+                        <option>Ketchup</option>
+                        <option>Relish</option>
+                    </select>
+                </div>
+                <div class="span10 center">
+                    <input id="validate" class="button themed" type="submit" value="Xem Thời Khóa Biểu" name="signup">
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
+<?php
+if(isset($_SESSION['xGroup']) && $_SESSION['xGroup'] == "2268470")
+{
+    ?>
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="widget-body">
+                <table class="table table-bordered table-vertical-center table-pricing table-app">
+
+                    <!-- Table heading -->
+                    <thead>
+                    <tr>
+                        <th class="center">Tiết</th>
+                        <th class="center">Thứ 2</th>
+                        <th class="center">Thứ 3</th>
+                        <th class="center">Thứ 4</th>
+                        <th class="center">Thứ 5</th>
+                        <th class="center">Thứ 6</th>
+                        <th class="center">Thứ 7</th>
+                        <th class="center">Chủ nhật</th>
+                    </tr>
+                    </thead>
+                    <!-- // Table heading END -->
+
+                    <!-- Table body -->
+                    <tbody>
+
+                    <!-- Table pricing row -->
+                    <tr class="pricing">
+                        <td class="center">
+                            <span>1</span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[2][1]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[3][1]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[4][1]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[5][1]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[6][1]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[7][1]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[8][1]);?></span>
+                        </td>
+                    </tr>
+                    <!-- // Table pricing row END -->
+
+                    <!-- Table row -->
+                    <tr>
+                        <td class="center">
+                            <span>2</span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[2][2]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[3][2]);?><?php //getmon(3, 2, 1,'8226572', '2318869')?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[4][2]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[5][2]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[6][2]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[7][2]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[8][2]);?></span>
+                        </td>
+
+                    </tr>
+                    <tr class="pricing">
+                        <td class="center">
+                            <span>3</span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[2][3]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[3][3]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[4][3]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[5][3]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[6][3]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[7][3]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[8][3]);?></span>
+                        </td>
+                    </tr>
+                    <!-- // Table pricing row END -->
+
+                    <!-- Table row -->
+                    <tr>
+                        <td class="center">
+                            <span>4</span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[2][4]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[3][4]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[4][4]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[5][4]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[6][4]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[7][4]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[8][4]);?></span>
+                        </td>
+                    </tr>
+
+                    <tr class="pricing">
+                        <td class="center">
+                            <span>5</span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[2][5]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[3][5]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[4][5]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[5][5]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[6][5]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[7][5]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo application::getInstance()->get_subj_name($tkbs[8][5]);?></span>
+                        </td>
+                    </tr>
+                    <!-- // Table row END -->
+
+                    </tbody>
+                    <!-- // Table body END -->
+
+                </table>
+            </div>
+        </div>
+    </div>
+<?php
+}
+elseif(isset($_SESSION['xGroup']) && $_SESSION['xGroup'] == "2267588")
+{
+    ?>
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="widget-body">
+                <table class="table table-bordered table-vertical-center table-pricing table-app">
+
+                    <!-- Table heading -->
+                    <thead>
+                    <tr>
+                        <th class="center">Tiết</th>
+                        <th class="center">Thứ 2</th>
+                        <th class="center">Thứ 3</th>
+                        <th class="center">Thứ 4</th>
+                        <th class="center">Thứ 5</th>
+                        <th class="center">Thứ 6</th>
+                        <th class="center">Thứ 7</th>
+                        <th class="center">Chủ nhật</th>
+                    </tr>
+                    </thead>
+                    <!-- // Table heading END -->
+
+                    <!-- Table body -->
+                    <tbody>
+
+                    <!-- Table pricing row -->
+                    <tr class="pricing">
+                        <td class="center">
+                            <span>1</span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo school::getInstance()->get_class_name($tkbs[2][1]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo school::getInstance()->get_class_name($tkbs[3][1]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo school::getInstance()->get_class_name($tkbs[4][1]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo school::getInstance()->get_class_name($tkbs[5][1]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo school::getInstance()->get_class_name($tkbs[6][1]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo school::getInstance()->get_class_name($tkbs[7][1]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo school::getInstance()->get_class_name($tkbs[8][1]);?></span>
+                        </td>
+                    </tr>
+                    <!-- // Table pricing row END -->
+
+                    <!-- Table row -->
+                    <tr>
+                        <td class="center">
+                            <span>2</span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo school::getInstance()->get_class_name($tkbs[2][2]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo school::getInstance()->get_class_name($tkbs[3][2]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo school::getInstance()->get_class_name($tkbs[4][2]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo school::getInstance()->get_class_name($tkbs[5][2]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo school::getInstance()->get_class_name($tkbs[6][2]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo school::getInstance()->get_class_name($tkbs[7][2]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo school::getInstance()->get_class_name($tkbs[8][2]);?></span>
+                        </td>
+                    </tr>
+
+                    <tr class="pricing">
+                        <td class="center">
+                            <span>3</span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo school::getInstance()->get_class_name($tkbs[2][3]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo school::getInstance()->get_class_name($tkbs[3][3]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo school::getInstance()->get_class_name($tkbs[4][3]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo school::getInstance()->get_class_name($tkbs[5][3]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo school::getInstance()->get_class_name($tkbs[6][3]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo school::getInstance()->get_class_name($tkbs[7][3]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo school::getInstance()->get_class_name($tkbs[8][3]);?></span>
+                        </td>
+                    </tr>
+                    <!-- // Table pricing row END -->
+
+                    <!-- Table row -->
+                    <tr>
+                        <td class="center">
+                            <span>4</span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo member::getInstance()->get_member_info("7221111111","name")?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo school::getInstance()->get_class_name($tkbs[3][4]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo school::getInstance()->get_class_name($tkbs[4][4]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo school::getInstance()->get_class_name($tkbs[5][4]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo school::getInstance()->get_class_name($tkbs[6][4]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo school::getInstance()->get_class_name($tkbs[7][4]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo school::getInstance()->get_class_name($tkbs[8][4]);?></span>
+                        </td>
+                    </tr>
+
+                    <tr class="pricing">
+                        <td class="center">
+                            <span>5</span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo school::getInstance()->get_class_name($tkbs[2][5]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo school::getInstance()->get_class_name($tkbs[3][5]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo school::getInstance()->get_class_name($tkbs[4][5]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo school::getInstance()->get_class_name($tkbs[5][5]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo school::getInstance()->get_class_name($tkbs[6][5]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo school::getInstance()->get_class_name($tkbs[7][5]);?></span>
+                        </td>
+                        <td class="center">
+                            <span><?php echo school::getInstance()->get_class_name($tkbs[8][5]);?></span>
+                        </td>
+                    </tr>
+                    <!-- // Table row END -->
+
+                    </tbody>
+                    <!-- // Table body END -->
+
+                </table>
+            </div>
+        </div>
+    </div>
+<?php
+}
+else
+{
+    echo "Ban khong co quyen xem tkb";
+}
+?>
 </div>
 </div>
 <!-- // Content END -->
