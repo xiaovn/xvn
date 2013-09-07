@@ -70,5 +70,32 @@ Class memberController extends baseController
         $this->view->data['member_heading'] = 'This is the member Signup';
         $this->view->show('member_account');
     }
-
+    public function thongtin()
+    {
+        //$xid = '2254489252';
+        $xid = $_SESSION['xID'];
+        $this->view->data['hoten'] = member::getInstance()->get_member_info($xid,'name');
+        $this->view->data['ngaysinh'] = member::getInstance()->get_member_info($xid,'birthday');
+        $this->view->data['namhoc']=member::getInstance()->get_member_hocsinh($xid,'namhoc');
+        $this->view->data['hsmail']=member::getInstance()->get_member_account($xid,'email');
+        $this->view->data['hsyahoo']=member::getInstance()->get_member_account($xid,'yahoo');
+        $this->view->data['didong']=member::getInstance()->get_member_info($xid,'didong');
+        $this->view->data['dienthoai'] = member::getInstance()->get_member_info($xid,'dienthoai');
+        $this->view->data['lop'] = member::getInstance()->tenlop(member::getInstance()->getlop($xid));
+        if((member::getInstance()->get_member_info($xid,'sex'))==1)
+        {
+            $this->view->data['gioitinh'] = "Nam";
+        }
+        elseif((member::getInstance()->get_member_info($xid,'sex'))==0)
+        {
+            $this->view->data['gioitinh'] = "Nữ";
+        }
+        else
+        {
+            $this->view->data['gioitinh'] = "Khác";
+        }
+        $this->view->data['honnhan']=member::getInstance()->get_honnhan(member::getInstance()->get_mahonnhan($xid));
+        $this->view->data['avatar']=member::getInstance()->anhdaidien(member::getInstance()->idfriend($xid));
+        $this->view->show('member_index');
+    }
 }

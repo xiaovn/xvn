@@ -19,6 +19,7 @@ Class memberloginModel extends baseModel
             $_SESSION['xID'] = $row->xid;
             $_SESSION['xUser'] = $row->username;
             $_SESSION['xEmail'] = $row->email;
+            $_SESSION['xGroup'] = $row->xgroup;
             $_SESSION['LoggedIn'] = 1;
             if($row->group == 7)
             {

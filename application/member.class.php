@@ -105,4 +105,18 @@ Class member{
             return "";
         }
     }
+    public function xgroup($groupid)
+    {
+        if(isset($groupid) && $groupid != "")
+        {
+            global $db;
+            $db->query("SELECT groupname FROM xdata_account_group WHERE groupid = ".$groupid);
+            $ifo = $db->fetch_object($first_row = true);
+            return $ifo->groupname;
+        }
+        else
+        {
+            return "";
+        }
+    }
 }
