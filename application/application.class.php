@@ -31,4 +31,21 @@ Class application{
     // UPDATE QUERY CONTROL
     // INSERT QUERY CONTROL
     // DELETE QUERY CONTROL
+    //07/97/2013_ viet
+    public function show_exm()
+    {
+        return "aaaaaaaaaaab";
+    }
+    public function get_subj_name($subj_id)
+    {
+        if($subj_id != "")
+        {
+            global $db;
+            $blog = $db->query("SELECT tenmon FROM xdata_monhoc WHERE mamon=".$subj_id);
+            $me = $db->fetch_object($first_row = true);
+            return $me->tenmon;
+        }
+        else return "";
+
+    }
 }
