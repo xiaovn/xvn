@@ -119,4 +119,74 @@ Class member{
             return "";
         }
     }
+    public function dantoc($madantoc)
+    {
+        if(isset($madantoc) && $madantoc != "")
+        {
+            global $db;
+            $db->query("SELECT tendantoc FROM xdata_dantoc WHERE madantoc = ".$madantoc);
+            $ifo = $db->fetch_object($first_row = true);
+            return $ifo->tendantoc;
+        }
+        else
+        {
+            return "";
+        }
+    }
+    public function tongiao($matongiao)
+    {
+        if(isset($matongiao) && $matongiao != "")
+        {
+            global $db;
+            $db->query("SELECT tentongiao FROM xdata_tongiao WHERE matongiao = ".$matongiao);
+            $ifo = $db->fetch_object($first_row = true);
+            return $ifo->tentongiao;
+        }
+        else
+        {
+            return "";
+        }
+    }
+    public function tinh($matinh)
+    {
+        if(isset($matinh) && $matinh != "")
+        {
+            global $db;
+            $db->query("SELECT tentinh FROM xdata_tinhthanh WHERE matinh = ".$matinh);
+            $ifo = $db->fetch_object($first_row = true);
+            return $ifo->tentinh;
+        }
+        else
+        {
+            return "";
+        }
+    }
+    public function huyen($mahuyen)
+    {
+        if(isset($mahuyen) && $mahuyen != "")
+        {
+            global $db;
+            $db->query("SELECT tenhuyen FROM xdata_huyen WHERE mahuyen = ".$mahuyen);
+            $ifo = $db->fetch_object($first_row = true);
+            return $ifo->tenhuyen;
+        }
+        else
+        {
+            return "";
+        }
+    }
+    public function xa($maxa)
+    {
+        if(isset($maxa) && $maxa != "")
+        {
+            global $db;
+            $db->query("SELECT tenxa FROM xdata_xa WHERE maxa = ".$maxa);
+            $ifo = $db->fetch_object($first_row = true);
+            return $ifo->tenxa;
+        }
+        else
+        {
+            return "";
+        }
+    }
 }
