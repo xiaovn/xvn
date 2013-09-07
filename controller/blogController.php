@@ -39,13 +39,37 @@ Class blogController Extends baseController {
         $this->view->data['blog_heading'] = 'This is the blog timeline';
         $this->view->show('blog_timeline');
     }
-	public function view($args){
+    public function view()
+    {
+        $id_blog = $_GET['id'];
+
+        if(isset($_POST['noidung'])&& $_POST['noidung']!="")
+        {
+            $comment_blog_id = $id_blog;
+            $comment_author = $_SESSION['xID'];
+            $comment_author_email = $_SESSION['xEmail'];
+            $comment_author_ip = $_SERVER['REMOTE_ADDR'];
+            $comment_content = $_POST['noidung'];
+            $comment_approved = 0;
+            $comment_date = date("Y-m-d H:i:s");
+            $this->model->get('blogModel')->guibinhluan($comment_blog_id,$comment_author,$comment_author_email,$comment_author_ip,$comment_content,$comment_approved,$comment_date);
+            $this->redirect->redirect("blog","view?id=".$id_blog);
+        }
+        $blog_binhluan = $this->model->get('commentModel')->get_binhluan($id_blog);
+        $this->view->data['binhluan'] = $blog_binhluan;
+        $blog_detail = $this->model->get('blogModel')->get_blog_detail($id_blog);
+        $this->view->data['xem'] = $blog_detail;
+        $this->view->show('blog_view');
+    }
+	/*public function view($args){
 		$id_blog = $args[1];
-		//$blog_detail = $this->model->get('blogModel')->get_blog_detail($id_blog);
+		$blog_detail = $this->model->get('blogModel')->get_blog_detail($id_blog);
+		$this->view->data['xem']=$blog_detail;
 		//$this->view->data['blog_heading'] = $blog_detail->name;
 		//$this->view->data['blog_content'] = $blog_detail->content;
 		$this->view->show('blog_view');
 	}
+	*/
     public function create_blog()
     {
         $this->view->show('blog_write');
