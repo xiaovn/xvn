@@ -48,4 +48,33 @@ Class application{
         else return "";
 
     }
+    public function get_blog_list($type = "feature")
+    {
+        global $db;
+        switch($type)
+        {
+            case "feature":
+                $db->query("SELECT * FROM xdata_blog ORDER BY viewcount DESC LIMIT 5");
+                break;
+            case "topcomment":
+                $db->query("SELECT * FROM xdata_blog ORDER BY commentcount DESC LIMIT 5");
+                break;
+            case "topview":
+                $db->query("SELECT * FROM xdata_blog ORDER BY viewcount DESC LIMIT 5");
+                break;
+            case "toplike":
+                $db->query("SELECT * FROM xdata_blog ORDER BY likecount DESC LIMIT 5");
+                break;
+            case "topshare":
+                $db->query("SELECT * FROM xdata_blog ORDER BY sharecount DESC LIMIT 5");
+                break;
+            case "newest":
+                $db->query("SELECT * FROM xdata_blog ORDER BY id DESC LIMIT 5");
+                break;
+            default:
+                $db->query("SELECT * FROM xdata_blog ORDER BY id DESC LIMIT 5");
+                break;
+        }
+        return $db->fetch_object($first_row = false);
+    }
 }
