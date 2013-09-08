@@ -38,8 +38,9 @@ Class memberModel Extends baseModel
         }
 
     }
-    public function get_member_details($xid)
+    public function addfriend($xid1,$xid2)
     {
-
+        global $db;
+        $db->query("INSERT INTO xdata_friend(`xid1`,`xid2`,`from`) VALUE ('".$xid1."','".$xid2."',CURRENT_TIMESTAMP)");
     }
 }

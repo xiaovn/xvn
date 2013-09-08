@@ -207,4 +207,28 @@ Class member{
         $db->query("SELECT * FROM xdata_app_log WHERE xid =".$xid." LIMIT 5");
         return $db->fetch_object();
     }
+    public function checkfriend($xid1, $xid2)
+    {
+        if($xid1 == $xid2)
+        {
+            return false;
+        }
+        elseif(isset($xid1) && isset($xid2) && $xid1 != "" && $xid2 != "")
+        {
+            global $db;
+            $db->query("SELECT * FROM xdata_friend WHERE (xid1 = ".$xid1." AND xid2 =".$xid2.") OR (xid1 = ".$xid2." AND xid2 = ".$xid1.")");
+            if($db->num_row())
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

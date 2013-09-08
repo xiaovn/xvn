@@ -24,12 +24,32 @@ Class memberController extends baseController
         }
 
     }
+    public function testview($a)
+    {
+        $this->view->data['title1'] = $a[1];
+        $this->view->data['title2'] = $a[2];
+        $this->view->show('test_view');
+    }
     public function view($args){
         $id_mem = $args[1];
-        $member_info = $this->model->get('memberModel')->get_member_detail($id_mem);
-        $this->view->data['member_heading'] = $member_info->username;
-        $this->view->data['member_info'] = $member_info->email;
+        //$member_info = $this->model->get('memberModel')->get_member_detail($id_mem);
+        $this->view->data['memberid'] = $id_mem;
+        $this->view->data['hoctap'] = school::getInstance()->get_learning_year($id_mem,date("Y"));
+        //$this->view->data['member'] = $member_info;
         $this->view->show('member_view');
+    }
+    public function addfriend($memid){
+        $xid2 = $memid[1];
+        $xid1 = $_SESSION['xID'];
+        if(member::getInstance()->checkfriend($xid1,$xid2))
+        {
+            $this->model->get('memberModel')->addfriend($xid1,$xid2);
+            $this->view->data['status'] = "success";
+        }
+        else
+        {
+            $this->view->data['status'] = "error";
+        }
     }
     public function logout()
     {
