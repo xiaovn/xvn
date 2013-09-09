@@ -189,6 +189,20 @@ Class member{
             return "";
         }
     }
+    public function honnhan($mahonnhan)
+    {
+        if(isset($mahonnhan) && $mahonnhan != "")
+        {
+            global $db;
+            $db->query("SELECT tinhtranghonnhan FROM xdata_honnhan WHERE mahonnhan = ".$mahonnhan);
+            $ifo = $db->fetch_object($first_row = true);
+            return $ifo->tinhtranghonnhan;
+        }
+        else
+        {
+            return "";
+        }
+    }
     public function get_activity($xid)
     {
         global $db;
