@@ -25,7 +25,7 @@ require_once "nav.php";
 <!-- Top navbar END -->
 <div class="container-960 innerT">
 
-<h3 class="glyphicons shopping_cart"><i></i>Application Store - <?php echo $test;?></h3>
+<h3 class="glyphicons shopping_cart"><i></i>Application Store - <?php echo $xgroup;?></h3>
 <div class="separator bottom"></div>
 
 <div class="carousel-1 carousel slide" id="myCarousel">

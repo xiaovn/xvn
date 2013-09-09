@@ -15,6 +15,7 @@ Class memberController extends baseController
         {
             $this->view->data['members'] =  $this->model->get("memberModel")->get_mem();
             $this->view->data['member_heading'] = 'This is the member Index';
+            $this->view->data['hoctap'] = school::getInstance()->get_learning_year($_SESSION['xID'],date("Y"));
             $this->view->show('member_index');
         }
         else
@@ -23,12 +24,41 @@ Class memberController extends baseController
         }
 
     }
+    public function testview($a)
+    {
+        $this->view->data['title1'] = $a[1];
+        $this->view->data['title2'] = $a[2];
+        $this->view->show('test_view');
+    }
     public function view($args){
-        $id_mem = $args[1];
-        $member_info = $this->model->get('memberModel')->get_member_detail($id_mem);
-        $this->view->data['member_heading'] = $member_info->username;
-        $this->view->data['member_info'] = $member_info->email;
-        $this->view->show('member_view');
+        //$id_mem = $args[1];
+        $id_mem = member::getInstance()->checkuser($args[1]);
+        if($id_mem)
+        {
+            $this->view->data['memberid'] = $id_mem;
+            $this->view->data['hoctap'] = school::getInstance()->get_learning_year($id_mem,date("Y"));
+            //$this->view->data['title1'] =$id_mem;
+            $this->view->show('member_view');
+        }
+        else
+        {
+            $this->view->data['error'] = "Không tồn tại tài khoản này!";
+            $this->view->show('error404');
+        }
+
+    }
+    public function addfriend($memid){
+        $xid2 = $memid[1];
+        $xid1 = $_SESSION['xID'];
+        if(member::getInstance()->checkfriend($xid1,$xid2))
+        {
+            $this->model->get('memberModel')->addfriend($xid1,$xid2);
+            $this->view->data['status'] = "success";
+        }
+        else
+        {
+            $this->view->data['status'] = "error";
+        }
     }
     public function logout()
     {
