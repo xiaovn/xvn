@@ -51,7 +51,7 @@ require_once "nav.php";
             <div class="thumbnail widget-thumbnail">
                 <img src="<?php echo $template_path;?>images/avatar-large.jpg"  alt="100%x200 Image Holder" />
                 <div class="caption">
-                    <h4><?php echo $_SESSION['xUser']?></h4>
+                    <h4><?php echo member::getInstance()->account($memberid,"username");?></h4>
                     <p><?php echo member::getInstance()->get_member_info($memberid,"slogan");?></p>
 
                     <!-- Social Icons -->

@@ -31,12 +31,21 @@ Class memberController extends baseController
         $this->view->show('test_view');
     }
     public function view($args){
-        $id_mem = $args[1];
-        //$member_info = $this->model->get('memberModel')->get_member_detail($id_mem);
-        $this->view->data['memberid'] = $id_mem;
-        $this->view->data['hoctap'] = school::getInstance()->get_learning_year($id_mem,date("Y"));
-        //$this->view->data['member'] = $member_info;
-        $this->view->show('member_view');
+        //$id_mem = $args[1];
+        $id_mem = member::getInstance()->checkuser($args[1]);
+        if($id_mem)
+        {
+            $this->view->data['memberid'] = $id_mem;
+            $this->view->data['hoctap'] = school::getInstance()->get_learning_year($id_mem,date("Y"));
+            //$this->view->data['title1'] =$id_mem;
+            $this->view->show('member_view');
+        }
+        else
+        {
+            $this->view->data['error'] = "Không tồn tại tài khoản này!";
+            $this->view->show('error404');
+        }
+
     }
     public function addfriend($memid){
         $xid2 = $memid[1];

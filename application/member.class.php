@@ -124,7 +124,7 @@ Class member{
         if(isset($madantoc) && $madantoc != "")
         {
             global $db;
-            $db->query("SELECT tendantoc FROM xdata_dantoc WHERE madantoc = ".$madantoc);
+            $db->query("SELECT tendantoc FROM xdata_dantoc WHERE madantoc = '".$madantoc."'");
             $ifo = $db->fetch_object($first_row = true);
             return $ifo->tendantoc;
         }
@@ -243,6 +243,27 @@ Class member{
         else
         {
             return false;
+        }
+    }
+    public function checkuser($xid)
+    {
+        if(isset($xid) && $xid != "")
+        {
+            global $db;
+            $db->query("SELECT * FROM xdata_account WHERE xid = '".$xid."' OR username ='".$xid."' OR email = '".$xid."'" );
+            if($db->num_row())
+            {
+                $mem = $db->fetch_object($first_row = true);
+                return $mem->xid;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        else
+        {
+            return null;
         }
     }
 }
