@@ -1,0 +1,227 @@
+1: hiển thị thông tin trong một bảng dựa trên khóa trong bảng
+2: Hiển thị thông tin trong bảng B dựa trên khóa được lấy từ bảng A
+
+1. Bắt đầu với lấy dữ liệu từ khóa trong table.
+
+Giờ giả sử lấy mô tả tình trạng hôn nhân trong bảng HÔN NHÂN khi biết mã hôn nhân. OK. Đang gắn tai nghe. Chỗ nào không hiểu hoặc nhanh quá thì nói để tao làm lại.
+
+Giờ việc đầu tiên là sẽ xác định mã hôn nhân.
+
+Giờ tao viết một controller, bỏ qua model vì các thao tác trực tiếp đến dữ liệu chỉ nằm trên controller.
+
+DỮ LIỆU # CƠ SỞ DỮ LIỆU
+
+SESSION -  là một biến hệ thống kiểu mảng để lưu tất cả các giá trị trong phiên làm việc. SESSION - Phiên
+
+
+get_member_info($xid,$xfunc)
+
+Đây là hàm get_member_info
+Tham số của nó gồm có mã tài khoản + thông tin để định vị nội dung.
+Ví dụ: cần lấy tên thì "name", ngày sinh thì: ""
+Nói quạch tẹt ra là cái xfunc là cái tên cột :)).
+
+Được, nhưng không ai thông minh đến mức làm thế đâu. (Nói xoáy đó :)) )
+
+Tất nhiên, lúc đó mình sử dụng Model, giờ không dùng model mình dùng cách này nhanh hơn.
+
+SESSION sinh ra khi người dùng đăng nhập.
+
+TỪ TỪ
+
+ĐỂ TAO GIẢI THÍCH TỪNG LOẠI CHO HIỂU.
+
+1. CLASS APPLICATION
+Cái này chứa tất tần tật mấy cái thư viện, hàm hoặc các định nghĩa lớp. Ví dụ: Định nghĩa đối tượng là học sinh hoặc tài khoản,... Hoặc có thể định nghĩa một chức năng nào đó: VD: Chức năng hiển thị "$this->view" nhớ không
+$this->view->show('test gì đó');
+
+get_member_info là hàm chứ không phải là object. hiểu không.
+
+
+
+2. MODEL
+Model là nơi thao tác trực tiếp với CƠ SỞ DỮ LIỆU. Cái này hiểu không. Khi nói làm việc với cơ sở dữ liệu, thì đừng quan tâm tới controller, chỉ cần xem trong Model.
+
+3. CONTROLLER
+Cái cục nợ này xử lý tất tần tận mọi thứ dữ liệu nó có. Nó không cần biết dữ liệu đó có từ đâu, nó chỉ làm công việc xử lý cái đống đó thôi.
+Nói cách khác, Controller chính là trung gian xử lý giữa Model và View.
+
+4. VIEW
+View - (Khung nhìn, giao diện) muốn hiểu sao cũng được, nhưng ý nghĩa của nó là hiển thị cái cục output của Controller lên màn hình.
+Hiểu không?
+
+
+
+ĐỂ VIẾT ĐƯỢC 1 ỨNG DỤNG THEO MÔ HÌNH MVC, CẦN BIẾT CÁI GÌ LÀ INPUT, CÁI GÌ LÀ OUTPUT.
+
+VÍ DỤ: INPUT LÀ TẬP DỮ LIỆU A
+OUTPUT CẦN LÀ TẬP DỮ LIỆU B.
+
+BƯỚC 1. MỔ BỤNG A.
+BƯỚC NÀY RẤT ĐƠN GIẢN, CHỈ CẦN LẤY DỮ LIỆU CỦA THẰNG A THÔI, KHÔNG CẦN BIẾT NÓ CÓ GÌ. BƯỚC NÀY THỰC HIỆN Ở CONTROLLER
+
+BƯỚC 2. PHÂN TÍCH B.
+PHẦN TÍCH TRÊN GIẤY HOẶC Ở ĐÂU ĐÓ, MIỄN LÀ XÁC ĐỊNH ĐƯỢC ĐỂ CÓ ĐƯỢC THẰNG B THÌ CẦN LÀM GÌ VỚI THẰNG A (NẤU, XÀO, NƯỚNG, LUỘC,...). NHỮNG CÁI NẤU, XÀO, NƯỚNG, LUỘC ĐÓ CHÍNH LÀ CÁC THAO TÁC TRONG CONTROLLER ĐỂ BƯỚC SAU SỬ DỤNG. GIẢ SỬ TA CHỌN PHƯƠNG PHÁP LÀ NƯỚNG (DELETE). TẤT NHIÊN, ĐÃ DELETE THÌ SẼ LIÊN QUAN TỚI CSDL, VÌ VẬY CHẮC CHẮN NÓ CẦN LÀM VIỆC VỚI CSDL.
+
+BƯỚC 3. CHẾ BIẾN A.
+TA ĐÃ CHỌN CÁCH NƯỚNG, VÌ VẬY CẦN PHẢI CÓ THAN ĐỂ NƯỚNG.
+BƯỚC 3.1 NHÓM BẾP (BẮT ĐẦU ĐÓI BỤNG RỒI :(( ).
+- THAN Ở ĐÂY CHÍNH LÀ MODEL, VIỆC XÂY DỰNG MODEL LUÔN ĐI SAU BƯỚC PHÂN TÍCH VÀ CONTROLLER BỞI LÚC ĐÓ MỚI BIẾT LÀ CẦN LÀM GÌ VỚI CSDL.
+- ĐỂ CÓ ĐƯỢC BẾP THAN THÌ CHỈ CÒN CÁCH LÀ ĐỘNG TAY VÀO ĐỐNG THAN ĐÓ THÔI. LỬA CHÍNH LÀ CÂU LỆNH SQL CÒN THAN CHÍNH LÀ DATABASE.
+
+BƯỚC 3.2 XỬ LÝ RUỘT (X-( )
+ĐANG THÈM THỊT BẮT ĂN RUỘT.
+
+BƯỚC NÀY GIỐNG NHƯ CHẾ BIẾN THỊT TRƯỚC KHI NƯỚNG THÔI, KIỂU NHƯ RỬA, ƯỚP,... BƯỚC NÀY CHÍNH LÀ CÁC THAO TÁC ĐẦU TIÊN TRONG CONTROLLER.
+
+BƯỚC 4. NƯỚNG.
+BƯỚC NÀY MỚI THẤY ĐƯỢC SỰ LIÊN QUAN GIỮA CONTROLLER VÀ MODEL VÌ TẠI BƯỚC NÀY CONTROLLER SẼ SỬ DỤNG CÁC MODEL GIỐNG NHƯ ĐẶT LÊN BẾP THAN VẬY.
+
+BƯỚC 5. THỂ HIỆN THÀNH QUẢ.
+VIEW RA THÔI. ĐÚNG, HOẶC CŨNG CÓ THỂ LÀ TRONG BỤNG CON CHÓ :)) (NƯỚNG KHÔNG CHÍN :)))
+
+LÀM MỘT VÍ DỤ LUÔN CHO NÓNG.
+
+MODULE GÌ GIỜ?
+=========== HIỂN THỊ THÔNG TIN CÁ NHÂN CỦA THÀNH VIÊN A NÀO ĐÓ ==============
+INPUT: MÃ TÀI KHOẢN (XID)
+OUTPUT: THÔNG TIN CÁ NHÂN CỦA THẰNG A
+=============================================================================
+BƯỚC 1.
+GIÁ TRỊ ĐẦU VÀO: XID
+
+BƯỚC 2. XỬ LÝ XID
+
+BƯỚC 3.
+CÓ XID RỒI THÌ PHẢI THAO TÁC VỚI DỮ LIỆU MỚI QUERY ĐƯỢC, ĐÚNG KHÔNG.??
+
+Cái MODEL NÀY HIỂU KHÔNG?
+
+KẾT QUẢ TRẢ VỀ NÓ THẾ NÀY NÈ:
+
+Biến $hoc sẽ ra như thế đó.
+
+
+
+
+
+
+
+
+
+
+
+cẦN GÌ?
+- HỌ TÊN:
+- LỚP:
+- TRƯỜNG:
+- GIỚI TÍNH:
+- HÔN NHÂN:
+- CMND:
+- DÂN TỘC:
+- TỈNH:
+- HUYỆN:
+- AVATAR:
+
+CÒN GÌ NỮA.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+nHÌN TRONG DỮ LIỆU NÈ, CÓ 2 DÒNG CÓ MÃ GIỐNG NHAU
+
+
+$PA['conco','anca']
+
+get_learning_year($xid,$ly)
+learning_year
+lấy thông tin học tập của học sinh có mã xid ở năm "ly"
+
+get_learning_year($xid,$ly)
+cái hàm này yêu cầu đầu vào là năm học
+
+mục đích là truy vấn tới năm học nào, tại một học sinh có tới 7 năm học. ?
+hok hiểu câu hỏi.
+
+Để tao giải thích cho nè.
+
+Ví dụ năm nay là 2013, tao đang học lớp 11 ok.
+Nghĩa là năm 2012 tao học lớp 10? đúng không (loại trừ các trường hợp nghỉ học, bỏ học, ở lại)kệ
+
+thì có phải năm 2011 tao học lớp 9 không. :)
+
+Vậy giờ muốn biết năm 2011 tao đang học lớp mấy, trường nào thì có phải tao cần biết mã học sinh và năm học không
+get_learning_year($xid,"2011")
+
+THÌ NÓ LỚP 9, HOK QUẢN LÝ THÌ NULL
+
+10
+11
+12
+
+GIỜ TAO GIẢ SỬ NHÉ
+HỌC: SINH NĂM 1991, TỐT NGHIỆP NĂM 2009
+ID HỌC: 1
+HỌC:
+10: 2007
+11: 2008
+12: 2009
+
+GIỜ get_learning_year(1,"2013") ? ĐÚNG VẬY KHÔNG
+THÌ NÓ RA NULL
+đúng rồi, thực chất thì cần 2 bảng thôi, nhưng mình đang thao tác trên info nên thao tác tới 3 bảng
+1. info (account)
+2. student_year
+3. truong
+
+đúng rồi
+
+VIỆT SINH NĂM 1995 TỐT NGHIỆP NĂM 2013
+ID VIỆT: 2
+12: 2013
+11: 2012
+10: 2011
+
+SANG: SINH NĂM 199 HỒI ĐÓ TN 2015
+ID SANG: 3
+
+GIẢ SỬ
+
+NĂM HIỆN TẠI LÀ 2013
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
