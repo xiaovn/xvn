@@ -18,15 +18,23 @@ Class blogModel extends baseModel{
 	public function get_blog_detail($id) 
 	{	
 		 global $db;
-		 $blog = $db->query('SELECT id, name, content FROM blog where id = '.$db->sqlQuote($id));
+		 $blog = $db->query('SELECT * FROM xdata_blog where id = '.$db->sqlQuote($id));
 		 return $db->fetch_object($first_row = true);
 	}
+
     public function comment_post($blogid,$cmauthor,$cmemail,$cmip,$cmcontent)
     {
         global $db;
         $cmdate = "";
         $blog = $db->query('INSERT INTO xdata_blog_comment(comment_blog_id,comment_author,comment_author_email,comment_author_ip,comment_content,comment_approved,comment_date) VALUES('.$blogid.','.$cmauthor.','.$cmemail.','.$cmip.','.$cmcontent.',0,'.$cmdate.')');
         //return $db->fetch_object();
+    }
+    public function guibinhluan($comment_blog_id,$comment_author,$comment_author_email,$comment_author_ip,$comment_content,$comment_approved,$comment_date)
+    {
+        global $db;
+        $db->query("INSERT INTO xdata_blog_comment(comment_blog_id,comment_author,comment_author_email,comment_author_ip,comment_content,comment_approved,comment_date) VALUE (".$comment_blog_id.",".$comment_author.",'".$comment_author_email."','".$comment_author_ip."','".$comment_content."',".$comment_approved.",'".$comment_date."')");
+        $db->query("UPDATE xdata_blog SET commentcount = commentcount + 1 WHERE id=".$comment_blog_id);
+        return true;
     }
 }
 ?>
