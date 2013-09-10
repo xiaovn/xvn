@@ -26,18 +26,45 @@ Class memberController extends baseController
     }
     public function testview($a)
     {
+        $this->view->data['title1'] = $a[0];
         $this->view->data['title1'] = $a[1];
         $this->view->data['title2'] = $a[2];
+        $this->view->data['title3'] = $a[3];
         $this->view->show('test_view');
     }
+    public function nguyenhoc()
+    {
+        //PA là tham số trên đầu vòa trên trình duyệt
+        $xid = $_GET['xid'];
+        //$xid = '7221111111';
+        $error = "";
+        if(isset($xid) && $xid != "")
+        {
+            $hoc = $this->model->get('ngocvietModel')->mo_bung_thang_hoc($xid);
+            // CÓ được dữ liệu rồi giờ sẽ xử lý dữ liệu đó để hiển thị ra ngoài view
+            $this->view->data['ten'] = $hoc->name;
+            $this->view->data['thangkhung'] = $hoc;
+            //Giả sử chỉ cần một biến là tên thôi.
+            $this->view->show('ngocviet');
+            //Ăn thôi
+        }
+        else
+        {
+            //Khi xid không hợp lệ
+            $error = "Không thực hiện được!";
+        }
+        if(strlen($error)>1)
+        {
+            $this->view->data['error'] = $error;
+        }
+        $this->view->show('nguyenhoc');
+    }
     public function view($args){
-        //$id_mem = $args[1];
         $id_mem = member::getInstance()->checkuser($args[1]);
         if($id_mem)
         {
             $this->view->data['memberid'] = $id_mem;
             $this->view->data['hoctap'] = school::getInstance()->get_learning_year($id_mem,date("Y"));
-            //$this->view->data['title1'] =$id_mem;
             $this->view->show('member_view');
         }
         else
@@ -46,6 +73,54 @@ Class memberController extends baseController
             $this->view->show('error404');
         }
 
+    }
+    public function editavatar()
+    {
+        $prefix = "xiao_member_";
+        $avatar_file = "";
+        if(isset($_POST ['upload']))
+        {
+            $file = $_FILES ['afile'];
+            $name1 = $file ['name'];
+            $type = $file ['type'];
+            $size = $file ['size'];
+            $tmppath = $file ['tmp_name'];
+            if($name1!="")
+            {
+                move_uploaded_file ($tmppath, 'uploads/'.$name1);
+            }
+            $this->view->data['avatarfile'] = $name1;
+            $this->view->show('member_avatar');
+            exit;
+        }
+        elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $targ_w = $targ_h = 300;
+            $jpeg_quality = 300;
+
+            if(!isset($_POST['x']) || !is_numeric($_POST['x'])) {
+                die('Please select a crop area.');
+            }
+
+            $src = XC_URL.'/uploads/'.$_POST['afile'];
+            $img_r = imagecreatefromjpeg($src);
+            $dst_r = ImageCreateTrueColor($targ_w, $targ_h);
+
+            imagecopyresampled($dst_r,$img_r,0,0,$_POST['x'],$_POST['y'],
+                $targ_w,$targ_h,$_POST['w'],$_POST['h']);
+
+            //header('Content-type: image/jpeg');
+            //imagejpeg($dst_r,null,$jpeg_quality); // NULL will output the image directly
+            $uploadfile = $prefix. time() . 'avatar.jpg';
+            imagejpeg($dst_r, 'avatar/' . $uploadfile);
+            $this->view->data['avatar'] = $uploadfile;
+            $this->model->get('avatarupdateModel')->updateavatar($_SESSION['xID'],$uploadfile);
+            $this->view->show('member_avatar');
+            exit;
+        }
+        else
+        {
+            $this->view->show('member_avatar');
+        }
     }
     public function addfriend($memid){
         $xid2 = $memid[1];
@@ -75,7 +150,6 @@ Class memberController extends baseController
             if($member_login)
             {
                 $this->view->data['member_heading'] = 'This is the member Login with'.$_SESSION['xID'];
-                //$this->view->show('member_index');
                 $this->redirect->redirect("member","index");
             }
             else

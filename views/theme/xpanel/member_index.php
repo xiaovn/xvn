@@ -43,7 +43,7 @@ require_once "nav.php";
 
             <!-- Thumbnail -->
             <div class="thumbnail widget-thumbnail">
-                <img src="<?php echo $template_path;?>images/avatar-large.jpg"  alt="100%x200 Image Holder" />
+                <img src="<?php echo XC_URL;?>/avatar/<?php echo member::getInstance()->account($_SESSION['xID'],"avatar");?>"  alt="100%x200 Image Holder" />
                 <div class="caption">
                     <h4><?php echo $_SESSION['xUser']?></h4>
                     <p><?php echo member::getInstance()->get_member_info($_SESSION['xID'],"slogan");?></p>
@@ -125,7 +125,7 @@ require_once "nav.php";
                             <li>Ngày sinh: <?php echo member::getInstance()->get_member_info($_SESSION['xID'],"birthday");?></li>
 
                             <li>Giới tính: <?php echo member::getInstance()->sex(member::getInstance()->get_member_info($_SESSION['xID'],"sex"));?></li>
-                            <li>Tình trạng hôn nhân: <?php echo member::getInstance()->get_member_info($_SESSION['xID'],"honnhan");?></li>
+                            <li>Tình trạng hôn nhân: <?php echo member::getInstance()->honnhan(member::getInstance()->get_member_info($_SESSION['xID'],"honnhan"));?></li>
                             <li>Chứng minh nhân dân: <?php echo member::getInstance()->get_member_info($_SESSION['xID'],"cmnd");?></li>
                             <li>Nơi cấp CMND: <?php echo member::getInstance()->get_member_info($_SESSION['xID'],"birthday");?></li>
                             <li>Ngày cấp CMND: <?php echo member::getInstance()->get_member_info($_SESSION['xID'],"ngaycapcmnd");?></li>

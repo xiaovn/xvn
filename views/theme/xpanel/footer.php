@@ -154,10 +154,10 @@
 
 <!-- Cookie Plugin -->
 <script src="<?php echo $template_path;?>js/jquery.cookie.js"></script>
-<script src="<?php echo $template_path;?>js/jquery.notyfy.js"></script>
 <script src="<?php echo $template_path;?>js/modals.js"></script>
 <script src="<?php echo $template_path;?>js/jquery.gritter.min.js"></script>
 <script src="<?php echo $template_path;?>js/notifications.js"></script>
+<script src="<?php echo $template_path;?>js/bootstrap-fileupload.js"></script>
 
 <!-- Colors -->
 <script>
