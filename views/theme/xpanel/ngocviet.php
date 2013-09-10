@@ -5,6 +5,9 @@
  * Date: 9/10/13
  * Time: 3:20 PM
  * To change this template use File | Settings | File Templates.
+ * To change this template use File | Settings | File Templates.
+ * To change this template use File | Settings | File Templates.
+ * To change this template use File | Settings | File Templates.
  */
 
 echo "XID:  ".$thangkhung->xid; echo "<br>";
