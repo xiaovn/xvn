@@ -79,7 +79,8 @@ class Database{
         return $value; 
     } 
      
-    //Chạy câu truy vấn query 
+    //Chạy câu truy vấn query
+    //$db->query();
     public function query($sql){ 
         $this->result = mysql_query($sql, $this->connection); 
         if (!$this->result){ 
@@ -115,7 +116,8 @@ class Database{
             $num = mysql_num_rows($this->result); 
         } 
         return $num;  
-    } 
+    }
+
 	 public function fetch_object($first_row = FALSE){ 
         if ($this->result){ 
 			if(!$first_row)

@@ -94,6 +94,20 @@ Class school{
             return "";
         }
     }
+    public function nhommon($manhom,$info)
+    {
+        if(isset($manhom) && $manhom != "" && isset($info) && $info != "")
+        {
+            global $db;
+            $db->query("SELECT ".$info." FROM xdata_nhommon WHERE manhommon=".$manhom);
+            $nmon = $db->fetch_object($first_row = true);
+            return $nmon->$info;
+        }
+        else
+        {
+            return "";
+        }
+    }
     public function phonghoc($maphong,$info)
     {
         if(isset($maphong) && $maphong != "" && isset($info) && $info != "")
@@ -102,6 +116,27 @@ Class school{
             $db->query("SELECT ".$info." FROM xdata_phonghoc WHERE maphonghoc=".$maphong);
             $phonghoc = $db->fetch_object($first_row = true);
             return $phonghoc->$info;
+        }
+        else
+        {
+            return "";
+        }
+    }
+    public function get_learning_year($xid,$ly)
+    {
+        if(isset($xid) && $xid != "" && isset($ly) && $ly != "")
+        {
+            global $db;
+            $db->query("SELECT * FROM xdata_student_year WHERE xid=".$xid." AND year = ".$ly);
+            if($db->num_row())
+            {
+                return $db->fetch_object($first_row = true);
+            }
+            else
+            {
+                return "";
+            }
+
         }
         else
         {
@@ -121,5 +156,25 @@ Class school{
         {
             return "";
         }
+    }
+    public function tesst($s)
+    {
+        $s = "a";
+        substr($s,1,1);
+    }
+    public function tkb($lop,$nhommon)
+    {
+        global $db;
+        $db->query("SELECT * FROM xdata_tkb WHERE lop=".$lop." AND nhommon = ".$nhommon);
+        return $db->fetch_object();
+    }
+    public function tkbdata($tkbs)
+    {
+        $t = "";
+        foreach($tkbs as $tkb)
+        {
+            $t[$tkb->buoi][$tkb->thu][$tkb->tiet] = $tkb->mon;
+        }
+        return $t;
     }
 }

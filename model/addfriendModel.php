@@ -8,10 +8,10 @@
  */
 class addfriendModel extends baseModel
 {
-    public function addfriend($user1,$info,$user2)
+    public function addfriend($user1,$user2)
     {
         global $db;
-        $db->query('INSERT INTO xdata_friend(user1,user2,info) VALUE ('.$user1.','.$user2.','.$info.')');
+        $db->query('INSERT INTO xdata_friend(xid1,xid2,from) VALUE ('.$user1.','.$user2.',CURRENT_TIMESTAMP)');
     }
 }
 ?>

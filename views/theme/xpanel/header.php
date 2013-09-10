@@ -40,6 +40,7 @@ include "config.php"
 	<link href="<?php echo $template_path;?>css/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" />
 	<!-- MiniColors ColorPicker Plugin -->
 	<link href="<?php echo $template_path;?>css/jquery.miniColors.css"  rel="stylesheet" />
+	<link href="<?php echo $template_path;?>css/fileupload.css"  rel="stylesheet" />
 	<!-- Google Code Prettify Plugin -->
 	<link href="<?php echo $template_path;?>css/prettify.css"  rel="stylesheet" />
 	<!-- REVOLUTION BANNER CSS SETTINGS -->
