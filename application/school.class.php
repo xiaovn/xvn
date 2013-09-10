@@ -128,7 +128,15 @@ Class school{
         {
             global $db;
             $db->query("SELECT * FROM xdata_student_year WHERE xid=".$xid." AND year = ".$ly);
-            return $db->fetch_object($first_row = true);
+            if($db->num_row())
+            {
+                return $db->fetch_object($first_row = true);
+            }
+            else
+            {
+                return "";
+            }
+
         }
         else
         {

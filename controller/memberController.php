@@ -26,9 +26,38 @@ Class memberController extends baseController
     }
     public function testview($a)
     {
+        $this->view->data['title1'] = $a[0];
         $this->view->data['title1'] = $a[1];
         $this->view->data['title2'] = $a[2];
+        $this->view->data['title3'] = $a[3];
         $this->view->show('test_view');
+    }
+    public function nguyenhoc()
+    {
+        //PA là tham số trên đầu vòa trên trình duyệt
+        $xid = $_GET['xid'];
+        //$xid = '7221111111';
+        $error = "";
+        if(isset($xid) && $xid != "")
+        {
+            $hoc = $this->model->get('ngocvietModel')->mo_bung_thang_hoc($xid);
+            // CÓ được dữ liệu rồi giờ sẽ xử lý dữ liệu đó để hiển thị ra ngoài view
+            $this->view->data['ten'] = $hoc->name;
+            $this->view->data['thangkhung'] = $hoc;
+            //Giả sử chỉ cần một biến là tên thôi.
+            $this->view->show('ngocviet');
+            //Ăn thôi
+        }
+        else
+        {
+            //Khi xid không hợp lệ
+            $error = "Không thực hiện được!";
+        }
+        if(strlen($error)>1)
+        {
+            $this->view->data['error'] = $error;
+        }
+        $this->view->show('nguyenhoc');
     }
     public function view($args){
         $id_mem = member::getInstance()->checkuser($args[1]);
@@ -90,8 +119,6 @@ Class memberController extends baseController
         }
         else
         {
-            $step++;
-            $this->view->data['step']= $step;
             $this->view->show('member_avatar');
         }
     }
