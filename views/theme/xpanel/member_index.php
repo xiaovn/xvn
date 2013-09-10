@@ -86,9 +86,9 @@ require_once "nav.php";
                                 <h4>Thông tin cá nhân</h4>
                                 <p>
                                 <ul>
-                                    <li>Ngày sinh: </li>
-                                    <li>Giới tính: Nam</li>
-                                    <li>Tình tình trạng hôn nhân: độc thân</li>
+                                    <li>Ngày sinh: <?php echo member::getInstance()->get_member_info($_SESSION['xID'],"birthday");?></li>
+                                    <li>Giới tính: <?php echo member::getInstance()->sex(member::getInstance()->get_member_info($_SESSION['xID'],"sex"));?></li>
+                                    <li>Tình tình trạng hôn nhân: <?php echo member::getInstance()->honnhan($hoctap->honnhan,"tenlop","honnhan");?></li>
                                 </ul>
                                 </p>
                             </div>
