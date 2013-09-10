@@ -8,7 +8,9 @@
  * Website: www.xiao.vn
  */
 
-Class thoikhoabieuController extends baseController
+Class
+
+Controller extends baseController
 {
     public function index()
     {
@@ -43,5 +45,12 @@ Class thoikhoabieuController extends baseController
             $this->view->show('app_tkb');
         }
 
+    }
+    public function huy()
+    {
+        $bv = $_GET['sid'];
+        $moi = $this->model->get('schoolModel')->get_truong($bv);
+        $this->view->data['truong']= $moi;
+        $this->view->show('school_index');
     }
 }
