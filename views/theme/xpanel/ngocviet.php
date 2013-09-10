@@ -8,6 +8,7 @@
  * To change this template use File | Settings | File Templates.
  * To change this template use File | Settings | File Templates.
  * To change this template use File | Settings | File Templates.
+ * To change this template use File | Settings | File Templates.
  */
 
 echo "XID:  ".$thangkhung->xid; echo "<br>";

@@ -17,6 +17,7 @@ require_once "header.php";
 <div class="container-fluid">
 
 <!-- Content -->
+<!-- Content -->
 <div id="content">
 
 <!-- Top navbar (note: add class "navbar-hidden" to close the navbar by default) -->
