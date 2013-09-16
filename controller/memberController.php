@@ -202,4 +202,63 @@ Class memberController extends baseController
         $this->view->data['avatar']=member::getInstance()->anhdaidien(member::getInstance()->idfriend($xid));
         $this->view->show('member_index');
     }
+    /*
+    public function thongtin()
+    {
+        //PA là tham số trên đầu vòa trên trình duyệt
+        $xid = $_GET['xid'];
+        //$xid = '7221111111';
+        $error = "";
+        if(isset($xid) && $xid != "")
+        {
+            $thongtinacc = $this->model->get('memberModel')->get_acc($xid);
+            // CÓ được dữ liệu rồi giờ sẽ xử lý dữ liệu đó để hiển thị ra ngoài view
+            $this->view->data['ten'] = $thongtinacc->name;
+            $this->view->data['acc'] = $thongtinacc;
+            //Giả sử chỉ cần một biến là tên thôi.
+            $this->view->show('member_index');
+            //Ăn thôi
+        }
+        else
+        {
+            //Khi xid không hợp lệ
+            $error = "Không thực hiện được!";
+        }
+        if(strlen($error)>0)
+        {
+            $this->view->data['error'] = $error;
+        }
+        $this->view->show('index');
+    }
+    */
+    public function changepassw($args){
+        $id_mem = member::getInstance()->checkuser($args[1]);
+        if($id_mem)
+        {
+            $this->view->data['memberid'] = $id_mem;
+            $this->view->data['hoctap'] = school::getInstance()->get_learning_year($id_mem,date("Y"));
+            $this->view->show('member_view');
+        }
+        else
+        {
+            $this->view->data['error'] = "Không tồn tại tài khoản này!";
+            $this->view->show('error404');
+        }
+
+    }
+    public function changepass()
+    {
+        if(isset($_SESSION['LoggedIn']) && $_SESSION['LoggedIn'] == 1)
+        {
+            $this->view->data['members'] =  $this->model->get("memberModel")->get_mem();
+            $this->view->data['member_heading'] = 'This is the member Index';
+            $this->view->data['hoctap'] = school::getInstance()->get_learning_year($_SESSION['xID'],date("Y"));
+            $this->view->show('changepass');
+        }
+        else
+        {
+            $this->redirect->redirect("member","login");
+        }
+
+    }
 }
