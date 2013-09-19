@@ -19,12 +19,25 @@ Class clubController extends baseController
             $nhomclub = $_POST['clubgroup'];
             $anhclub = $_POST['clublogo'];
             $this->model->get('clbModel')->get_createclub($maclub,$tenclub,$nhomclub,$id_clubadmin,$anhclub);
-            //$this->view->data['infoclub'] = club::getInstance()->get_clubinfo($nhomclub);
             $this->view->show('club_index');
         }
         else
         {
             $this->view->show('club_index');
+        }
+    }
+    public function view($pa)
+    {
+        $clubid = $pa[1];
+       if((isset($clubid)&& $clubid != ""))
+        {
+            $thongtin = $this->model->get('clubModel')->get_viewclub($clubid);
+            $this->view->data['thongtinclub'] = $thongtin;
+            $this->view->show('club_view');
+        }
+        else
+        {
+            $this->view->show('error404');
         }
     }
 }

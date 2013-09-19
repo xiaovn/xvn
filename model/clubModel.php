@@ -14,5 +14,11 @@ class clubModel extends baseModel
         $db->query('INSERT INTO xdata_clb(clubid,clubname,clubgroup,clubadmin,createdate,lastactiondate,postcount,memcount,clublogo) VALUE ('.$clubid.','.$clubname.','.$clubgroup.','.$clubadmin.',"","","0","0",'.$clublogo.')');
         return true;
     }
+    public function get_viewclub($clubid)
+    {
+        global $db;
+        $db->query("SELECT * FROM xdata_clb WHERE clubid =".$clubid);
+        return $db->fetch_object($first_row = true);
+    }
 }
 ?>
