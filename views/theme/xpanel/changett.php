@@ -85,76 +85,44 @@ require_once "header.php";
                                                     <div class="box themed_box">
                                                         <tr>
                                                             <td class="DataTD" width="130px">Tên đăng nhập</td>
-                                                            <td><input name="UserName" type="text" value="zero_viet" maxlength="200" readonly="readonly" id="UserName" style="width:250px;"></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="DataTD">Họ</td>
-                                                            <td><input name="FirstName" type="text" value="Nguyễn Ngọc" maxlength="200" id="FirstName" style="width:250px;"></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="DataTD">Tên</td>
-                                                            <td><input name="LastName" type="text" value="Việt" maxlength="200" id="LastName" style="width:250px;"></td>
+                                                            <td><input name="UserName" type="text" value="<?php echo $_SESSION['xUser']?>" maxlength="200" readonly="readonly" id="UserName" style="width:250px;"></td>
                                                         </tr>
                                                         <tr>
                                                             <td class="DataTD">Tên khác</td>
-                                                            <td><input name="Othername" type="text" value="Nguyễn Ngọc" maxlength="200" id="Othername" style="width:250px;"></td>
+                                                            <td><input name="Othername" type="text" value="<?php echo member::getInstance()->get_member_info($_SESSION['xID'],"othername");?>" maxlength="200" id="Othername" style="width:250px;"></td>
                                                         </tr>
                                                         <tr>
                                                             <td class="DataTD">Thư điện tử</td>
-                                                            <td><input name="Email" type="text" value="ngocviet1208@gmail.com" maxlength="250" id="Email" disabled="disabled" style="width:250px;"></td>
+                                                            <td><input name="Email" type="text" value="ngocviet1208@gmail.com" maxlength="250" id="Email" style="width:250px;"></td>
                                                         </tr>
                                                         <tr>
                                                             <td class="DataTD">Di động</td>
-                                                            <td><input name="Mobile" type="text" value="01655940225" maxlength="14" id="Mobile" style="width:250px;"></td>
+                                                            <td><input name="Mobile" type="text" value="<?php echo member::getInstance()->get_member_info($_SESSION['xID'],"didong");?>" maxlength="14" id="Mobile" style="width:250px;"></td>
                                                         </tr>
                                                         <tr>
                                                             <td class="DataTD">Điện thoại bàn</td>
-                                                            <td><input name="Telephone" type="text" maxlength="14" id="Telephone" style="width:250px;"></td>
+                                                            <td><input name="Telephone" type="text" value="<?php echo member::getInstance()->get_member_info($_SESSION['xID'],"dienthoai");?>" maxlength="14" id="Telephone" style="width:250px;"></td>
                                                         </tr>
                                                         <tr>
                                                             <td class="DataTD">CMND/Hộ chiếu</td>
-                                                            <td><input name="IdPassport" type="text" value="230802563" maxlength="250" id="IdPassport" disabled="disabled" style="width:250px;"></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="DataTD">Nơi sống</td>
-                                                            <td>Tỉnh&nbsp;:<select name="CityId" id="CityId" style="width:120px;">
-                                                                    <option value="">--Lựa chọn--</option>
-                                                                    <option value="23">Hà Nội</option>
-                                                                </select>
-                                                                Huyện &nbsp;:
-                                                                <select name="CityId" id="CityId" style="width:120px;">
-                                                                    <option value="">--Lựa chọn--</option>
-                                                                    <option value="23">Hà Nội</option>
-                                                                </select>
-                                                                Xã &nbsp;:
-                                                                <select name="CityId" id="CityId" style="width:120px;">
-                                                                    <option value="">--Lựa chọn--</option>
-                                                                    <option value="23">Hà Nội</option>
-                                                                </select>
-                                                            </td>
+                                                            <td><input name="IdPassport" type="text" value="<?php echo member::getInstance()->get_member_info($_SESSION['xID'],"cmnd");?>" maxlength="250" id="IdPassport" disabled="disabled" style="width:250px;"></td>
                                                         </tr>
                                                         <tr>
                                                             <td class="DataTD">Ngày sinh</td>
                                                             <td>
-                                                                <div class="input-append">
-                                                                    <input type="text" name="from" id="dateRangeFrom" class="input-mini hasDatepicker" value="08/05/13" style="width: 53px;">
-                                                                    <span class="add-on glyphicons calendar"><i></i></span>
-                                                                </div>
+                                                                <input name="FirstName" type="text" value=" <?php echo member::getInstance()->get_member_info($_SESSION['xID'],"birthday");?>" maxlength="200" id="sex" disabled="disabled" style="width:250px;">
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td class="DataTD">Giới tính</td>
-                                                            <td class="DataTD">
-                                                                <select name="Sex" id="Sex">
-                                                                    <option value="">--Giới tính--</option>
-                                                                    <option selected="selected" value="0">Nam</option>
-                                                                    <option value="1">Nữ</option>
-                                                                </select>
+                                                            <td>
+                                                                <input name="FirstName" type="text" value="<?php echo member::getInstance()->sex(member::getInstance()->get_member_info($_SESSION['xID'],"sex"));?>" maxlength="200" id="FirstName" disabled="disabled" style="width:250px;">
                                                             </td>
+                                                        </tr>
                                                         <tr>
                                                             <td class="DataTD">Tình trạng hôn nhân</td>
                                                             <td><select name="CityId" id="CityId" style="width:220px;">
-                                                                    <option value="">--Lựa chọn--</option>
+                                                                    <option value=""><?php echo member::getInstance()->honnhan(member::getInstance()->get_member_info($_SESSION['xID'],"honnhan"));?></option>
                                                                     <option value="23">đã kết hôn</option>
                                                                 </select>
                                                             </td>
@@ -162,13 +130,13 @@ require_once "header.php";
                                                         <tr>
                                                             <td class="DataTD">Dân tộc</td>
                                                             <td>
-                                                                <input name="FirstName" type="text" value="Nguyễn Ngọc" maxlength="200" id="FirstName" disabled="disabled" style="width:250px;">
+                                                                <input name="FirstName" type="text" value="<?php echo member::getInstance()->dantoc(member::getInstance()->get_member_info($_SESSION['xID'],"dantoc"));?>" maxlength="200" id="FirstName" disabled="disabled" style="width:250px;">
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td class="DataTD">Tôn giáo</td>
                                                             <td><select name="CityId" id="CityId" style="width:220px;">
-                                                                    <option value="">--Lựa chọn--</option>
+                                                                    <option value=""><?php echo member::getInstance()->tongiao(member::getInstance()->get_member_info($_SESSION['xID'],"tongiao"));?></option>
                                                                     <option value="23">bà ni</option>
                                                                 </select>
                                                         </tr>
@@ -178,8 +146,9 @@ require_once "header.php";
                                     </div>
 
                                     </table>
-                                    <input type="submit" name="btsubmit" onclick="configcheck();" class="btn btn-primary" value="Cập nhật">
-
+                                    <p align='center'>
+                                    <input type="submit" name="capnhat" onclick="configcheck();" class="btn btn-primary" value="Cập nhật">
+                                    </p>
                                 </div>
                             </div>
                         </div>

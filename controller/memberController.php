@@ -231,29 +231,66 @@ Class memberController extends baseController
         $this->view->show('index');
     }
     */
-    public function changepassw($args){
-        $id_mem = member::getInstance()->checkuser($args[1]);
-        if($id_mem)
-        {
-            $this->view->data['memberid'] = $id_mem;
-            $this->view->data['hoctap'] = school::getInstance()->get_learning_year($id_mem,date("Y"));
-            $this->view->show('member_view');
-        }
-        else
-        {
-            $this->view->data['error'] = "Không tồn tại tài khoản này!";
-            $this->view->show('error404');
-        }
 
+    public function quenpass()
+    {
+        $this->view->data['quen'] = $this->model->get("memberModel")->get_quen_pass();
+        $this->view->show('quenmk');
     }
     public function changepass()
     {
+
+        $u=$_SESSION['xID'];
+        $pw=member::getInstance()->account($u,"password");
+
+        if(isset($_POST["capnhat"]))
+        {
+            $old_pw=md5($_POST["old_pw"]);
+            $new_pwd=md5($_POST["new_pw"]);
+            $pre_pwd=md5($_POST["pre_pw"]);
+
+            if(!$_POST["old_pw"] || !$_POST["new_pw"] || !$_POST["pre_pw"])
+            {
+                $this->view->data['error'] .= "bạn phải nhập đầy đủ thông tin!";
+                $this->view->show('changepass');
+            }
+            elseif($old_pw!=$pw)
+            {
+                $this->view->data['error'] .= "mật khẩu cũ nhập không đúng!";
+                $this->view->show('changepass');
+            }
+            elseif($new_pwd!=$pre_pwd)
+            {
+                $this->view->data['error'] .= "mật khẩu xác nhận không đúng!";
+                $this->view->show('changepass');
+            }
+            else
+            {
+                $this->view->data['doimk'] =  $this->model->get("changepassModel")->doimk($new_pwd,$u);
+                $this->view->data['error1'] .= "Bạn đổi mật khẩu thành công!";
+                $this->view->show('changepass');
+            }
+        }
+        $this->view->show('changepass');
+    }
+    public function changeim()
+    {
         if(isset($_SESSION['LoggedIn']) && $_SESSION['LoggedIn'] == 1)
         {
-            $this->view->data['members'] =  $this->model->get("memberModel")->get_mem();
+            /*$xid = $_SESSION['xID'];
+            $ho = $_POST['xFirstname'];
+            $ten = $_POST['xName'];
+            $tenkhac = $_POST['xOthername'];
+            $tthonnhan = $_POST['xOthername'];
+            $tongiao = $_POST['xOthername'];
+            $dienthoai = $_POST['noidung'];
+            $didong = $_POST['noidung'];
+            $slogan = $_POST['noidung'];
+            $this->view->data['members'] =  $this->model->get("memberModel")->get_mem();*/
             $this->view->data['member_heading'] = 'This is the member Index';
             $this->view->data['hoctap'] = school::getInstance()->get_learning_year($_SESSION['xID'],date("Y"));
-            $this->view->show('changepass');
+            //$this->view->data['suaim'] =  $this->model->get("changepassModel")->changeim($xid,$ho,$ten,$tenkhac,$tthonnhan,$tongiao,$dienthoai,$didong,$slogan);
+            $this->view->show('changett');
         }
         else
         {

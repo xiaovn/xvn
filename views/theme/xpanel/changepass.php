@@ -75,22 +75,24 @@ require_once "header.php";
                             <div class="widget widget-body-white" data-toggle="collapse-widget">
                                 <div class="widget-head">
                                     <h4 class="heading glyphicons user"><i></i>Đổi mật khẩu</h4>
-
                                 </div>
                                 <div class="widget-body">
+                                    <font style="background-color: #efefef" color="red" size="4"><b>Lưu Ý: <i><?php echo $error?></i></b></font>
+                                    <font style="background-color: #efefef" color="blue" size="4"><b><i><?php echo $error1?></i></b></font>
                                     <div class="separator top">
                                         <div class="pull-left">
                                             <div class="box themed_box">
-                                                <label class="form-label"> <b>Mật khẩu hiện tại *</b> </label>
-                                                <input id="form-passwordo" class="form-field width60" name="mkcu" type="password" value="" maxlength="100">
+                                               <form action="" name="frmresetpass" method="POST">
+                                               <label class="form-label"> <b>Mật khẩu hiện tại *</b> </label>
+                                                <input id="form-passwordo" class="form-field width60" name="old_pw" type="password" value="" maxlength="100">
                                                 <label class="explain">Vì lý do an ninh, bạn phải xác minh mật khẩu hiện tại trước khi đặt mật khẩu mới.</label>
                                                 <hr>
                                                 <label class="form-label"><b> Mật khẩu mới</b> </label>
-                                                <input id="form-password" class="form-field width60" name="password" type="password" value="" maxlength="100">
-                                                <label class="form-label"> <b>Xác nhận mật khẩu </b></label>
-                                                <input id="form-confirmpassword" class="form-field width60" name="password_confirm" type="password" value="" maxlength="100">
+                                                <input id="form-password" class="form-field width60" name="new_pw" type="password" value="" maxlength="100">
+                                                <label class="form-label"> <b>Xác nhận mật khẩu mới</b></label>
+                                                <input id="form-confirmpassword" class="form-field width60" name="pre_pw" type="password" value="" maxlength="100">
                                                 <hr>
-                                                <input type="submit" name="btsubmit" onclick="configcheck();" class="btn btn-primary" value="Xem điều khoản">
+                                                <input type="submit" name="xemdieukhoan" class="btn btn-primary" value="Xem điều khoản">
                                                 <br>
                                                 <br>
                                                 <label class="form-label"> </label>
@@ -98,9 +100,11 @@ require_once "header.php";
                                                     <input class="checkbox ui-helper-hidden-accessible" id="terms" type="checkbox" name="terms">
                                                     <label for="terms" id="lterms" aria-pressed="false" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left ui-corner-right" role="button" aria-disabled="false"><span class="ui-button-text">Tôi đã đọc và đồng ý với Điều khoản sử dụng dịch vụ.</span></label>
                                                 </p>
-                                                <input type="submit" name="btsubmit" onclick="configcheck();" class="btn btn-primary" value="Xóa">
-                                                <input type="submit" name="btsubmit" onclick="configcheck();" class="btn btn-primary" value="Hoàn tất">
-                                                </form>
+                                                <p align='center'>
+                                                <input type="reset" name="reset" class="btn btn-primary" value="Xóa">
+                                                <input type="submit" name="capnhat" class="btn btn-primary" value="Hoàn tất">
+                                                </p>
+                                                    </form>
                                             </div>
                                         </div>
                                     </div>
@@ -108,6 +112,7 @@ require_once "header.php";
                             </div>
                         </div>
                     </div>
+        </div>
         </div>
     </div>
     <!-- // Content END -->

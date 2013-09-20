@@ -21,15 +21,15 @@ class changepassModel extends  baseModel
             return false;
         }
     }
-    public function doimk($pass,$xid)
+    public function doimk($new_pwd,$xid)
     {
         global $db;
-        $db->query('UPDATE xdata_account SET password='.$pass.' WHERE xid='.$xid);
+        $db->query('UPDATE xdata_account SET password='.$new_pwd.' WHERE xid='.$xid);
     }
-    public function changeim($xid,$ho,$ten,$tenkhac,$ngaysinh,$gioitinh,$tthonnhan,$tongiao,$hkxa,$hkhuyen,$hktinh,$dienthoai,$didong,$slogan)
+    public function changeim($xid,$ho,$ten,$tenkhac,$tthonnhan,$tongiao,$dienthoai,$didong,$slogan)
     {
         global $db;
-        $db->query('UPDATE xdata_info SET firstname='.$ho.',name='.$ten.',othernamme='.$tenkhac.',birthday='.$ngaysinh.',sex='.$gioitinh.',honnhan='.$tthonnhan.',tongiao='.$tongiao.',hokhau_xa='.$hkxa.',hokhau_huyen='.$hkhuyen.',hokhau_tinh='.$hktinh.',dienthoai='.$dienthoai.',didong='.$didong.',slogan='.$slogan.' WHERE xid='.$xid);
+        $db->query('UPDATE xdata_info SET firstname='.$ho.',name='.$ten.',othernamme='.$tenkhac.',honnhan='.$tthonnhan.',tongiao='.$tongiao.',dienthoai='.$dienthoai.',didong='.$didong.',slogan='.$slogan.' WHERE xid='.$xid);
     }
 }
 ?>
