@@ -194,7 +194,7 @@ Class member{
         if(isset($mahonnhan) && $mahonnhan != "")
         {
             global $db;
-            $db->query("SELECT tinhtranghonnhan FROM xdata_honnhan WHERE mahonnhan = ".$mahonnhan);
+            $db->query("SELECT tinhtranghonnhan FROM xdata_honhan WHERE mahonnhan = ".$mahonnhan);
             $ifo = $db->fetch_object($first_row = true);
             return $ifo->tinhtranghonnhan;
         }
@@ -264,6 +264,21 @@ Class member{
         else
         {
             return null;
+        }
+    }
+    //Hàm chức năng xem club
+    public function get_loaiclub($loaiclub)
+    {
+        if(isset($loaiclub) && $loaiclub != "")
+        {
+            global $db;
+            $db->query("SELECT clb_group_name FROM xdata_clb_group WHERE clb_group_id = ".$loaiclub);
+            $ifo = $db->fetch_object($first_row = true);
+            return $ifo->clb_group_name;
+        }
+        else
+        {
+            return "";
         }
     }
 }
