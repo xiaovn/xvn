@@ -96,7 +96,7 @@ require_once "nav.php";
                             <div class="separator bottom"></div>
                             <div class="glyphicons glyphicon-large group">
                                 <i></i>
-                                <h4>Lớp: <?php echo school::getInstance()->lop($hoctap->class,"tenlop");?> - <?php echo school::getInstance()->truong($hoctap->school,"tentruong");?></h4>
+                                <h4>Trường: <?php echo school::getInstance()->truong($hoctap->school,"tentruong");?></h4>
                                 <p>Năm: <?php echo $hoctap->year;?> - <?php echo $hoctap->year+1;?></p>
                                 <br><p> <a href="">Chi tiết</a></p>
                             </div>
