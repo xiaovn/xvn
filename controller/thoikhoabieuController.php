@@ -53,4 +53,42 @@ Controller extends baseController
         $this->view->data['truong']= $moi;
         $this->view->show('school_index');
     }
+
+    // Sử dụng tkbModel -> function them_tkb
+    public function add()
+    {
+            $buoi = $_POST['tkbbuoi'];
+            $thu = $_POST['tkbthu'];
+            $tiet = $_POST['tkbtiet'];
+            $mon = $_POST['tkbmon'];
+            $giaovien = $_POST['tkbgiaovien'];
+            $lop = $_POST['tkblop'];
+            $nhommon = $_POST['tkbnhommon'];
+            $this->model->get("tkbModel")->them_tkb($buoi,$thu,$tiet,$mon,$giaovien,$lop,$nhommon);
+    }
+    //Sử dụng tkbModel->function gettkb_gv($magv)-> function sưa_tkb -> function xoa_tkb
+    public function edit()
+    {
+        $tkbid = $_GET['tkbid'];
+        if(isset($_POST['tkbid']) && $_POST['tkbid'] != "")
+        {
+            $mon = $_POST['tkbmon'];
+            $giaovien = $_POST['tkbgiaovien'];
+            $this->model->get("tkbModel")->sua_tkb($mon,$giaovien);
+        }
+        else
+        $this->view->show('app_tkb');
+    }
+    // Sử dụng tkbModel -> function xoa_tkb
+    public function delete()
+    {
+        $delete =$_GET['tkbid'];
+        if(isset($_POST['tkbid']) && $_POST['tkbid'] != "")
+        {
+
+            $this->model->get("tkbModel")->xoa_tkb($delete);
+        }
+        else
+        $this->view->show('app_tkb');
+    }
 }
