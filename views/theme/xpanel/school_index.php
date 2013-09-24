@@ -5,7 +5,7 @@
  * Date: 9/9/13
  * Time: 2:21 PM
  * To change this template use File | Settings | File Templates.
- */
+ ***/
 require_once "header.php";
 ?>
     <link href="<?php echo $template_path;?>css/style-default.css"  rel="stylesheet" />
@@ -21,9 +21,8 @@ require_once "header.php";
         <!-- Top navbar (note: add class "navbar-hidden" to close the navbar by default) -->
         <?php require_once "nav.php";?>
         <!-- Top navbar END --><div class="container-960 innerT">
-            $sid =
-            <h3 class="glyphicons notes"><i></i><?php echo school::getInstance()->truong($sid,tentruong);?></h3>
-            <?php echo member::getInstance()->get_member_info($_SESSION['xID'],"birthday");?>
+
+            <h3 class="glyphicons notes"><i></i><?php echo"Trường  " .$truong->tentruong;?></h3>
             <div class="separator bottom"></div>
             <?php
 
@@ -39,10 +38,9 @@ require_once "header.php";
                                 </div>
                                 <div class="span12">
                                     <span class="glyphicons single regular user"><i></i> Ảnh nhà trường<a href=""> Hình ảnh</a></span>
-                                    <span class="glyphicons single regular calendar"><i></i>2013-08-03 17:33:58</span>
+                                    <span class="glyphicons single regular calendar"><i></i><?php echo date("Y-m-d");?></span>
                                     <span class="glyphicons single regular comments"><i></i> 5 bình luận</span>
                                     <div class="separator bottom"></div>
-                                    <p class="content">Giới thiệu đơn vị Trường THPT Nguyễn Trãi
 
                                     </p>
                                 </div>
@@ -58,18 +56,27 @@ require_once "header.php";
                                     <a href="" class="thumb"><img src="<?php echo $template_path;?>images/2-1.jpg" alt="Image" /></a>
                                 </div>
                                 <div class="span10">
-                                    <span class="glyphicons single regular user"><i></i> Năm thành lập <a href=""> $nam</a></span>
-                                    <span class="glyphicons single regular user"><i></i> Chức danh: <a href=""> $chucdanh</a></span>
-                                    <span class="glyphicons single regular user"><i></i> Số điện thoại <a href=""> $sdt</a></span>
-                                    <span class="glyphicons single regular user"><i></i> Fax <a href=""> $fax</a></span>
-                                    <span class="glyphicons single regular calendar"><i></i> 2013-08-03 17:33:58</span>
+                                    <span class="glyphicons single regular user"><i></i> Trường <a href=""> <?php echo $truong->tentruong;?></a></span> </br>
+                                    <span class="glyphicons single regular user"><i></i> Năm thành lập <a href=""> <?php echo $truong->namtl;?></a></span> </br>
+                                    <span class="glyphicons single regular user"><i></i> Website: <a href=""> <?php echo $truong->website;?></a></span> </br>
+                                    <span class="glyphicons single regular user"><i></i> Số điện thoại <a href=""> <?php echo $truong->sdienthoai;?></a></span>
+                                    <span class="glyphicons single regular user"><i></i> Fax <a href=""> <?php echo $truong->fax;?></a></span> </br>
+                                    <span class="glyphicons single regular user"><i></i> Số điểm trường <a href=""> <?php echo $truong->sdiem;?></a></span> </br>
+                                    <span class="glyphicons single regular user"><i></i> Loại hình trường <a href=""> <?php echo $truong->loaihinh;?></a></span> </br>
+                                    <span class="glyphicons single regular user"><i></i> Chuẩn quốc gia <a href=""> <?php echo $truong->chuanqg;?></a></span> </br>
+                                    <span class="glyphicons single regular user"><i></i> Hạng trường <a href=""> <?php echo school::getInstance()->hang($truong->hang);?></a></span> </br>
+                                    <span class="glyphicons single regular user"><i></i> Cấp trường <a href=""> <?php echo school::getInstance()->cap($truong->cap);?></a></span> </br>
+                                    <span class="glyphicons single regular user"><i></i> Đặt thù <a href=""> <?php echo $truong->datthu;?></a></span> </br>
+                                    <span class="glyphicons single regular user"><i></i> Chất lượng <a href=""> <?php echo $truong->schatluong;?></a></span> </br>
+                                    <span class="glyphicons single regular user"><i></i> Thành tích <a href=""> <?php echo $truong->sthanhtich;?></a></span> </br>
+                                    <span class="glyphicons single regular user"><i></i> Địa chỉ <a href=""> <?php echo member::getInstance()->xa($truong->xa). " - " .member::getInstance()->huyen($truong->huyen). " - " .member::getInstance()->tinh($truong->tinh);?></a></span> </br>
                                     <div class="separator bottom"></div>
                                     <p>This is demo comment</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <h3 class="glyphicons chat"><i></i>GỬI BÌNH LUẬN</h3>
+                    <h3 class="glyphicons chat"><i></i>GỬI THÔNG TIN PHẢN HỒI</h3>
                     <div class="separator bottom"></div>
                     <div class="widget widget-heading-simple widget-body-white">
                         <div class="widget-body">
@@ -79,7 +86,7 @@ require_once "header.php";
                                         <span class="glyphicons single regular user"><i></i> Gửi với tài khoản: <a href="">Admin</a></span>
                                         <div class="separator bottom"></div>
                                         <p><textarea cols="200" rows="7" class="span12"></textarea> </p>
-                                        <p><input type="submit" name="submit" value="Gửi bình luận"></p>
+                                        <p><input type="submit" name="submit" value="Gửi phản hồi"></p>
                                     </form>
                                 </div>
                             </div>
@@ -96,15 +103,6 @@ require_once "header.php";
 
                             <!-- List -->
                             <ul>
-                                <li>
-                                    <select>
-                                        <option value=<?php echo get_?> >Volvo</option>
-                                        <?php echo school::getInstance()->lop($hoctap->class,"tenlop");?> - <?php echo school::getInstance()->truong($hoctap->school,"tentruong");?>
-                                        <option value="saab">Saab</option>
-                                        <option value="mercedes">Mercedes</option>
-                                        <option value="audi">Audi</option>
-                                    </select>
-                                </li>
                                 <li>
                                     <a href="">Công tác giảng dạy</a>
                                     <span class="badge">2</span>
@@ -167,14 +165,18 @@ require_once "header.php";
                         <div class="row-fluid">
                             <div class="span2 center">
                                 <a href="" class="thumb"><img src="<?php echo $template_path;?>images/2-1.jpg" alt="Image" /></a>
+                                <a href="" class="thumb"><img src="<?php echo $template_path;?>images/2-1.jpg" alt="Image" /></a>
                             </div>
                             <div class="span10">
-                                <span class="glyphicons single regular user"><i></i> Chức danh: <a href=""> $chucdanh</a></span>
-                                <span class="glyphicons single regular user"><i></i> Họ và tên: <a href=""> $name</a></span>
-                                <span class="glyphicons single regular user"><i></i> Ngày sinh: <a href=""> $name</a></span>
-                                <span class="glyphicons single regular user"><i></i> Số điện thoại: <a href=""> $name</a></span>
-                                <span class="glyphicons single regular user"><i></i> Email: <a href=""> $name</a></span>
-                                <span class="glyphicons single regular calendar"><i></i> 2013-08-03 17:33:58</span>
+                                <span class="glyphicons single regular user"><i></i> Chức vụ <a href=""> <?php echo $truong->hieutruong;?></a></span>
+                                <span class="glyphicons single regular user"><i></i> Họ và tên <a href=""> <?php echo member::getInstance()->info($truong->hieutruong,'firstname'). " " .member::getInstance()->info($truong->hieutruong,'name');?></a></span>
+                                <span class="glyphicons single regular user"><i></i> Giới tính <a href=""> <?php echo member::getInstance()->sex(member::getInstance()->get_member_info($truong->hieutruong,"sex"));?></a></span>
+                                <span class="glyphicons single regular user"><i></i> Ngày sinh <a href=""> <?php echo member::getInstance()->info($truong->hieutruong,'birthday');?></a></span>
+                                <?php $madatocs = member::getInstance()->get_member_info($truong->hieutruong,'dantoc')?>
+                                <span class="glyphicons single regular user"><i></i> Dân tộc <a href=""> <?php echo member::getInstance()->dantoc($madatocs);?></a></span>
+                                <span class="glyphicons single regular user"><i></i> Số điện thoại <a href=""> <?php echo member::getInstance()->info($truong->hieutruong,'didong');?></a></span>
+                                <span class="glyphicons single regular user"><i></i> Skype <a href=""> <?php echo member::getInstance()->info($truong->hieutruong,'skype');?></a></span>
+                                <span class="glyphicons single regular calendar"><i></i> <?php echo date("Y-m-d");?></span>
                                 <div class="separator bottom"></div>
                                 <p></p>
                             </div>
@@ -185,7 +187,7 @@ require_once "header.php";
 
                         </div>
                         <!-- // Thumbnail END -->
-                        <div class="widget-body"><p class="margin-none">$slogan</p></div>
+                        <div class="widget-body"><p class="margin-none"><?php echo member::getInstance()->info($truong->hieutruong,'slogan'); ?></p></div>
                     </div>
 
                     <div class="widget widget-heading-simple widget-body-gray">

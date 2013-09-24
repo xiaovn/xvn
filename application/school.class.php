@@ -177,4 +177,32 @@ Class school{
         }
         return $t;
     }
+    public function hang($hang)
+    {
+        if(isset($hang) && $hang != "")
+        {
+            global $db;
+            $db->query("SELECT tenhang FROM xdata_hangtruong WHERE hang = ".$hang);
+            $ifo = $db->fetch_object($first_row = true);
+            return $ifo->tenhang;
+        }
+        else
+        {
+            return "";
+        }
+    }
+    public function cap($cap)
+    {
+        if(isset($cap) && $cap != "")
+        {
+            global $db;
+            $db->query("SELECT tencap FROM xdata_cap WHERE cap = '".$cap."'");
+            $ifo = $db->fetch_object($first_row = true);
+            return $ifo->tencap;
+        }
+        else
+        {
+            return "";
+        }
+    }
 }

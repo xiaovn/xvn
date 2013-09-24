@@ -8,10 +8,10 @@
  */
 Class schoolModel extends baseModel
 {
-    public function get_truong($xfun)
+    public function get_truong($sid)
     {
         global $db;
-        $db->query("SELECT ".$xfun." FROM xdata_truong");
-        return $db->fetch_object();
+        $db->query("SELECT * FROM xdata_truong WHERE sid = '".$sid."'");
+        return $db->fetch_object($first_row = true);
     }
 }
