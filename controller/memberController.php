@@ -202,4 +202,100 @@ Class memberController extends baseController
         $this->view->data['avatar']=member::getInstance()->anhdaidien(member::getInstance()->idfriend($xid));
         $this->view->show('member_index');
     }
+    /*
+    public function thongtin()
+    {
+        //PA là tham số trên đầu vòa trên trình duyệt
+        $xid = $_GET['xid'];
+        //$xid = '7221111111';
+        $error = "";
+        if(isset($xid) && $xid != "")
+        {
+            $thongtinacc = $this->model->get('memberModel')->get_acc($xid);
+            // CÓ được dữ liệu rồi giờ sẽ xử lý dữ liệu đó để hiển thị ra ngoài view
+            $this->view->data['ten'] = $thongtinacc->name;
+            $this->view->data['acc'] = $thongtinacc;
+            //Giả sử chỉ cần một biến là tên thôi.
+            $this->view->show('member_index');
+            //Ăn thôi
+        }
+        else
+        {
+            //Khi xid không hợp lệ
+            $error = "Không thực hiện được!";
+        }
+        if(strlen($error)>0)
+        {
+            $this->view->data['error'] = $error;
+        }
+        $this->view->show('index');
+    }
+    */
+
+    public function quenpass()
+    {
+        $this->view->data['quen'] = $this->model->get("memberModel")->get_quen_pass();
+        $this->view->show('quenmk');
+    }
+    public function changepass()
+    {
+
+        $u=$_SESSION['xID'];
+        $pw=member::getInstance()->account($u,"password");
+
+        if(isset($_POST["capnhat"]))
+        {
+            $old_pw=md5($_POST["old_pw"]);
+            $new_pwd=md5($_POST["new_pw"]);
+            $pre_pwd=md5($_POST["pre_pw"]);
+
+            if(!$_POST["old_pw"] || !$_POST["new_pw"] || !$_POST["pre_pw"])
+            {
+                $this->view->data['error'] .= "bạn phải nhập đầy đủ thông tin!";
+                $this->view->show('changepass');
+            }
+            elseif($old_pw!=$pw)
+            {
+                $this->view->data['error'] .= "mật khẩu cũ nhập không đúng!";
+                $this->view->show('changepass');
+            }
+            elseif($new_pwd!=$pre_pwd)
+            {
+                $this->view->data['error'] .= "mật khẩu xác nhận không đúng!";
+                $this->view->show('changepass');
+            }
+            else
+            {
+                $this->view->data['doimk'] =  $this->model->get("changepassModel")->doimk($new_pwd,$u);
+                $this->view->data['error1'] .= "Bạn đổi mật khẩu thành công!";
+                $this->view->show('changepass');
+            }
+        }
+        $this->view->show('changepass');
+    }
+    public function changeim()
+    {
+        if(isset($_SESSION['LoggedIn']) && $_SESSION['LoggedIn'] == 1)
+        {
+            /*$xid = $_SESSION['xID'];
+            $ho = $_POST['xFirstname'];
+            $ten = $_POST['xName'];
+            $tenkhac = $_POST['xOthername'];
+            $tthonnhan = $_POST['xOthername'];
+            $tongiao = $_POST['xOthername'];
+            $dienthoai = $_POST['noidung'];
+            $didong = $_POST['noidung'];
+            $slogan = $_POST['noidung'];
+            $this->view->data['members'] =  $this->model->get("memberModel")->get_mem();*/
+            $this->view->data['member_heading'] = 'This is the member Index';
+            $this->view->data['hoctap'] = school::getInstance()->get_learning_year($_SESSION['xID'],date("Y"));
+            //$this->view->data['suaim'] =  $this->model->get("changepassModel")->changeim($xid,$ho,$ten,$tenkhac,$tthonnhan,$tongiao,$dienthoai,$didong,$slogan);
+            $this->view->show('changett');
+        }
+        else
+        {
+            $this->redirect->redirect("member","login");
+        }
+
+    }
 }

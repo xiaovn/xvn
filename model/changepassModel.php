@@ -21,48 +21,15 @@ class changepassModel extends  baseModel
             return false;
         }
     }
-    public function doimk($pass,$xid)
+    public function doimk($new_pwd,$xid)
     {
         global $db;
-        $db->query('UPDATE xdata_account SET password='.$pass.' WHERE xid='.$xid);
+        $db->query('UPDATE xdata_account SET password='.$new_pwd.' WHERE xid='.$xid);
     }
-
-   /* public function changepw()
+    public function changeim($xid,$ho,$ten,$tenkhac,$tthonnhan,$tongiao,$dienthoai,$didong,$slogan)
     {
         global $db;
-        $change = $db->query('SELECT * FROM xdata_account');
-        $user = $_SESSION['user'];
-        $pass = $_SESSION['pass'];
-        echo $user;
-        $old_pass=md5($_POST["old_pass"]);
-        $new_pass=md5($_POST["new_pass"]);
-        $pre_pass=md5($_POST["pre_pass"]);
-
-        If(isset($_POST["ok"]))
-        {
-         if(!$old_pass||!$new_pass||!$pre_pass)
-         {
-             return
-             exit;
-         }
-
-         else if($old_pass=!$pass)
-         {
-             echo"Mat Khau Cu Ko Dung";
-             exit;
-         }
-            else if($new_pass!=$pre_pass)
-            {
-                echo"Nhap mat khau xac nhan sai";
-                exit;
-            }
-            else
-            {
-                $sql=mysql_query(" UPDATE memberModel SET password='$new_pass' WHERE username='$user'");
-                echo"mật khẩu đã thay đổi";
-            }
-        }
+        $db->query('UPDATE xdata_info SET firstname='.$ho.',name='.$ten.',othernamme='.$tenkhac.',honnhan='.$tthonnhan.',tongiao='.$tongiao.',dienthoai='.$dienthoai.',didong='.$didong.',slogan='.$slogan.' WHERE xid='.$xid);
     }
-*/
 }
 ?>

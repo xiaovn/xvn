@@ -32,4 +32,28 @@ Class schoolController extends baseController
         $this->view->data['truong']= $moi;
         $this->view->show('school_index');
     }
+    public function schoolinfo($pa)
+    {
+        $sid = $pa[1];
+        $abcd = $pa[2];
+        $error = "";
+        if(isset($sid) && $sid != "")
+        {
+            $truong = $this->model->get('schoolModel')->get_truong($sid);
+            $this->view->data['truong'] = $truong;
+            $this->view->data['abcd'] = $abcd;
+            $this->view->show('school_index');
+
+        }
+        else
+        {
+            $this->view->show('error404');
+        }
+        if(strlen($error)>1)
+        {
+            $this->view->data['error'] = $error;
+        }
+        $this->view->show('school_index');
+    }
+
 }

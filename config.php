@@ -18,7 +18,7 @@ define('DB_HOST', 'localhost'); //sql server
 define('ThemeMaster', 'xpanel'); //Replace xpanel by your theme's name
 
 /*** define site path ***/
-define('XC_URL','http://localhost/xvn');
+define('XC_URL','http://localhost/xvn2');
 //Replace http://localhost/xvn by your site URL on server
 // Note: url start with http:// and not end with /
 

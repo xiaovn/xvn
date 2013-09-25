@@ -26,7 +26,7 @@ require_once "nav.php";
 ?>
 <!-- Top navbar END --><div class="container-960 innerT">
 
-<h3 class="glyphicons circle_info margin-none"><i></i><?php echo member::getInstance()->get_member_info($_SESSION['xID'],"name");?> <span>Thông tin cá nhân.</span></h3>
+<h3 class="glyphicons circle_info margin-none"><i></i><?php echo member::getInstance()->get_member_info($_SESSION['xID'],"firstname");?>&nbsp;<?php echo member::getInstance()->get_member_info($_SESSION['xID'],"name");?> <span>Thông tin cá nhân.</span></h3>
 <div class="separator bottom"></div>
 
 <div class="widget widget-heading-simple widget-body-gray">
@@ -77,20 +77,8 @@ require_once "nav.php";
                             <div class="separator bottom"></div>
                             <div class="glyphicons glyphicon-large group">
                                 <i></i>
-                                <h4>Lớp <?php echo school::getInstance()->lop($hoctap->class,"tenlop");?> - <?php echo school::getInstance()->truong($hoctap->school,"tentruong");?></h4>
-                                <p>Năm: <?php echo $hoctap->year;?><br> <a href="">Chi tiết</a></p>
-                            </div>
-                            <div class="separator bottom"></div>
-                            <div class="glyphicons glyphicon-large group">
-                                <i></i>
-                                <h4>Thông tin cá nhân</h4>
-                                <p>
-                                <ul>
-                                    <li>Ngày sinh: <?php echo member::getInstance()->get_member_info($_SESSION['xID'],"birthday");?></li>
-                                    <li>Giới tính: <?php echo member::getInstance()->sex(member::getInstance()->get_member_info($_SESSION['xID'],"sex"));?></li>
-                                    <li>Tình tình trạng hôn nhân: <?php echo member::getInstance()->honnhan($hoctap->honnhan,"tenlop","honnhan");?></li>
-                                </ul>
-                                </p>
+                                <h4>Trường: <?php echo school::getInstance()->truong($hoctap->school,"tentruong");?></h4>
+                                <p>Năm học: <?php echo $hoctap->year;?> - <?php echo $hoctap->year+1;?><br> <a href="">Chi tiết</a></p>
                             </div>
                         </div>
                     </div>
@@ -121,17 +109,21 @@ require_once "nav.php";
                         <h4>Thông tin cá nhân</h4>
                         <p>
                         <ul>
-                            <li>Họ tên: <?php echo member::getInstance()->get_member_info($_SESSION['xID'],"name");?></li>
+                            <li>Họ tên: <?php echo member::getInstance()->get_member_info($_SESSION['xID'],"firstname");?>&nbsp<?php echo member::getInstance()->get_member_info($_SESSION['xID'],"name");?></li>
                             <li>Tên khác: <?php echo member::getInstance()->get_member_info($_SESSION['xID'],"othername");?></li>
                             <li>Ngày sinh: <?php echo member::getInstance()->get_member_info($_SESSION['xID'],"birthday");?></li>
-
                             <li>Giới tính: <?php echo member::getInstance()->sex(member::getInstance()->get_member_info($_SESSION['xID'],"sex"));?></li>
+                            <li>Địa Chỉ: <?php echo member::getInstance()->xa(member::getInstance()->get_member_info($_SESSION['xID'],"hokhau_xa"));?>, &nbsp;<?php echo member::getInstance()->huyen(member::getInstance()->get_member_info($_SESSION['xID'],"hokhau_huyen"));?>, &nbsp;<?php echo member::getInstance()->tinh(member::getInstance()->get_member_info($_SESSION['xID'],"hokhau_tinh"));?></li>
+                        </ul>
+                        </p>
+                        <i></i>
+                        <h4>Thông tin khác</h4>
+                        <p>
+                        <ul>
                             <li>Tình trạng hôn nhân: <?php echo member::getInstance()->honnhan(member::getInstance()->get_member_info($_SESSION['xID'],"honnhan"));?></li>
-                            <li>Chứng minh nhân dân: <?php echo member::getInstance()->get_member_info($_SESSION['xID'],"cmnd");?></li>
-                            <li>Nơi cấp CMND: <?php echo member::getInstance()->get_member_info($_SESSION['xID'],"birthday");?></li>
-                            <li>Ngày cấp CMND: <?php echo member::getInstance()->get_member_info($_SESSION['xID'],"ngaycapcmnd");?></li>
-
-                            <li>Dân tộc: <?php echo member::getInstance()->get_member_info($_SESSION['xID'],"dantoc");?></li>
+                            <li>Dân tộc: <?php echo member::getInstance()->dantoc(member::getInstance()->get_member_info($_SESSION['xID'],"dantoc"));?></li>
+                            <li>Tôn giáo: <?php echo member::getInstance()->tongiao(member::getInstance()->get_member_info($_SESSION['xID'],"tongiao"));?></li>
+                            <li>Di Động: <?php echo member::getInstance()->get_member_info($_SESSION['xID'],"didong");?></li>
                         </ul>
                         </p>
                     </div>
@@ -143,11 +135,11 @@ require_once "nav.php";
                         $dsbb = member::getInstance()->get_banbe($_SESSION['xID']);
                         foreach($dsbb as $bb)
                         {
-                        ?>
+                            ?>
                             <div class="span2" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-5" data-delegate="#gallery-5">
                                 <a class="thumb" href="<?php echo $template_path;?>images/avatar-large-girl.jpg" alt="<?php echo member::getInstance()->info($bb->xid2,"name");?>" data-gallery="gallery"><img src="<?php echo $template_path;?>images/avatar-large-girl.jpg" alt="<?php echo member::getInstance()->account($bb->xid2,"username");?>" title="<?php echo member::getInstance()->account($bb->xid2,"username");?>"></a>
                             </div>
-                            <?php
+                        <?php
                         }
                         ?>
                     </div>
@@ -218,28 +210,28 @@ require_once "nav.php";
                 <div class="glyphicons glyphicon-large iphone">
                     <i></i>
                     <?php
-                        $applogs = member::getInstance()->get_app_log($_SESSION['xID']);
-                        foreach($applogs as $ap)
-                        {
-                            ?>
-                            <div class="span2" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-5" data-delegate="#gallery-5">
-                                <a class="thumb" href="<?php XC_URL?>/ungdung/view/?id<?php echo $ap->appid;?>" data-gallery="gallery"><img src="<?php echo $template_path;?>images/avatar-large-girl.jpg" title="<?php echo application::getInstance()->application($ap->appid,"appname");?>" alt="photo"></a>
-                            </div>
-                            <?php
-                        }
+                    $applogs = member::getInstance()->get_app_log($_SESSION['xID']);
+                    foreach($applogs as $ap)
+                    {
+                        ?>
+                        <div class="span2" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-5" data-delegate="#gallery-5">
+                            <a class="thumb" href="<?php XC_URL?>/ungdung/view/?id<?php echo $ap->appid;?>" data-gallery="gallery"><img src="<?php echo $template_path;?>images/avatar-large-girl.jpg" title="<?php echo application::getInstance()->application($ap->appid,"appname");?>" alt="photo"></a>
+                        </div>
+                    <?php
+                    }
                     ?>
                 </div>
 
                 <div class="separator bottom"></div>
                 <div class="glyphicons glyphicon-large magic group-column">
                     <i></i>
-                    <h4>Thành tích m?i nh?t</h4>
+                    <h4>Thành tích mới nhất</h4>
                     <div class="span2" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-5" data-delegate="#gallery-5">
                         <a class="thumb" href="<?php echo $template_path;?>images/medal/1.png" data-gallery="gallery"><img src="<?php echo $template_path;?>images/medal/1.png" alt="photo"></a>
                     </div>
-                    <p style="padding-left: 70px"> <b>Cao th? v?n ch??ng</b>
+                    <p style="padding-left: 70px"> <b>Cao thủ văn chương</b>
                         <br>
-                        Huy ch??ng dành cho các thành viên có l??ng bài vi?t ???c yêu thích nhi?u nh?t trong tháng.
+                        Huy chương dành cho các thành viên có lượng bài viếtt được yêu thích nhiều nhất trong tháng.
                     </p>
                 </div>
 
@@ -255,13 +247,13 @@ require_once "nav.php";
                     $acts = member::getInstance()->get_activity($_SESSION['xID']);
                     foreach($acts as $act)
                     {
-                    ?>
+                        ?>
                         <p>
                             <?php echo application::getInstance()->activity($act->active);?> với <b><?php echo member::getInstance()->account($act->with,"username");?></b>
                         </p>
-                        <?php
+                    <?php
                     }
-                        ?>
+                    ?>
                 </div>
             </div>
         </div>
