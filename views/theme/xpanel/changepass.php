@@ -77,7 +77,7 @@ require_once "header.php";
                                     <h4 class="heading glyphicons user"><i></i>Đổi mật khẩu</h4>
                                 </div>
                                 <div class="widget-body">
-                                    <font style="background-color: #efefef" color="red" size="4"><b>Lưu Ý: <i><?php echo $error?></i></b></font>
+                                    <font style="background-color: #efefef" color="red" size="4"><b><i><?php echo $error?></i></b></font>
                                     <font style="background-color: #efefef" color="blue" size="4"><b><i><?php echo $error1?></i></b></font>
                                     <div class="separator top">
                                         <div class="pull-left">
