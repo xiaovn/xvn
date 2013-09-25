@@ -6,7 +6,9 @@
  * Email: ngocviet@xiao.vn
  * Create Date: 9:21 PM - 8/27/13
  * Website: www.xiao.vn
+ * test
  */
+
 Class tkbModel extends baseModel
 {
     public function getmon($thu, $tiet, $buoi,$malop, $nhommon)
@@ -47,5 +49,16 @@ Class tkbModel extends baseModel
     {
         global $db;
         $xoa = $db->query("DELETE FROM xdata_tkb WHERE id='".$id."'");
+    }
+    public function nhap_tkb_excel($id,$buoi,$thu,$tiet,$mon,$giaovien,$lop,$nhommon)
+    {
+        global $db;
+        $nhapexcel=$db->query("UPDATE xdata_tkb SET buoi = '".$buoi."',thu= '".$thu."',tiet = '".$tiet."',mon = '".$mon."',giaovien= '".$giaovien."',lop = '".$lop."',nhommon= '".$nhommon."' WHERE id = '".$id."'");
+    }
+    public function xuat_tkb_excel($id)
+    {
+        global $db;
+        $db->query("SELECT * FROM xdata_tkb WHERE id=".$id);
+        return $db->fetch_object();
     }
 }
