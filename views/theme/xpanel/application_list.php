@@ -7,6 +7,7 @@
  * To change this template use File | Settings | File Templates.
  **/
 echo "Danh sach ung dung";
+//module view application list
 echo "" .$applist->appname;
 //$dsblog = application::getInstance()->get_blog($_SESSION['xID']);
 $i = 1;
@@ -17,4 +18,5 @@ foreach(applist as $app)
     echo $app->appname;
     echo $app->apppermission;
     $i ++;
+    //module view application list
 }

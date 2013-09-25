@@ -94,4 +94,5 @@ Class ungdungController extends baseController
         $this->view->data['applist'] = $this->model->get('applicationModel')->get_applist();
         $this->view->show('application_list');
     }
+    //module view application list
 }

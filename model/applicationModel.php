@@ -14,4 +14,5 @@ Class applicationModel Extends baseModel
         $app = $db->query('SELECT * FROM xdata_application');
         return $db->fetch_object();
     }
+    //module view application list
 }
