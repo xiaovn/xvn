@@ -24,6 +24,26 @@ Class memberController extends baseController
         }
 
     }
+    public function edit()
+    {
+        $xid = $_SESSION['xID'];
+        $xgroup = $_SESSION['xGroup'];
+        $xtype = "";
+        if($xgroup == "")
+        {
+            $xtype = "Đang học tại";
+        }
+        elseif($xgroup == "")
+        {
+            $xtype = "Đang công tác tại";
+        }
+        else
+        {
+            $xtype = "Đang làm việc tại";
+        }
+        $this->view->data['xtype'] = $xtype;
+        $this->view->show("member_editinfo");
+    }
     public function testview($a)
     {
         $this->view->data['title1'] = $a[0];

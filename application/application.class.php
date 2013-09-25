@@ -60,7 +60,7 @@ Class application{
     public function get_feed($xid)
     {
         global $db;
-        $db->query("SELECT * FROM xdata_feed WHERE feedauthor = ".$xid);
+        $db->query("SELECT * FROM xdata_feed WHERE feedauthor = '".$xid."' ORDER BY feedid DESC");
         return $db->fetch_object();
     }
     public function application($appid,$info)
@@ -71,6 +71,20 @@ Class application{
             $db->query("SELECT ".$info." FROM xdata_application WHERE appid = ".$appid);
             $app = $db->fetch_object($first_row = true);
             return $app->$info;
+        }
+        else
+        {
+            return "";
+        }
+    }
+    public function get_blog_by_xid($xid,$fr)
+    {
+        if(isset($xid) && $xid != "" && isset($fr) && $fr != "")
+        {
+                global $db;
+                $db->query("SELECT * FROM xdata_blog WHERE author = '".$xid."' ORDER BY id DESC");
+                return $db->fetch_object($first_row = $fr);
+
         }
         else
         {
@@ -105,5 +119,79 @@ Class application{
                 break;
         }
         return $db->fetch_object($first_row = false);
+    }
+    public function findmon($tenmon)
+    {
+        global $db;
+        $db->query("SELECT mamon FROM xdata_monhoc WHERE tenmon like '$tenmon' OR viettat like '%$tenmon%'");
+        $gv = $db->fetch_object($firstrow = true);
+        return $gv->mamon;
+    }
+    function sosanh($xid,$mamon)
+    {
+        global $db;
+        $db->query("SELECT * FROM xdata_giaovien WHERE xid = $xid");
+        $gv = $db->fetch_object($first_row = true);
+        if($gv->mamom == $mamon)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public function analytic($strings)
+    {
+        global $db;
+        $ct = explode("-", $strings);
+        $gv = $ct[1];
+        $mon = $ct[0];
+        $magv = "";
+        $tenmon = $this->findmon($mon);
+        $db->query("SELECT * FROM xdata_info");
+        $ck = 1;
+        $dem = 1;
+        $giaovien = "";
+        $ketqua = 0;
+        $result[] = null;
+        $gvss = $db->fetch_object();
+        foreach($gvss as $gvs)
+        {
+            if($ketqua != 1)
+            {
+                $magv = $gvs->xid;
+                $tengv = $gvs->name;
+                $orname = trim(strtolower($tengv));
+                $orinput = trim(strtolower($gv));
+                if (preg_match("/".$orname."/", $orinput))
+                {
+                    if($this->sosanh($magv,$tenmon))
+                    {
+                        $giaovien = $gvs->xid;
+                        $ketqua = 1;
+                    }
+                    else
+                    {
+                        $giaovien = $gvs->xid;
+                        $ketqua = "Not same";
+                    }
+                }
+            }
+
+        }
+        if($ketqua)
+        {
+            $result['mamom'] = "";
+            $result['magiaovien'] = "";
+            $result['found'] = 1;
+        }
+        else
+        {
+            $result['mamom'] = "";
+            $result['magiaovien'] = "";
+            $result['found'] = 0;
+        }
+        return $result;
     }
 }

@@ -20,6 +20,35 @@ Class adminController extends baseController
             $this->redirect->redirect("admin","login");
         }
     }
+    public function student($feature)
+    {
+        $func = $feature[1];
+        switch($func)
+        {
+            case "edit":
+            {
+                break;
+            }
+            default:
+            {
+                $spp = 10;
+                $page = 1;
+                if(isset($feature[2]) && $feature[2] != "")
+                {
+                    $page = $feature[2];
+                }
+                $cp = $page - 1;
+                $sodu_lieu = member::getInstance()->memcount("2268470");
+                $sotrang = $sodu_lieu/$spp;
+                $sql = "SELECT * FROM xdata_account WHERE xgroup = '2268470' ORDER BY id DESC  LIMIT ".$cp*$spp.",".$spp;
+                $this->view->data['liststudent'] = $this->model->get('adminmemberModel')->memberquery($sql,false);
+                $this->view->data['count'] = $sodu_lieu;
+                $this->view->data['sotrang'] = $sotrang;
+                $this->view->admintmp('member');
+                break;
+            }
+        }
+    }
     public function login()
     {
         if(isset($_POST['username']) && $_POST['username'] != "")
