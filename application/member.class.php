@@ -91,6 +91,100 @@ Class member{
             return "";
         }
     }
+    public function bank($xid,$info)
+    {
+        if(isset($xid) && $xid != "" && isset($info) && $info != "")
+        {
+            global $db;
+            $db->query("SELECT ".$info." FROM xdata_bank WHERE xid = ".$xid);
+            $ifo = $db->fetch_object($first_row = true);
+            return $ifo->$info;
+        }
+        else
+        {
+            return "";
+        }
+    }
+    public function get_score($xid,$appid)
+    {
+        if(isset($xid) && $xid != "" && isset($appid) && $appid != "")
+        {
+            global $db;
+            $db->query("SELECT score FROM xdata_score WHERE xid = '".$xid."' AND appid = '".$appid."'");
+            if($db->num_row())
+            {
+                $ifo = $db->fetch_object($first_row = true);
+                return $ifo->score;
+            }
+            else
+            {
+                return "0";
+            }
+        }
+        else
+        {
+            return "0";
+        }
+    }
+    public function get_rank_of_xid($xid, $appid)
+    {
+
+        if(isset($xid) && $xid != "" && isset($appid) && $appid != "")
+        {
+            global $db;
+            $db->query("SELECT score, FIND_IN_SET( score, ( SELECT GROUP_CONCAT( score ORDER BY score DESC ) FROM xdata_score ) ) AS rank  FROM xdata_score WHERE xid = '".$xid."' AND appid = '".$appid."'");
+
+            if($db->num_row())
+            {
+                $ifo = $db->fetch_object($first_row = true);
+                return $ifo->rank;
+            }
+            else
+            {
+                return "0";
+            }
+        }
+        else
+        {
+            return "0";
+        }
+    }
+    public function get_max_score($appid)
+    {
+        if(isset($appid) && $appid != "")
+        {
+            global $db;
+            $db->query("SELECT MAX(score) as maxs FROM xdata_score WHERE appid = '".$appid."'");
+
+            if($db->num_row())
+            {
+                $ifo = $db->fetch_object($first_row = true);
+                return $ifo->maxs;
+            }
+            else
+            {
+                return "0";
+            }
+        }
+        else
+        {
+            return "0";
+        }
+    }
+    public function bio($xid,$info)
+    {
+        if(isset($xid) && $xid != "" && isset($info) && $info != "")
+        {
+            global $db;
+            $db->query("SELECT ".$info." FROM xdata_bio WHERE xid = ".$xid);
+            $ifo = $db->fetch_object($first_row = true);
+            return $ifo->$info;
+        }
+        else
+        {
+            return "";
+        }
+    }
     public function info($xid,$info)
     {
         if(isset($xid) && $xid != "" && isset($info) && $info != "")
@@ -194,7 +288,7 @@ Class member{
         if(isset($mahonnhan) && $mahonnhan != "")
         {
             global $db;
-            $db->query("SELECT tinhtranghonnhan FROM xdata_honhan WHERE mahonnhan = ".$mahonnhan);
+            $db->query("SELECT tinhtranghonnhan FROM xdata_honnhan WHERE mahonnhan = ".$mahonnhan);
             $ifo = $db->fetch_object($first_row = true);
             return $ifo->tinhtranghonnhan;
         }
@@ -220,6 +314,20 @@ Class member{
         global $db;
         $db->query("SELECT * FROM xdata_app_log WHERE xid =".$xid." LIMIT 5");
         return $db->fetch_object();
+    }
+    public function memcount($type)
+    {
+        if(isset($type) && $type != "")
+        {
+            //Query student
+            global $db;
+            $db->query("SELECT * FROM xdata_account WHERE xgroup  = '".$type."'");
+            return $db->num_row();
+        }
+        else
+        {
+            return null;
+        }
     }
     public function checkfriend($xid1, $xid2)
     {

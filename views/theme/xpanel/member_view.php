@@ -10,12 +10,12 @@
 require_once "header.php";
 ?>
     <link href="<?php echo $template_path;?>css/style-default.css" rel="stylesheet" />
-    <!--    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>-->
-    <!--    <script>-->
-    <!--        $(document).ready(function () {-->
-    <!--            alert("The DOM is now loaded and can be manipulated.");-->
-    <!--        });-->
-    <!--    </script>-->
+<!--    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>-->
+<!--    <script>-->
+<!--        $(document).ready(function () {-->
+<!--            alert("The DOM is now loaded and can be manipulated.");-->
+<!--        });-->
+<!--    </script>-->
     </head>
 <body>
 
@@ -31,7 +31,7 @@ require_once "nav.php";
 ?>
 <!-- Top navbar END --><div class="container-960 innerT">
 
-<h3 class="glyphicons circle_info margin-none"><i></i><?php echo member::getInstance()->get_member_info($memberid,"firstname");?>&nbsp;<?php echo member::getInstance()->get_member_info($memberid,"name");?> <span>Thông tin cá nhân.</span></h3>
+<h3 class="glyphicons circle_info margin-none"><i></i><?php echo member::getInstance()->get_member_info($memberid,"name");?> <span>Thông tin cá nhân.</span></h3>
 <div class="separator bottom"></div>
 
 <div class="widget widget-heading-simple widget-body-gray">
@@ -49,7 +49,7 @@ require_once "nav.php";
 
             <!-- Thumbnail -->
             <div class="thumbnail widget-thumbnail">
-                <img src="<?php echo $template_path;?>images/avatar-large.jpg"  alt="100%x200 Image Holder" />
+                <img src="<?php echo XC_URL;?>/avatar/<?php echo member::getInstance()->account($memberid,"avatar");?>"  alt="100%x200 Image Holder" />
                 <div class="caption">
                     <h4><?php echo member::getInstance()->account($memberid,"username");?></h4>
                     <p><?php echo member::getInstance()->get_member_info($memberid,"slogan");?></p>
@@ -68,12 +68,12 @@ require_once "nav.php";
                     <a id="modals-bootbox-alert" class="glyphicons standard <?php if(member::getInstance()->get_member_info($memberid,"didong") != ""){echo "primary";}?> iphone"><i></i></a>
                     <a href="<?php echo member::getInstance()->get_member_info($memberid,"skype")?>" class="glyphicons standard <?php if(member::getInstance()->get_member_info($memberid,"skype") != ""){echo "primary";}?> skype"><i></i></a>
                     <a href="<?php echo member::getInstance()->account($memberid,"email")?>" class="glyphicons standard <?php if(member::getInstance()->account($memberid,"email") != ""){echo "primary";}?> e-mail"><i></i></a>
-                    <?php if(member::getInstance()->checkfriend($_SESSION['xID'],$memberid)){
-                        ?>
-                        <a href="<?php echo XC_URL;?>/member/addfriend/<?php echo $memberid;?>" class="glyphicons standard primary user_add"><i></i></a>
-                    <?php
-                    }
-                    ?>
+    <?php if(member::getInstance()->checkfriend($_SESSION['xID'],$memberid)){
+    ?>
+                    <a href="<?php echo XC_URL;?>/member/addfriend/<?php echo $memberid;?>" class="glyphicons standard primary user_add"><i></i></a>
+    <?php
+   }
+    ?>
 
                     <div class="clearfix"></div>
                     <!-- // Social Icons END -->
@@ -96,18 +96,30 @@ require_once "nav.php";
                             <div class="separator bottom"></div>
                             <div class="glyphicons glyphicon-large group">
                                 <i></i>
-                                <h4>Trường: <?php echo school::getInstance()->truong($hoctap->school,"tentruong");?></h4>
-                                <p>Năm: <?php echo $hoctap->year;?> - <?php echo $hoctap->year+1;?></p>
-                                <br><p> <a href="">Chi tiết</a></p>
+                                <h4>Lớp <?php echo school::getInstance()->lop($hoctap->class,"tenlop");?> - <?php echo school::getInstance()->truong($hoctap->school,"tentruong");?></h4>
+                                <p>Năm: <?php echo $hoctap->year;?><br> <a href="">Chi tiết</a></p>
+                            </div>
+                            <div class="separator bottom"></div>
+                            <div class="glyphicons glyphicon-large group">
+                                <i></i>
+                                <h4>Thông tin cá nhân</h4>
+                                <p>
+                                <ul>
+                                    <li>Ngày sinh: <?php echo member::getInstance()->get_member_info($memberid,"birthday");?></li>
+                                    <li>Giới tính: <?php echo member::getInstance()->sex(member::getInstance()->get_member_info($memberid,"sex"));?></li>
+                                    <li>Tình tình trạng hôn nhân: </li>
+                                </ul>
+                                </p>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Carousel -->
-
-                    <!-- // Carousel END -->
-
                 </div>
+
+                <!-- Carousel -->
+
+                <!-- // Carousel END -->
+
+            </div>
         </li>
 
     </ul>
@@ -128,22 +140,17 @@ require_once "nav.php";
                         <h4>Thông tin cá nhân</h4>
                         <p>
                         <ul>
-                            <li>Họ tên: <?php echo member::getInstance()->get_member_info($memberid,"firstname");?>&nbsp<?php echo member::getInstance()->get_member_info($memberid,"name");?></li>
+                            <li>Họ tên: <?php echo member::getInstance()->get_member_info($memberid,"name");?></li>
                             <li>Tên khác: <?php echo member::getInstance()->get_member_info($memberid,"othername");?></li>
                             <li>Ngày sinh: <?php echo member::getInstance()->get_member_info($memberid,"birthday");?></li>
 
                             <li>Giới tính: <?php echo member::getInstance()->sex(member::getInstance()->get_member_info($memberid,"sex"));?></li>
-                            <li>Địa Chỉ: <?php echo member::getInstance()->xa(member::getInstance()->get_member_info($memberid,"hokhau_xa"));?>, &nbsp;<?php echo member::getInstance()->huyen(member::getInstance()->get_member_info($memberid,"hokhau_huyen"));?>, &nbsp;<?php echo member::getInstance()->tinh(member::getInstance()->get_member_info($memberid,"hokhau_tinh"));?></li>
-                        </ul>
-                        </p>
-                        <i></i>
-                        <h4>Thông tin khác</h4>
-                        <p>
-                        <ul>
-                            <li>Tình trạng hôn nhân: <?php echo member::getInstance()->honnhan(member::getInstance()->get_member_info($memberid,"honnhan"));?></li>
-                            <li>Dân tộc: <?php echo member::getInstance()->dantoc(member::getInstance()->get_member_info($memberid,"dantoc"));?></li>
-                            <li>Tôn giáo: <?php echo member::getInstance()->tongiao(member::getInstance()->get_member_info($memberid,"tongiao"));?></li>
-                            <li>Di Động: <?php echo member::getInstance()->get_member_info($memberid,"didong");?></li>
+                            <li>Tình trạng hôn nhân: <?php echo member::getInstance()->get_member_info($memberid,"honnhan");?></li>
+                            <li>Chứng minh nhân dân: <?php echo member::getInstance()->get_member_info($memberid,"cmnd");?></li>
+                            <li>Nơi cấp CMND: <?php echo member::getInstance()->get_member_info($memberid,"birthday");?></li>
+                            <li>Ngày cấp CMND: <?php echo member::getInstance()->get_member_info($memberid,"ngaycapcmnd");?></li>
+
+                            <li>Dân tộc: <?php echo member::getInstance()->get_member_info($memberid,"dantoc");?></li>
                         </ul>
                         </p>
                     </div>
@@ -245,13 +252,13 @@ require_once "nav.php";
                 <div class="separator bottom"></div>
                 <div class="glyphicons glyphicon-large magic group-column">
                     <i></i>
-                    <h4>Thành tích mới nhấtt</h4>
+                    <h4>Thành tích m?i nh?t</h4>
                     <div class="span2" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-5" data-delegate="#gallery-5">
                         <a class="thumb" href="<?php echo $template_path;?>images/medal/1.png" data-gallery="gallery"><img src="<?php echo $template_path;?>images/medal/1.png" alt="photo"></a>
                     </div>
-                    <p style="padding-left: 70px"> <b>Cao thủ văn chương</b>
+                    <p style="padding-left: 70px"> <b>Cao th? v?n ch??ng</b>
                         <br>
-                        Huy chương dành cho các thành viên có lượng bài viếtt được yêu thích nhiều nhất trong tháng.
+                        Huy ch??ng dành cho các thành viên có l??ng bài vi?t ???c yêu thích nhi?u nh?t trong tháng.
                     </p>
                 </div>
 

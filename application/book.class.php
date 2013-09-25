@@ -70,6 +70,19 @@ Class book{
             return $db->num_row();
         }
     }
+    public function get_book_by_xid($xid)
+    {
+        if(isset($xid) && $xid != "")
+        {
+            global $db;
+            $db->query("SELECT * FROM xiaob_book WHERE bookpuber = ".$xid);
+            return $db->fetch_object($first_row = false);
+        }
+        else
+        {
+            return null;
+        }
+    }
     public function bookthumb($bookimage)
     {
         $bt = "noimage.png";

@@ -50,12 +50,26 @@ require_once "nav.php";
                     <p><?php echo member::getInstance()->get_member_info($_SESSION['xID'],"slogan");?></p>
 
                     <!-- Social Icons -->
-                    <a href="<?php echo member::getInstance()->get_member_info($_SESSION['xID'],"facebook")?>" class="glyphicons standard <?php if(member::getInstance()->get_member_info($_SESSION['xID'],"facebook") != ""){echo "primary";}?> facebook"><i></i></a>
-                    <a href="<?php echo member::getInstance()->get_member_info($_SESSION['xID'],"twitter")?>" class="glyphicons standard <?php if(member::getInstance()->get_member_info($_SESSION['xID'],"twitter") != ""){echo "primary";}?> twitter"><i></i></a>
-                    <a href="<?php echo member::getInstance()->get_member_info($_SESSION['xID'],"yahoo")?>" class="glyphicons standard <?php if(member::getInstance()->get_member_info($_SESSION['xID'],"yahoo") != ""){echo "primary";}?> yahoo"><i></i></a>
-                    <a href="<?php echo member::getInstance()->get_member_info($_SESSION['xID'],"didong")?>" class="glyphicons standard <?php if(member::getInstance()->get_member_info($_SESSION['xID'],"didong") != ""){echo "primary";}?> iphone"><i></i></a>
+
+                    <!-- Button Facebook -->
+                    <span data-toggle="popover" data-title="Follow <?php echo member::getInstance()->get_member_info($_SESSION['xID'],"name");?> on Facebook" data-content="https://facebook.com/<?php echo member::getInstance()->get_member_info($_SESSION['xID'],"facebook");?>" data-placement="bottom"><a class="glyphicons standard <?php if(member::getInstance()->get_member_info($_SESSION['xID'],"facebook") != ""){echo "primary";}?> facebook"><i></i></a></span>
+                    <!-- Button Facebook -->
+
+                    <!-- Button Twitter -->
+                    <span data-toggle="popover" data-title="Follow <?php echo member::getInstance()->get_member_info($_SESSION['xID'],"name");?> on Twitter" data-content="https://twitter.com/<?php echo member::getInstance()->get_member_info($_SESSION['xID'],"twitter");?>" data-placement="bottom"><a class="glyphicons standard <?php if(member::getInstance()->get_member_info($_SESSION['xID'],"twitter") != ""){echo "primary";}?> twitter"><i></i></a></span>
+                    <!-- Button Twitter -->
+
+                    <a id="bootbox-member-yahoo"  class="glyphicons standard <?php if(member::getInstance()->get_member_info($_SESSION['xID'],"yahoo") != ""){echo "primary";}?> yahoo"><i></i></a>
+                    <a id="modals-bootbox-alert" class="glyphicons standard <?php if(member::getInstance()->get_member_info($_SESSION['xID'],"didong") != ""){echo "primary";}?> iphone"><i></i></a>
                     <a href="<?php echo member::getInstance()->get_member_info($_SESSION['xID'],"skype")?>" class="glyphicons standard <?php if(member::getInstance()->get_member_info($_SESSION['xID'],"skype") != ""){echo "primary";}?> skype"><i></i></a>
                     <a href="<?php echo member::getInstance()->account($_SESSION['xID'],"email")?>" class="glyphicons standard <?php if(member::getInstance()->account($_SESSION['xID'],"email") != ""){echo "primary";}?> e-mail"><i></i></a>
+    <?php if(member::getInstance()->checkfriend($_SESSION['xID'],$_SESSION['xID'])){
+    ?>
+                    <a href="<?php echo XC_URL;?>/member/addfriend/<?php echo $_SESSION['xID'];?>" class="glyphicons standard primary user_add"><i></i></a>
+    <?php
+   }
+    ?>
+
                     <div class="clearfix"></div>
                     <!-- // Social Icons END -->
                 </div>
@@ -293,6 +307,12 @@ require_once "nav.php";
 
 </div>
 </div>
+<script>
+    var username = '<?php echo member::getInstance()->account($_SESSION['xID'],"username");?>',
+        name = '<?php echo member::getInstance()->get_member_info($_SESSION['xID'],"name");?>',
+        phone = '<?php echo member::getInstance()->get_member_info($_SESSION['xID'],"didong");?>',
+        yahoo = '<?php echo member::getInstance()->get_member_info($_SESSION['xID'],"yahoo");?>';
+</script>
 <script>
     var primaryColor = '#4a8bc2',
         dangerColor = '#b55151',
