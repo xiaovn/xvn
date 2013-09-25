@@ -6,7 +6,7 @@
  * Email: kenzaki@xiao.vn
  * Create Date: 8:52 AM - 7/31/13
  * Website: www.xiao.vn
- *****/
+ *******/
 
 Class ungdungController extends baseController
 {
@@ -93,6 +93,6 @@ Class ungdungController extends baseController
     {
         $this->view->data['applist'] = $this->model->get('applicationModel')->get_applist();
         $this->view->show('application_list');
+        //$this->view->show('app_list');
     }
-    //module view application list
 }
