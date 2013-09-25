@@ -5,7 +5,7 @@
  * Date: 9/25/13
  * Time: 2:17 PM
  * To change this template use File | Settings | File Templates.
- */
+ ***/
 require_once "header.php";
 ?>
     <link href="<?php echo $template_path;?>css/style-default.css"  rel="stylesheet" />

@@ -6,7 +6,7 @@
  * Email: kenzaki@xiao.vn
  * Create Date: 8:52 AM - 7/31/13
  * Website: www.xiao.vn
- *****/
+ *******/
 
 Class ungdungController extends baseController
 {
