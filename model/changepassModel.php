@@ -24,7 +24,7 @@ class changepassModel extends  baseModel
     public function doimk($new_pwd,$xid)
     {
         global $db;
-        $db->query('UPDATE xdata_account SET password='.$new_pwd.' WHERE xid='.$xid);
+        $db->query("UPDATE xdata_account SET password='".$new_pwd."' WHERE xid='".$xid."'");
     }
     public function changeim($xid,$ho,$ten,$tenkhac,$tthonnhan,$tongiao,$dienthoai,$didong,$slogan)
     {

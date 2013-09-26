@@ -91,4 +91,22 @@ Controller extends baseController
         else
         $this->view->show('app_tkb');
     }
+    // Sử dụng tkbModel -> function nhap_tkb_excel
+    public function nhaptkb()
+    {
+        $tkbid = $_GET['tkbid'];
+        if(isset($_POST['tkbid']) && $_POST['tkbid'] != "")
+        {
+            $buoi = $_POST['tkbbuoi'];
+            $thu = $_POST['tkbthu'];
+            $tiet = $_POST['tkbtiet'];
+            $mon = $_POST['tkbmon'];
+            $giaovien = $_POST['tkbgiaovien'];
+            $lop = $_POST['tkblop'];
+            $nhommon = $_POST['tkbnhommon'];
+            $this->model->get("tkbModel")->nhap_tkb_excel($buoi,$thu,$tiet,$mon,$giaovien,$lop,$nhommon);
+        }
+        else
+            $this->view->show('app_tkb');
+    }
 }
