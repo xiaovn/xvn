@@ -12,7 +12,15 @@ Class followerController extends baseController
     {
         $xid = $_SESSION['xID'];
         $this->view->data['toitheodoi'] = $this->model->get('followerModel')->get_follower($xid);
-        //$this->view->data['theodoitoi'] = member::getInstance()->get_follower_anyone($xid);
+        $this->view->data['theodoitoi'] = member::getInstance()->get_follower($xid);
         $this->view->show('follower_index');
     }
+    /* Code trong member class
+    public function get_follower($xid)
+    {
+        global $db;
+        $db->query("SELECT * FROM xdata_friend WHERE xid2 = '".$xid."'");
+        return $db->fetch_object();
+    }
+    */
 }
