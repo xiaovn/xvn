@@ -175,6 +175,7 @@
 <script src="<?php echo $template_path;?>js/themer.js" ></script>
 <!-- <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyARi0YZiwE498oj9SgIQGeZeaQ2Auwp8PU&v=3.5&sensor=false"></script> -->
 <script src="<?php echo $template_path;?>js/contact.js"></script>
-
+<script type="text/javascript" src="/xvn/chat/external.php?type=djs" charset="utf-8"></script>
+<script type="text/javascript" src="/xvn/chat/external.php?type=js" charset="utf-8"></script>
 </body>
 </html>

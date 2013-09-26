@@ -77,6 +77,60 @@ Class baseMailler {
             return true;
         }
     }
+    function mail($name) {
+        $path = __SITE_PATH . '/views' . '/theme/emails/' . $name . '.html';
+
+        if (file_exists($path) == false)
+        {
+            throw new Exception('Template not found in '. $path);
+            return false;
+        }
+        return file_get_contents($path);
+    }
+    public function sendersmtp($name,$to,$type,$content,$value)
+    {
+        include_once "phpmailer.class.php";
+        include_once "smtp.class.php";
+        $mail = new PHPMailer();
+        $mail->IsSMTP(); // set mailer to use SMTP
+        $mail->Host = MAIL_HOST; // specify main and backup server
+        $mail->Port = MAIL_PORT; // set the port to use
+        $mail->SMTPAuth = MAIL_AUTH; // turn on SMTP authentication
+        $mail->SMTPSecure = MAIL_SECURE;
+        $mail->Username = MAIL_ACC; // your SMTP username or your gmail username
+        $mail->Password = MAIL_PASS; // your SMTP password or your gmail password
+        //End variable
+        $mail->From = "";
+        $mail->Subject = "";
+        switch($type)
+        {
+            case "newregister":
+            {
+                $mail->From = "passport@xiao.vn";
+                $mail->Subject = "Thank for signup at Xiao Media Account Gateway!";
+                $mail->AddReplyTo("passport@xiao.vn","Xiao Media Inc");
+                $mail->FromName = "Xiao Passport Gateway"; // Name to indicate where the email came from when the recepient received
+                $mail->AddAddress($to,$name);
+                $tpl = $this->mail("general_email");
+                $tpl = str_replace('%%GLOBAL_EmailHeader%%', "Cổng tài khoản Xiao", $tpl);
+                $tpl = str_replace('%%GLOBAL_EmailMessage%%', "Đây là một thông báo thử nghiệm từ Xiao Media", $tpl);
+                $tpl = str_replace('%%GLOBAL_EmailFooter%%', "Thông báo này được gửi đến email: ".$to." vì đã đăng ký nhận tin", $tpl);
+                $mail->Body = $tpl;
+            }
+                default:
+                break;
+        }
+        $mail->WordWrap = 50;
+        $mail->IsHTML(true);
+        if(!$mail->Send())
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
 }
 
 ?>

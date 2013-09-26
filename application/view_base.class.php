@@ -73,6 +73,8 @@ function show($name) {
 
 	include ($path);               
 }
+
+
 function admintmp($name)
 {
     $path = __SITE_PATH . '/views' . '/theme/xiaocontrol/' . $name . '.php';

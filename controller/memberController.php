@@ -318,4 +318,8 @@ Class memberController extends baseController
         }
 
     }
+    public function testmember()
+    {
+        $this->view->show("test_view");
+    }
 }

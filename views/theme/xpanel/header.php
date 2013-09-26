@@ -49,4 +49,6 @@ include "config.php"
     <link href="<?php echo $template_path;?>css/bootstrap-toggle-buttons.css" rel="stylesheet" />
   <!-- LESS.js Library -->
 	<script src="<?php echo $template_path;?>js/less.min.js" ></script>
-
+    <link type="text/css" rel="stylesheet" id="arrowchat_css" media="all" href="/xvn/chat/external.php?type=css" charset="utf-8" />
+    <script type="text/javascript" src="/xvn/chat/includes/js/jquery.js"></script>
+    <script type="text/javascript" src="/xvn/chat/includes/js/jquery-ui.js"></script>

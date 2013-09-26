@@ -7,10 +7,6 @@
  * To change this template use File | Settings | File Templates.
  */
 
-echo $title0;
-echo "<br>";
-echo $title1;
-echo "<br>";
-echo $title2;
-echo "<br>";
-echo $title3;
+echo $a; echo "<br>";
+echo $xid; echo "<br>";
+echo $type; echo "<br>";
