@@ -20,5 +20,11 @@ class clubModel extends baseModel
         $db->query("SELECT * FROM xdata_clb WHERE clubid =".$clubid);
         return $db->fetch_object($first_row = true);
     }
+    public function thamgianhom($clbid,$xid)
+    {
+        global $db;
+        $db->query('INSERT INTO xdata_clb_member(clbid,xid,permission,status) VALUE ('.$clbid.','.$xid.',"2264321","0")');
+        return true;
+    }
 }
 ?>
