@@ -13,7 +13,10 @@ Class apiModel extends baseModel
         global $db;
         $db->query("SELECT * FROM xdata_score_setting WHERE feature_code = '".$type."'");
         $score_setting = $db->fetch_object($first_row = true);
-        if($score_setting->feature_once)
+        $once = $score_setting->feature_once;
+        $application_id = $score_setting->application_id;
+        $feature_score = $score_setting->feature_score;
+        if($once)
         {
             $db->query("SELECT * FROM xdata_score_log WHERE xid = '".$xid."' AND score_code = '".$score_setting->feature_code."'");
             if($db->num_row())
@@ -22,7 +25,7 @@ Class apiModel extends baseModel
             }
             else
             {
-                $db->query("SELECT * FROM xdata_score_log WHERE xid = '".$xid."' AND feature_code = '".$type."'");
+                $db->query("SELECT * FROM xdata_score WHERE xid = '".$xid."' AND appid = '".$score_setting->application_id."'");
                 if($db->num_row())
                 {
                     $db->query("UPDATE xdata_score SET score = score + ".$score_setting->feature_score." WHERE xid = '".$xid."' AND appid = '".$score_setting->application_id."'");
