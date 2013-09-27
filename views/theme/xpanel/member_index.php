@@ -80,7 +80,7 @@ require_once "nav.php";
         <!-- // Column END -->
         <li class="span8">
             <div class="span12" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-5" data-delegate="#gallery-5">
-                <a class="thumb" href="<?php echo XC_URL;?>/member/view/" data-gallery="gallery"><img src="<?php echo $template_path;?>images/cv.png" alt="photo"></a>
+                <a class="thumb" href="<?php echo $template_path;?>images/cv.png" data-gallery="gallery"><img src="<?php echo $template_path;?>images/cv.png" alt="photo"></a>
                 <div class="separator bottom"></div>
             </div>
             <div class="span12">
@@ -151,7 +151,7 @@ require_once "nav.php";
                         {
                             ?>
                             <div class="span2" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-5" data-delegate="#gallery-5">
-                                <a class="thumb" href="<?php echo XC_URL;?>/member/view/<?php echo $bb->xid2;?>" alt="<?php echo member::getInstance()->info($bb->xid2,"name");?>" data-gallery="gallery"><img src="<?php echo XC_URL;?>/avatar/<?php echo member::getInstance()->account($bb->xid2,"avatar");?>" alt="<?php echo member::getInstance()->account($bb->xid2,"username");?>" title="<?php echo member::getInstance()->account($bb->xid2,"username");?>"></a>
+                                <a class="thumb" href="<?php echo $template_path;?>images/avatar-large-girl.jpg" alt="<?php echo member::getInstance()->info($bb->xid2,"name");?>" data-gallery="gallery"><img src="<?php echo $template_path;?>images/avatar-large-girl.jpg" alt="<?php echo member::getInstance()->account($bb->xid2,"username");?>" title="<?php echo member::getInstance()->account($bb->xid2,"username");?>"></a>
                             </div>
                         <?php
                         }
