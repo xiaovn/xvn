@@ -11,11 +11,13 @@ Class memberController extends baseController
 {
     public function index()
     {
+        $xid = $_SESSION['xID'];
         if(isset($_SESSION['LoggedIn']) && $_SESSION['LoggedIn'] == 1)
         {
             $this->view->data['members'] =  $this->model->get("memberModel")->get_mem();
             $this->view->data['member_heading'] = 'This is the member Index';
             $this->view->data['hoctap'] = school::getInstance()->get_learning_year($_SESSION['xID'],date("Y"));
+            $this->view->data['theodoi'] = $this->model->get("followerModel")->theodoi($xid);
             $this->view->show('member_index');
         }
         else
