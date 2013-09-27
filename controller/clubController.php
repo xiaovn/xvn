@@ -40,4 +40,13 @@ Class clubController extends baseController
             $this->view->show('error404');
         }
     }
+    public function thamgianhom()
+    {
+            $clbid = $_POST['clubid'];
+            $xid = $_SESSION['xID'];
+            $permission = "2264321";
+            $status = "0";
+            $this->model->get('clubModel')->thamgianhom($clbid,$xid,$permission,$status);
+            $this->view->data['hoantat'] = "Tham gia nhóm thành công. Đang chờ duyệt";
+    }
 }
