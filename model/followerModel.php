@@ -5,7 +5,7 @@
  * Date: 9/25/13
  * Time: 5:26 PM
  * To change this template use File | Settings | File Templates.
- */
+ ******/
 Class followerModel extends baseModel
 {
     //Tôi theo dõi mọi người.
