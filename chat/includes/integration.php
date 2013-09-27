@@ -4,7 +4,7 @@ session_start();
 	|| #################################################################### ||
 	|| #                             ArrowChat                            # ||
 	|| # ---------------------------------------------------------------- # ||
-	|| #    Copyright ©2010-2012 ArrowSuites LLC. All Rights Reserved.    # ||
+	|| #    Copyright ï¿½2010-2012 ArrowSuites LLC. All Rights Reserved.    # ||
 	|| # This file may not be redistributed in whole or significant part. # ||
 	|| # ---------------- ARROWCHAT IS NOT FREE SOFTWARE ---------------- # ||
 	|| #   http://www.arrowchat.com | http://www.arrowchat.com/license/   # ||
@@ -139,13 +139,13 @@ session_start();
 	{
 		global $base_url;
 		
-		if (is_file(dirname(dirname(dirname(__FILE__))) . '/images/' . $image . '.gif')) 
+		if (is_file('http://localhost/xvn/avatar/' . $image))
 		{
-			return $base_url . '../images/' . $image . '.gif';
+			return 'http://localhost/xvn/avatar/' . $image;
 		} 
 		else 
 		{
-			return $base_url . AC_FOLDER_ADMIN . "/images/img-no-avatar.gif";
+			return 'http://localhost/xvn/avatar/no_avatar.jpg';
 		}
 	}
 
