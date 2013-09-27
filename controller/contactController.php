@@ -28,4 +28,9 @@ Class contactController extends baseController
             $this->view->show('contact_index');
         }
     }
+    public function test()
+    {
+        PDF::getInstance()->export();
+        $this->view->show('contact_index');
+    }
 }
