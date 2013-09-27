@@ -6,7 +6,7 @@
  * Email: kenzaki@xiao.vn
  * Create Date: 2:40 PM - 7/30/13
  * Website: www.xiao.vn
- */
+ ***/
 require_once "header.php";
 ?>
     <link href="<?php echo $template_path;?>css/style-default.css" rel="stylesheet" />
@@ -236,14 +236,16 @@ $theodoitoi = $theodoi['list2'];
                         <div class="pull-left">
                             <div class="box themed_box">
                                 <form action="" name="frmresetpass" method="POST">
-                                    <img src="<?php
+                                    <?php
                                     foreach($toitheodoi as $bb)
                                     {
                                         ?>
-                                        <?php echo member::getInstance()->account($bb->xid,"avatar");?>
+                                        <div class="span2" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-5" data-delegate="#gallery-5">
+                                            <a class="thumb" href="<?php echo XC_URL;?>/member/view/<?php echo member::getInstance()->account($bb->xid,"avatar");?>" alt="<?php echo member::getInstance()->info($bb->xid,"name");?>" data-gallery="gallery"><img src="<?php echo XC_URL;?>/avatar/<?php echo member::getInstance()->account($bb->xid,"avatar");?>" alt="<?php echo member::getInstance()->account($bb->xid2,"username");?>" title="<?php echo member::getInstance()->account($bb->xid2,"username");?>"></a>
+                                        </div>
                                     <?php
                                     }
-                                    ?>images/8-1.jpg" alt="" />
+                                    ?>
                                 </form>
                             </div>
                         </div>
