@@ -31,6 +31,7 @@ include __SITE_PATH . '/application/' . 'application.class.php';
 include __SITE_PATH . '/application/' . 'configuration.class.php';
 include __SITE_PATH . '/application/' . 'readerlibrary.class.php';
 include __SITE_PATH . '/application/' . 'point.class.php';
+include __SITE_PATH . '/application/' . 'pdf.class.php';
 
 
  /*** include the registry class ***/
