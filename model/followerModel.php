@@ -5,7 +5,7 @@
  * Date: 9/25/13
  * Time: 5:26 PM
  * To change this template use File | Settings | File Templates.
- */
+ **/
 Class followerModel extends baseModel
 {
     //Tôi theo dõi mọi người
@@ -19,7 +19,7 @@ Class followerModel extends baseModel
     {
         $a[] = null;
         global $db;
-        $db->query("SELECT * FROM xdata_follow WHERE xid = '".$xid."'");
+        $db->query("SELECT * FROM xdata_follow WHERE xid = '".$xid."' ORDER BY id DESC LIMIT 9");
         $a['following'] = $db->num_row();
         if($a['following'])
         {
@@ -29,7 +29,7 @@ Class followerModel extends baseModel
         {
             $a['list1'] = "";
         }
-        $db->query("SELECT * FROM xdata_follow WHERE follow = '".$xid."'");
+        $db->query("SELECT * FROM xdata_follow WHERE follow = '".$xid."' ORDER BY id DESC LIMIT 9");
         $a['follower'] = $db->num_row();
         if($a['follower'])
         {
