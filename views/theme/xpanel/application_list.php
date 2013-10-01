@@ -5,7 +5,7 @@
  * Date: 9/25/13
  * Time: 2:17 PM
  * To change this template use File | Settings | File Templates.
- ******/
+ *******/
 include "config.php";
 ?>
 <!DOCTYPE html>
@@ -52,13 +52,42 @@ include "config.php";
     <!-- Main Theme Stylesheet :: CSS -->
     <link href="<?php echo $template_path;?>css/style-default.css" rel="stylesheet" />
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
 
 
     <!-- LESS.js Library -->
     <script src="<?php echo $template_path;?>js/less.min.js"></script>
 </head>
 <body>
+<script>
+    $(function() {
+        $(".xbtn-register").click(function()
+        {
+            var id = $(this).attr("id");
+            var dataString = 'id='+ id ;
+            var parent = $(this);
 
+
+            //$(this).fadeOut(300);
+            $( "#appid\\["+ id +"\\]").fadeOut(500);
+            $.ajax({
+                type: "POST",
+                url: "<?php echo XC_URL;?>/ungdung/applist/register",
+                data: dataString,
+                cache: false,
+
+                success: function(html)
+                {
+
+                }
+            });
+
+
+            return false;
+
+        });
+    });
+</script>
 <!-- Main Container Fluid -->
 <div class="container-fluid">
 
@@ -94,7 +123,7 @@ require_once "nav.php";
     <div class="span9">
         <div data-toggle="gridalicious" data-gridalicious-width="180" data-gridalicious-gutter="0">
             <?php foreach($applist as $app):?>
-            <div class="widget widget-heading-simple widget-body-white widget-pinterest">
+            <div id="appid[<?php echo $app->appid?>]" class="widget widget-heading-simple widget-body-white widget-pinterest">
                 <div class="widget-body padding-none">
                     <div class="description">
                         <h5 class="text-uppercase strong"><?php echo $app->appname;?></h5>
@@ -102,7 +131,7 @@ require_once "nav.php";
                         <div class="row-fluid">
                             <div class="span6">
                                 <div class="btn-group">
-                                    <button type="button"<a href="http://localhost/xvn/ungdung/applist" class="btn btn-success"><i class="icon-shopping-cart icon-fixed-width"></i>Đăng ký</a>
+                                    <a id="<?php echo $app->appid?>" class="btn xbtn-register btn-success"><i class="icon-shopping-cart icon-fixed-width"></i>Đăng ký</a>
                                 </div>
                             </div>
                         </div>
