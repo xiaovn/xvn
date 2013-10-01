@@ -15,3 +15,4 @@ Class applicationModel Extends baseModel
         return $db->fetch_object();
     }
 }
+?>
