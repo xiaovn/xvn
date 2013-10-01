@@ -41,4 +41,14 @@ Class followerModel extends baseModel
         }
         return $a;
     }
+    public function follower($user1,$user2)
+    {
+        global $db;
+        $db->query('INSERT INTO xdata_follow(xid,follow,fromdate) VALUE ('.$user1.','.$user2.',CURRENT_TIMESTAMP)');
+    }
+    public function huyfollow($id)
+    {
+        global $db;
+        $db->query("DELETE FROM xdata_follow WHERE id='".$id."'");
+    }
 }

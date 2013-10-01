@@ -74,7 +74,14 @@ require_once "nav.php";
     <?php
    }
     ?>
-
+                    <!--Theo dõi -->
+                    <?php if(member::getInstance()->checkfollow($_SESSION['xID'],$memberid)){
+                        ?>
+                        <a href="<?php echo XC_URL;?>/member/index/<?php echo $memberid;?>" class="glyphicons standard primary user_add"><i></i></a>
+                    <?php
+                    }
+                    ?>
+                    <!-- end-->
                     <div class="clearfix"></div>
                     <!-- // Social Icons END -->
                 </div>
