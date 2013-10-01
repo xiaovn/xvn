@@ -91,20 +91,6 @@ Class member{
             return "";
         }
     }
-    public function bank($xid,$info)
-    {
-        if(isset($xid) && $xid != "" && isset($info) && $info != "")
-        {
-            global $db;
-            $db->query("SELECT ".$info." FROM xdata_bank WHERE xid = ".$xid);
-            $ifo = $db->fetch_object($first_row = true);
-            return $ifo->$info;
-        }
-        else
-        {
-            return "";
-        }
-    }
     public function get_score($xid,$appid)
     {
         if(isset($xid) && $xid != "" && isset($appid) && $appid != "")
@@ -374,6 +360,27 @@ Class member{
             return null;
         }
     }
+    public function bank($xid,$info)
+    {
+        if(isset($xid) && $xid != "" && isset($info) && $info != "")
+        {
+            global $db;
+            $db->query("SELECT * FROM xdata_bank WHERE xid = '".$xid."'" );
+            if($db->num_row())
+            {
+                $mem = $db->fetch_object($first_row = true);
+                return $mem->xcoin;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        else
+        {
+            return null;
+        }
+    }
     //Hàm chức năng xem club
     public function get_loaiclub($loaiclub)
     {
@@ -387,6 +394,30 @@ Class member{
         else
         {
             return "";
+        }
+    }
+    public function checkfollow($xid1, $xid2)
+    {
+        if($xid1 == $xid2)
+        {
+            return 1;
+        }
+        elseif(isset($xid1) && isset($xid2) && $xid1 != "" && $xid2 != "")
+        {
+            global $db;
+            $db->query("SELECT * FROM xdata_follow WHERE (xid = ".$xid1." AND follow =".$xid2.")");
+            if($db->num_row())
+            {
+                return 2;
+            }
+            else
+            {
+                return 3;
+            }
+        }
+        else
+        {
+            return false;
         }
     }
 }

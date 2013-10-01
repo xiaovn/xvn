@@ -25,39 +25,39 @@
 <!-- Regular Size Menu -->
 <ul>
 <!-- Full Sidebar Style -->
-<li class="active"><a href="<?php echo XC_URL?>/admin" class="glyphicons dashboard"><i></i> Dashboard</a></li>
+<li class="active"><a href="<?php echo XC_URL?>/admin" class="glyphicons dashboard"><i></i> Tổng quan</a></li>
 <li class="dropdown dd-1">
-    <a href="" data-toggle="dropdown" class="glyphicons show_big_thumbnails"><i></i>Application <span class="icon-chevron-right"></span></a>
+    <a href="" data-toggle="dropdown" class="glyphicons show_big_thumbnails"><i></i>Ứng dụng <span class="icon-chevron-right"></span></a>
     <ul class="dropdown-menu pull-left">
 
         <!-- Components Submenu Level 2 -->
         <li class="dropdown submenu">
-            <a data-toggle="dropdown" class="dropdown-toggle">Library Manager</a>
+            <a data-toggle="dropdown" class="dropdown-toggle">Quản lý thư viện</a>
             <ul class="dropdown-menu submenu-show submenu-hide pull-right">
-                <li class=""><a href="<?php echo $siteurl;?>/admin/library">List all book</a></li>
-                <li class=""><a href="<?php echo $siteurl;?>/admin/library/?action=new">Add new book</a></li>
-                <li class=""><a href="<?php echo $siteurl;?>/admin/library/?report=book">Book Reporting</a></li>
-                <li class=""><a href="<?php echo $siteurl;?>/admin/library/?report=storage">Storage Reporting</a></li>
+                <li class=""><a href="<?php echo $siteurl;?>/admin/library">Tất cả sách, tài liệu</a></li>
+                <li class=""><a href="<?php echo $siteurl;?>/admin/library/?action=new">Thêm tài liệu mới</a></li>
+                <li class=""><a href="<?php echo $siteurl;?>/admin/library/?report=book">Thống kê thư viện</a></li>
+                <li class=""><a href="<?php echo $siteurl;?>/admin/library/?report=storage">Thống kê lưu trữ</a></li>
             </ul>
         </li>
         <!-- // Components Submenu Level 2 END -->
         <!-- Components Submenu Level 2 -->
         <li class="dropdown submenu">
-            <a data-toggle="dropdown" class="dropdown-toggle">Student Manager</a>
+            <a data-toggle="dropdown" class="dropdown-toggle">Quản lý học sinh</a>
             <ul class="dropdown-menu submenu-show submenu-hide pull-right">
-                <li class=""><a href="<?php echo $siteurl;?>/admin/student">Student list</a></li>
-                <li class=""><a href="<?php echo $siteurl;?>/admin/student/?action=new">Add new student</a></li>
-                <li class=""><a href="<?php echo $siteurl;?>/admin/student/?report=book">Student Reporting</a></li>
+                <li class=""><a href="<?php echo $siteurl;?>/admin/student">Danh sách học sinh</a></li>
+                <li class=""><a href="<?php echo $siteurl;?>/admin/student/?action=new">Thêm học sinh mới</a></li>
+                <li class=""><a href="<?php echo $siteurl;?>/admin/student/?report=book">Báo cáo</a></li>
             </ul>
         </li>
         <!-- // Components Submenu Level 2 END -->
     </ul>
 </li>
 <li class="dropdown dd-1">
-    <a href="" data-toggle="dropdown" class="glyphicons settings"><i></i>Configuration <span class="icon-chevron-right"></span></a>
+    <a href="" data-toggle="dropdown" class="glyphicons settings"><i></i>Cấu hình <span class="icon-chevron-right"></span></a>
     <ul class="dropdown-menu pull-left">
 
-        <li><a href="../admin/system" class="glyphicons history"><i></i>System</a></li>
+        <li><a href="../admin/system" class="glyphicons history"><i></i>Hệ thống</a></li>
     </ul>
 </li>
 <li class="glyphs">
@@ -70,7 +70,7 @@
 </li>
 <li class="search open">
     <form autocomplete="off" class="dropdown dd-1">
-        <input type="text" value="" placeholder="Type for suggestions .." data-toggle="typeahead" />
+        <input type="text" value="" placeholder="Nhập từ khóa .." data-toggle="typeahead" />
         <button type="button" class="glyphicons search"><i></i></button>
     </form>
 </li>

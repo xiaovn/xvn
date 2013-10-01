@@ -44,8 +44,8 @@ require_once "nav.php";
                 <p class="margin-none strong"><a href="" class="glyphicons single chevron-right"><i></i>Hướng dẫn nạp xu</a></p>
             </div>
             <div class="span3 center">
-                <span class="text-xxlarge strong separator bottom">&dollar;500</span>
-                <a href="" class="btn btn-inverse btn-small btn-block">Nạp xu</a>
+                <span class="text-xlarge strong separator bottom"> <?php echo member::getInstance()->bank($_SESSION['xID'],"xcoin");?></span>
+                <a href="" class="btn btn-primary btn-small btn-block">Nạp xu</a>
             </div>
         </div>
     </div>

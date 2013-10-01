@@ -88,6 +88,7 @@ Class memberController extends baseController
             $this->view->data['memberid'] = $id_mem;
             $this->view->data['hoctap'] = school::getInstance()->get_learning_year($id_mem,date("Y"));
             $this->view->data['theodoi'] = $this->model->get("followerModel")->theodoi($id_mem);
+
             $this->view->show('member_view');
         }
         else
@@ -194,8 +195,16 @@ Class memberController extends baseController
     }
     public function account()
     {
-        $this->view->data['member_heading'] = 'This is the member Signup';
-        $this->view->show('member_account');
+        if(isset($_SESSION['LoggedIn']) && $_SESSION['LoggedIn'] == 1)
+        {
+            $this->view->data['member_heading'] = 'This is the member Signup';
+            $this->view->show('member_account');
+        }
+        else
+        {
+            $this->redirect->redirect("member","login");
+        }
+
     }
     public function thongtin()
     {
@@ -225,36 +234,23 @@ Class memberController extends baseController
         $this->view->data['avatar']=member::getInstance()->anhdaidien(member::getInstance()->idfriend($xid));
         $this->view->show('member_index');
     }
-    /*
-    public function thongtin()
+    public function follow($para)
     {
-        //PA là tham số trên đầu vòa trên trình duyệt
-        $xid = $_GET['xid'];
-        //$xid = '7221111111';
-        $error = "";
-        if(isset($xid) && $xid != "")
+        if(isset($para[1]) && $para[1] == "follow")
         {
-            $thongtinacc = $this->model->get('memberModel')->get_acc($xid);
-            // CÓ được dữ liệu rồi giờ sẽ xử lý dữ liệu đó để hiển thị ra ngoài view
-            $this->view->data['ten'] = $thongtinacc->name;
-            $this->view->data['acc'] = $thongtinacc;
-            //Giả sử chỉ cần một biến là tên thôi.
-            $this->view->show('member_index');
-            //Ăn thôi
+            $follow = $_POST['follow'];
+            global $db;
+            $db->query("INSERT INTO xdata_follow(xid,follow) VALUES ('".$_SESSION['xID']."','".$follow."')");
+        }
+        elseif(isset($para[1]) && $para[1] == "huyfollow")
+        {
+            $follow = $_POST['follow'];
+            global $db;
+            $db->query("DELETE FROM xdata_follow WHERE xid='".$_SESSION['xID']."' AND follow = '".$follow."'");
         }
         else
-        {
-            //Khi xid không hợp lệ
-            $error = "Không thực hiện được!";
-        }
-        if(strlen($error)>0)
-        {
-            $this->view->data['error'] = $error;
-        }
-        $this->view->show('index');
+        {}
     }
-    */
-
     public function quenpass()
     {
         $this->view->data['quen'] = $this->model->get("memberModel")->get_quen_pass();

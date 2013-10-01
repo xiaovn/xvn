@@ -14,7 +14,7 @@
         <div class="container-960">
 
             <!-- Brand -->
-            <a href="<?php echo XC_URL?>" class="appbrand pull-left">X.E.M. MemberPanel</a>
+            <a href="<?php echo XC_URL?>" class="appbrand pull-left">X.E.M Online</a>
 
             <ul class="topnav pull-right">
 
