@@ -6,7 +6,7 @@
  * Email: kenzaki@xiao.vn
  * Create Date: 2:40 PM - 7/30/13
  * Website: www.xiao.vn
- */
+ ****/
 require_once "header.php";
 ?>
     <link href="<?php echo $template_path;?>css/style-default.css" rel="stylesheet" />
