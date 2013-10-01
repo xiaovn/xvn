@@ -52,3 +52,4 @@ include "config.php"
     <link type="text/css" rel="stylesheet" id="arrowchat_css" media="all" href="/xvn/chat/external.php?type=css" charset="utf-8" />
     <script type="text/javascript" src="/xvn/chat/includes/js/jquery.js"></script>
     <script type="text/javascript" src="/xvn/chat/includes/js/jquery-ui.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>

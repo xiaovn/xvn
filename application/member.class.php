@@ -400,7 +400,7 @@ Class member{
     {
         if($xid1 == $xid2)
         {
-            return false;
+            return 1;
         }
         elseif(isset($xid1) && isset($xid2) && $xid1 != "" && $xid2 != "")
         {
@@ -408,11 +408,11 @@ Class member{
             $db->query("SELECT * FROM xdata_follow WHERE (xid = ".$xid1." AND follow =".$xid2.")");
             if($db->num_row())
             {
-                return false;
+                return 2;
             }
             else
             {
-                return true;
+                return 3;
             }
         }
         else

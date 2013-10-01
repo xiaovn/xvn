@@ -21,7 +21,35 @@ require_once "header.php";
 
     <!-- Main Container Fluid -->
 <div class="container-fluid">
+<script>
+    $(function() {
+        $(".xbtntheodoi").click(function()
+        {
+            var id = $(this).attr("id");
+            var dataString = 'follow='+ id ;
+            var parent = $(this);
 
+
+            //$(this).fadeOut(300);
+            //$( "#appid\\["+ id +"\\]").fadeOut(500);
+            $.ajax({
+                type: "POST",
+                url: "<?php echo XC_URL;?>/member/follow/follow",
+                data: dataString,
+                cache: false,
+
+                success: function(html)
+                {
+                    $( ".xbtntheodoi" ).replaceWith( "<a style='float: right;' id='<?php echo $memberid?>' class='btn xbtn-huy-theo-doi btn-primary'>Hủy theo dõi</a>" );
+                }
+            });
+
+
+            return false;
+
+        });
+    });
+</script>
 <!-- Content -->
 <div id="content">
 
@@ -49,7 +77,24 @@ require_once "nav.php";
 
             <!-- Thumbnail -->
             <div class="thumbnail widget-thumbnail">
-                <img src="<?php echo XC_URL;?>/avatar/<?php echo member::getInstance()->account($memberid,"avatar");?>"  alt="100%x200 Image Holder" />
+                <div style="width: 300px; height: 300px; background-image: url('<?php echo XC_URL;?>/avatar/<?php echo member::getInstance()->account($memberid,"avatar");?>');">
+                <?php
+                    if(member::getInstance()->checkfollow($_SESSION['xID'],$memberid) == 3){
+                ?>
+                    <a style="float: right;" id="<?php echo $memberid?>" class="btn xbtntheodoi btn-primary">Theo dõi</a>
+                <?php
+                    }
+                    elseif(member::getInstance()->checkfollow($_SESSION['xID'],$memberid) == 2)
+                    {
+                        ?>
+                        <a style="float: right;" id="<?php echo $memberid?>" class="btn xbtn-huy-theo-doi btn-primary">Hủy theo dõi</a>
+                        <?php
+                    }
+                else
+                {
+                }
+                ?>
+                </div>
                 <div class="caption">
                     <h4><?php echo member::getInstance()->account($memberid,"username");?></h4>
                     <p><?php echo member::getInstance()->get_member_info($memberid,"slogan");?></p>
@@ -74,18 +119,7 @@ require_once "nav.php";
     <?php
    }
     ?>
-                    <!--Theo dõi -->
-                    <br>
-                    <div style="width: 100%; text-align: center">
-                        <?php if(member::getInstance()->checkfollow($_SESSION['xID'],$memberid)){
-                            ?>
-                            <button class="btn btn-primary">Theo dõi</button>
-                        <?php
-                        }
-                        ?>
 
-                    </div>
-                    <!-- end-->
                     <div class="clearfix"></div>
                     <!-- // Social Icons END -->
                 </div>
