@@ -31,7 +31,7 @@ require_once "nav.php";
 ?>
 <!-- Top navbar END --><div class="container-960 innerT">
 
-<h3 class="glyphicons circle_info margin-none"><i></i><?php echo member::getInstance()->get_member_info($memberid,"name");?> <span>Thông tin cá nhân.</span></h3>
+<h3 class="glyphicons circle_info margin-none"><i></i><?php echo member::getInstance()->get_member_info($memberid,"firstname");?>&nbsp;<?php echo member::getInstance()->get_member_info($memberid,"name");?> <span>Thông tin cá nhân.</span></h3>
 <div class="separator bottom"></div>
 
 <div class="widget widget-heading-simple widget-body-gray">
@@ -74,7 +74,18 @@ require_once "nav.php";
     <?php
    }
     ?>
+                    <!--Theo dõi -->
+                    <br>
+                    <div style="width: 100%; text-align: center">
+                        <?php if(member::getInstance()->checkfollow($_SESSION['xID'],$memberid)){
+                            ?>
+                            <button class="btn btn-primary">Theo dõi</button>
+                        <?php
+                        }
+                        ?>
 
+                    </div>
+                    <!-- end-->
                     <div class="clearfix"></div>
                     <!-- // Social Icons END -->
                 </div>
@@ -96,20 +107,8 @@ require_once "nav.php";
                             <div class="separator bottom"></div>
                             <div class="glyphicons glyphicon-large group">
                                 <i></i>
-                                <h4>Lớp <?php echo school::getInstance()->lop($hoctap->class,"tenlop");?> - <?php echo school::getInstance()->truong($hoctap->school,"tentruong");?></h4>
-                                <p>Năm: <?php echo $hoctap->year;?><br> <a href="">Chi tiết</a></p>
-                            </div>
-                            <div class="separator bottom"></div>
-                            <div class="glyphicons glyphicon-large group">
-                                <i></i>
-                                <h4>Thông tin cá nhân</h4>
-                                <p>
-                                <ul>
-                                    <li>Ngày sinh: <?php echo member::getInstance()->get_member_info($memberid,"birthday");?></li>
-                                    <li>Giới tính: <?php echo member::getInstance()->sex(member::getInstance()->get_member_info($memberid,"sex"));?></li>
-                                    <li>Tình tình trạng hôn nhân: </li>
-                                </ul>
-                                </p>
+                                <h4>Trường: <?php echo school::getInstance()->truong($hoctap->school,"tentruong");?></h4>
+                                <p>Năm học: <?php echo $hoctap->year;?> - <?php echo $hoctap->year+1;?><br> <a href="">Chi tiết</a></p>
                             </div>
                         </div>
                     </div>
@@ -129,142 +128,227 @@ require_once "nav.php";
 <!-- // Row END -->
 
 <div class="row-fluid">
-    <div class="span6">
+<div class="span6">
 
-        <div class="widget widget-heading-simple widget-body-white">
-            <div class="widget-body">
-                <div class="innerL">
-                    <div class="separator bottom"></div>
-                    <div class="glyphicons glyphicon-large shield">
-                        <i></i>
-                        <h4>Thông tin cá nhân</h4>
+    <div class="widget widget-heading-simple widget-body-white">
+        <div class="widget-body">
+            <div class="innerL">
+                <div class="separator bottom"></div>
+                <div class="glyphicons glyphicon-large shield">
+                    <i></i>
+                    <h4>Thông tin cá nhân</h4>
                         <p>
                         <ul>
-                            <li>Họ tên: <?php echo member::getInstance()->get_member_info($memberid,"name");?></li>
+                            <li>Họ tên: <?php echo member::getInstance()->get_member_info($memberid,"firstname");?>&nbsp<?php echo member::getInstance()->get_member_info($memberid,"name");?></li>
                             <li>Tên khác: <?php echo member::getInstance()->get_member_info($memberid,"othername");?></li>
                             <li>Ngày sinh: <?php echo member::getInstance()->get_member_info($memberid,"birthday");?></li>
-
                             <li>Giới tính: <?php echo member::getInstance()->sex(member::getInstance()->get_member_info($memberid,"sex"));?></li>
-                            <li>Tình trạng hôn nhân: <?php echo member::getInstance()->get_member_info($memberid,"honnhan");?></li>
-                            <li>Chứng minh nhân dân: <?php echo member::getInstance()->get_member_info($memberid,"cmnd");?></li>
-                            <li>Nơi cấp CMND: <?php echo member::getInstance()->get_member_info($memberid,"birthday");?></li>
-                            <li>Ngày cấp CMND: <?php echo member::getInstance()->get_member_info($memberid,"ngaycapcmnd");?></li>
-
-                            <li>Dân tộc: <?php echo member::getInstance()->get_member_info($memberid,"dantoc");?></li>
+                            <li>Địa Chỉ: <?php echo member::getInstance()->xa(member::getInstance()->get_member_info($memberid,"hokhau_xa"));?>, &nbsp;<?php echo member::getInstance()->huyen(member::getInstance()->get_member_info($memberid,"hokhau_huyen"));?>, &nbsp;<?php echo member::getInstance()->tinh(member::getInstance()->get_member_info($memberid,"hokhau_tinh"));?></li>
+                        </ul>
+                        </p>
+                        <i></i>
+                        <h4>Thông tin khác</h4>
+                        <p>
+                        <ul>
+                            <li>Tình trạng hôn nhân: <?php echo member::getInstance()->honnhan(member::getInstance()->get_member_info($memberid,"honnhan"));?></li>
+                            <li>Dân tộc: <?php echo member::getInstance()->dantoc(member::getInstance()->get_member_info($memberid,"dantoc"));?></li>
+                            <li>Tôn giáo: <?php echo member::getInstance()->tongiao(member::getInstance()->get_member_info($memberid,"tongiao"));?></li>
+                            <li>Di Động: <?php echo member::getInstance()->get_member_info($memberid,"didong");?></li>
                         </ul>
                         </p>
                     </div>
-                    <div class="separator bottom"></div>
-                    <div class="glyphicons glyphicon-large group">
-                        <i></i>
-                        <h4>Bạn bè</h4>
-                        <?php
-                        $dsbb = member::getInstance()->get_banbe($memberid);
-                        foreach($dsbb as $bb)
-                        {
-                            ?>
-                            <div class="span2" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-5" data-delegate="#gallery-5">
-                                <a class="thumb" href="<?php echo $template_path;?>images/avatar-large-girl.jpg" alt="<?php echo member::getInstance()->info($bb->xid2,"name");?>" data-gallery="gallery"><img src="<?php echo $template_path;?>images/avatar-large-girl.jpg" alt="<?php echo member::getInstance()->account($bb->xid2,"username");?>" title="<?php echo member::getInstance()->account($bb->xid2,"username");?>"></a>
-                            </div>
-                        <?php
-                        }
-                        ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Carousel -->
-        <div class="widget widget-heading-simple widget-body-simple">
-            <div class="widget-body">
-                <div class="carousel carousel-1 slide" id="myCarousel2">
-                    <div class="carousel-inner">
-                        <?php
-                        $dsblog = application::getInstance()->get_blog($memberid);
-                        $i = 1;
-                        $active = "";
-                        foreach($dsblog as $blog)
-                        {
-                            if($i == 1)
-                            {
-                                $active = "active";
-                            }
-                            else
-                            {
-                                $active = "";
-                            }
-                            ?>
-                            <!-- Item -->
-
-                            <div class="item <?php echo $active;?>">
-                                <div class="row-fluid">
-                                    <div class="span5 relativeWrap">
-                                        <div class="carousel-caption">
-                                            <h4><?php echo substr($blog->blogtitle,0,43);?>...</h4>
-                                            <p><?php echo strip_tags(substr($blog->blogcontent,0,180));?><br/> <a href="<?php echo XC_URL;?>/blog/view?id=<?php echo $blog->id;?>" target="_blank">Xem chi tiết...</a></p>
-                                        </div>
-                                    </div>
-                                    <div class="span7">
-                                        <img src="<?php echo $template_path;?>images/8-1.jpg" alt="" />
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- // Item END -->
-                            <?php
-                            $i ++;
-                        }
-                        ?>
-
-
-                    </div>
-                    <ol class="carousel-indicators">
-                        <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel2" data-slide-to="1"></li>
-                        <li data-target="#myCarousel2" data-slide-to="2"></li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-        <!-- // Carousel END -->
-
-    </div>
-    <div class="span6">
-
-        <div class="widget widget-heading-simple widget-body-white">
-            <div class="widget-body">
-
                 <div class="separator bottom"></div>
-                <div class="glyphicons glyphicon-large iphone">
+                <div class="glyphicons glyphicon-large group">
                     <i></i>
+                    <h4>Bạn bè</h4>
                     <?php
-                    $applogs = member::getInstance()->get_app_log($memberid);
-                    foreach($applogs as $ap)
+                    $dsbb = member::getInstance()->get_banbe($_SESSION['xID']);
+                    foreach($dsbb as $bb)
                     {
                         ?>
                         <div class="span2" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-5" data-delegate="#gallery-5">
-                            <a class="thumb" href="<?php XC_URL?>/ungdung/view/?id<?php echo $ap->appid;?>" data-gallery="gallery"><img src="<?php echo $template_path;?>images/avatar-large-girl.jpg" title="<?php echo application::getInstance()->application($ap->appid,"appname");?>" alt="photo"></a>
+                            <a class="thumb" href="<?php echo $template_path;?>images/avatar-large-girl.jpg" alt="<?php echo member::getInstance()->info($bb->xid2,"name");?>" data-gallery="gallery"><img src="<?php echo $template_path;?>images/avatar-large-girl.jpg" alt="<?php echo member::getInstance()->account($bb->xid2,"username");?>" title="<?php echo member::getInstance()->account($bb->xid2,"username");?>"></a>
                         </div>
                     <?php
                     }
                     ?>
                 </div>
+            </div>
+        </div>
+    </div>
+    <!-- Carousel -->
+    <div class="widget widget-heading-simple widget-body-simple">
+        <div class="widget-body">
+            <div class="carousel carousel-1 slide" id="myCarousel2">
+                <div class="carousel-inner">
+                    <?php
+                    $dsblog = application::getInstance()->get_blog($_SESSION['xID']);
+                    $i = 1;
+                    $active = "";
+                    foreach($dsblog as $blog)
+                    {
+                        if($i == 1)
+                        {
+                            $active = "active";
+                        }
+                        else
+                        {
+                            $active = "";
+                        }
+                        ?>
+                        <!-- Item -->
 
-                <div class="separator bottom"></div>
-                <div class="glyphicons glyphicon-large magic group-column">
-                    <i></i>
-                    <h4>Thành tích m?i nh?t</h4>
-                    <div class="span2" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-5" data-delegate="#gallery-5">
-                        <a class="thumb" href="<?php echo $template_path;?>images/medal/1.png" data-gallery="gallery"><img src="<?php echo $template_path;?>images/medal/1.png" alt="photo"></a>
+                        <div class="item <?php echo $active;?>">
+                            <div class="row-fluid">
+                                <div class="span5 relativeWrap">
+                                    <div class="carousel-caption">
+                                        <h4><?php echo substr($blog->blogtitle,0,43);?>...</h4>
+                                        <p><?php echo strip_tags(substr($blog->blogcontent,0,180));?><br/> <a href="<?php echo XC_URL;?>/blog/view?id=<?php echo $blog->id;?>" target="_blank">Xem chi tiết...</a></p>
+                                    </div>
+                                </div>
+                                <div class="span7">
+                                    <img src="<?php echo $template_path;?>images/8-1.jpg" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // Item END -->
+                        <?php
+                        $i ++;
+                    }
+                    ?>
+
+
+                </div>
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel2" data-slide-to="1"></li>
+                    <li data-target="#myCarousel2" data-slide-to="2"></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <!-- // Carousel END -->
+        </div>
+        <!-- // Carousel END -->
+        <!--Xem theo doi-->
+        <?php
+        $toitheodoi = $theodoi['list1'];
+        $demfollowing = $theodoi['following'];
+        $demfollower = $theodoi['follower'];
+        $theodoitoi = $theodoi['list2'];
+        ?>
+
+        <div class="span6" >
+            <!-- Bình chọn Theo Dõi-->
+            <div class="row-fluid">
+                <div class="span6" >
+                    <div class="widget">
+                        <div class="widget-head">
+                            <h4 class="heading glyphicons user"><i></i>Đang theo dõi</h4><span style="float: right" <b><?php echo "".$demfollowing;?></b></span>
+                        </div>
+                        <div class="widget-body" style="height: 200px;">
+                            <p><?php
+                                if($demfollowing)
+                                {
+
+                                    foreach($toitheodoi as $bb)
+                                    {
+                                        ?>
+
+                                        <a href="<?php echo XC_URL;?>/member/<?php echo member::getInstance()->account($bb->follow,"username");?>" alt="<?php echo member::getInstance()->account($bb->follow,"username");?>" >
+                                            <img class="span4 thumb" style="margin-left:2px; " src="<?php echo XC_URL;?>/avatar/<?php echo member::getInstance()->account($bb->follow,"avatar");?>" alt="<?php echo member::getInstance()->account($bb->follow,"username");?>" title="<?php echo member::getInstance()->account($bb->follow,"username");?>">
+                                        </a>
+
+
+                                    <?php
+
+                                    }
+                                }
+                                else
+                                {
+                                    echo "Chưa theo dõi ai";
+                                }
+                                ?>
+                                <br>
+                                <br>
+                                <a href="#">Xem thêm...</a>
+                            </p>
+                        </div>
                     </div>
-                    <p style="padding-left: 70px"> <b>Cao th? v?n ch??ng</b>
-                        <br>
-                        Huy ch??ng dành cho các thành viên có l??ng bài vi?t ???c yêu thích nhi?u nh?t trong tháng.
-                    </p>
+                </div>
+                <div class="span6" >
+                    <div class="widget">
+                        <div class="widget-head">
+                            <h4 class="heading glyphicons user"><i></i>Được theo dõi</h4><span style="float: right" <b><?php echo "".$demfollower;?></b></span>
+                        </div>
+                        <div class="widget-body" style="height: 200px;">
+                            <p><?php
+                                if($demfollower)
+                                {
+                                    foreach($theodoitoi as $bb)
+                                    {
+
+                                        ?>
+
+                                        <a href="<?php echo XC_URL;?>/member/<?php echo member::getInstance()->account($bb->xid,"username");?>" alt="<?php echo member::getInstance()->account($bb->xid,"username");?>" >
+                                            <img class="span4 thumb" style="margin-left:2px; " src="<?php echo XC_URL;?>/avatar/<?php echo member::getInstance()->account($bb->xid,"avatar");?>" alt="<?php echo member::getInstance()->account($bb->xid,"username");?>" title="<?php echo member::getInstance()->account($bb->xid,"username");?>">
+                                        </a>
+
+                                    <?php
+                                    }
+                                }
+                                else
+                                {
+                                    echo "Chưa có ai theo dõi";
+                                }
+                                ?>
+                                <br>
+                                <br>
+                                <a href="#">Xem thêm...</a>
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
             </div>
         </div>
+    <!--Hyo Sun-->
+<div class="span6">
 
+    <div class="widget widget-heading-simple widget-body-white">
+        <div class="widget-body">
+
+            <div class="separator bottom"></div>
+            <div class="glyphicons glyphicon-large iphone">
+                <i></i>
+                <?php
+                $applogs = member::getInstance()->get_app_log($_SESSION['xID']);
+                foreach($applogs as $ap)
+                {
+                    ?>
+                    <div class="span2" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-5" data-delegate="#gallery-5">
+                        <a class="thumb" href="<?php XC_URL?>/ungdung/view/?id<?php echo $ap->appid;?>" data-gallery="gallery"><img src="<?php echo $template_path;?>images/avatar-large-girl.jpg" title="<?php echo application::getInstance()->application($ap->appid,"appname");?>" alt="photo"></a>
+                    </div>
+                <?php
+                }
+                ?>
+            </div>
+
+            <div class="separator bottom"></div>
+            <div class="glyphicons glyphicon-large magic group-column">
+                <i></i>
+                <h4>Thành tích mới nhất</h4>
+                <div class="span2" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-5" data-delegate="#gallery-5">
+                    <a class="thumb" href="<?php echo $template_path;?>images/medal/1.png" data-gallery="gallery"><img src="<?php echo $template_path;?>images/medal/1.png" alt="photo"></a>
+                </div>
+                <p style="padding-left: 70px"> <b>Cao thủ văn chương</b>
+                    <br>
+                    Huy chương dành cho các thành viên có lượng bài viếtt được yêu thích nhiều nhất trong tháng.
+                </p>
+            </div>
+
+        </div>
+    </div>
         <div class="widget widget-heading-simple widget-body-gray">
             <div class="widget-body">
                 <h5>Hoạt động mới nhất</h5>

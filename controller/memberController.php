@@ -6,7 +6,7 @@
  * Email: kenzaki@xiao.vn
  * Create Date: 2:28 PM - 7/30/13
  * Website: www.xiao.vn
- ***/
+ *****/
 Class memberController extends baseController
 {
     public function index()
@@ -87,6 +87,8 @@ Class memberController extends baseController
         {
             $this->view->data['memberid'] = $id_mem;
             $this->view->data['hoctap'] = school::getInstance()->get_learning_year($id_mem,date("Y"));
+            $this->view->data['theodoi'] = $this->model->get("followerModel")->theodoi($id_mem);
+
             $this->view->show('member_view');
         }
         else

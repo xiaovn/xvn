@@ -89,10 +89,19 @@ Class ungdungController extends baseController
         $this->view->data['test'] = $this->model->get('dkmailModel')->get_dkmail();
         $this->view->show('app_dkmail');
     }
-    public function applist()
+    public function applist($para)
     {
-        $this->view->data['applist'] = $this->model->get('applicationModel')->get_applist();
-        $this->view->show('application_list');
-        //$this->view->show('app_list');
+        $xid = $_SESSION['xID'];
+        if(isset($para[1]) && $para[1] == "register")
+        {
+            $appid = $_POST['id'];
+            global $db;
+            $db->query("INSERT INTO xdata_app_log(xid,appid,status) VALUES ('".$_SESSION['xID']."','".$appid."','2178764')");
+        }
+        else
+        {
+            $this->view->data['applist'] = $this->model->get('applicationModel')->get_applist();
+            $this->view->show('application_list');
+        }
     }
 }

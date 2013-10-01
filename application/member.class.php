@@ -396,4 +396,28 @@ Class member{
             return "";
         }
     }
+    public function checkfollow($xid1, $xid2)
+    {
+        if($xid1 == $xid2)
+        {
+            return false;
+        }
+        elseif(isset($xid1) && isset($xid2) && $xid1 != "" && $xid2 != "")
+        {
+            global $db;
+            $db->query("SELECT * FROM xdata_follow WHERE (xid = ".$xid1." AND follow =".$xid2.")");
+            if($db->num_row())
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

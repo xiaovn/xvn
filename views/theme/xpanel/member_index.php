@@ -6,7 +6,7 @@
  * Email: kenzaki@xiao.vn
  * Create Date: 2:40 PM - 7/30/13
  * Website: www.xiao.vn
- ***/
+ ****/
 require_once "header.php";
 ?>
     <link href="<?php echo $template_path;?>css/style-default.css" rel="stylesheet" />
@@ -221,64 +221,75 @@ $demfollowing = $theodoi['following'];
 $demfollower = $theodoi['follower'];
 $theodoitoi = $theodoi['list2'];
 ?>
+
 <div class="span6" >
     <!-- Bình chọn Theo Dõi-->
     <div class="row-fluid">
-        <div class="span6">
-            <div class="widget widget-body-white" data-toggle="collapse-widget">
+        <div class="span6" >
+            <div class="widget">
                 <div class="widget-head">
                     <h4 class="heading glyphicons user"><i></i>Đang theo dõi</h4><span style="float: right" <b><?php echo "".$demfollowing;?></b></span>
                 </div>
-                <div class="widget-body">
-                    <font style="background-color: #efefef" color="red" size="4"><b><i><?php echo $error?></i></b></font>
-                    <font style="background-color: #efefef" color="blue" size="4"><b><i><?php echo $error1?></i></b></font>
-                    <div class="separator top">
-                        <div class="pull-left">
-                            <div class="box themed_box">
-                                <form action="" name="frmresetpass" method="POST">
-                                    <?php
-                                    foreach($toitheodoi as $bb)
-                                    {
-                                        ?>
-                                        <div class="span2" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-5" data-delegate="#gallery-5">
-                                            <a class="thumb" href="<?php echo XC_URL;?>/member/view/<?php echo member::getInstance()->account($bb->xid,"avatar");?>" alt="<?php echo member::getInstance()->info($bb->xid,"name");?>" data-gallery="gallery"><img src="<?php echo XC_URL;?>/avatar/<?php echo member::getInstance()->account($bb->xid,"avatar");?>" alt="<?php echo member::getInstance()->account($bb->xid2,"username");?>" title="<?php echo member::getInstance()->account($bb->xid2,"username");?>"></a>
-                                        </div>
-                                    <?php
-                                    }
-                                    ?>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+                <div class="widget-body" style="height: 200px;">
+                    <p><?php
+                        if($demfollowing)
+                        {
+
+                    foreach($toitheodoi as $bb)
+                    {
+                        ?>
+
+                        <a href="<?php echo XC_URL;?>/member/<?php echo member::getInstance()->account($bb->follow,"username");?>" alt="<?php echo member::getInstance()->account($bb->follow,"username");?>" >
+                            <img class="span4 thumb" style="margin-left:2px; " src="<?php echo XC_URL;?>/avatar/<?php echo member::getInstance()->account($bb->follow,"avatar");?>" alt="<?php echo member::getInstance()->account($bb->follow,"username");?>" title="<?php echo member::getInstance()->account($bb->follow,"username");?>">
+                        </a>
+
+
+                    <?php
+
+                    }
+                        }
+                        else
+                        {
+                            echo "Chưa theo dõi ai";
+                        }
+                    ?>
+                        <br>
+                        <br>
+                        <a href="#">Xem thêm...</a>
+                    </p>
                 </div>
             </div>
         </div>
-        <!-- Form 2-->
-
-        <div class="span6">
-            <div class="widget widget-body-white" data-toggle="collapse-widget">
+        <div class="span6" >
+            <div class="widget">
                 <div class="widget-head">
-                    <h4 class="heading glyphicons user"><i></i>Theo dõi</h4><span style="float: right" <b><?php echo "".$demfollower;?></b></span>
+                    <h4 class="heading glyphicons user"><i></i>Được theo dõi</h4><span style="float: right" <b><?php echo "".$demfollower;?></b></span>
                 </div>
-                <div class="widget-body">
-                    <font style="background-color: #efefef" color="red" size="4"><b><i><?php echo $error?></i></b></font>
-                    <font style="background-color: #efefef" color="blue" size="4"><b><i><?php echo $error1?></i></b></font>
-                    <div class="separator top">
-                        <div class="pull-left">
-                            <div class="box themed_box">
-                                <form action="" name="frmresetpass" method="POST">
-                                    <?php
-                                    foreach($theodoitoi as $bb)
-                                    {
-                                        ?>
-                                        <?php echo member::getInstance()->account($bb->xid,"username");?>
-                                    <?php
-                                    }
-                                    ?>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+                <div class="widget-body" style="height: 200px;">
+                    <p><?php
+                        if($demfollower)
+                        {
+                        foreach($theodoitoi as $bb)
+                        {
+
+                            ?>
+
+                            <a href="<?php echo XC_URL;?>/member/<?php echo member::getInstance()->account($bb->xid,"username");?>" alt="<?php echo member::getInstance()->account($bb->xid,"username");?>" >
+                                <img class="span4 thumb" style="margin-left:2px; " src="<?php echo XC_URL;?>/avatar/<?php echo member::getInstance()->account($bb->xid,"avatar");?>" alt="<?php echo member::getInstance()->account($bb->xid,"username");?>" title="<?php echo member::getInstance()->account($bb->xid,"username");?>">
+                            </a>
+
+                        <?php
+                        }
+                        }
+                        else
+                        {
+                            echo "Chưa có ai theo dõi";
+                        }
+                        ?>
+                        <br>
+                        <br>
+                        <a href="#">Xem thêm...</a>
+                    </p>
                 </div>
             </div>
         </div>
