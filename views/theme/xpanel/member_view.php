@@ -75,12 +75,16 @@ require_once "nav.php";
    }
     ?>
                     <!--Theo dõi -->
-                    <?php if(member::getInstance()->checkfollow($_SESSION['xID'],$memberid)){
+                    <br>
+                    <div style="width: 100%; text-align: center">
+                        <?php if(member::getInstance()->checkfollow($_SESSION['xID'],$memberid)){
+                            ?>
+                            <button class="btn btn-primary">Theo dõi</button>
+                        <?php
+                        }
                         ?>
-                        <a href="<?php echo XC_URL;?>/member/index/<?php echo $memberid;?>" class="glyphicons standard primary user_add"><i></i></a>
-                    <?php
-                    }
-                    ?>
+
+                    </div>
                     <!-- end-->
                     <div class="clearfix"></div>
                     <!-- // Social Icons END -->

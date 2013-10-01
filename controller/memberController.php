@@ -88,14 +88,7 @@ Class memberController extends baseController
             $this->view->data['memberid'] = $id_mem;
             $this->view->data['hoctap'] = school::getInstance()->get_learning_year($id_mem,date("Y"));
             $this->view->data['theodoi'] = $this->model->get("followerModel")->theodoi($id_mem);
-            if(isset($_POST['follow']))
-            {
-                $this->model->get("followerModel")->follower($_POST['follow']);
-            }
-            else
-            {
-                $this->model->get("followerModel")->huyfollow($_POST['follow']);
-            }
+
             $this->view->show('member_view');
         }
         else
