@@ -114,4 +114,15 @@ Class adminController extends baseController
         $this->view->admintmp('library');
         }
     }
+    public function thoikhoabieu()
+    {
+        if(isset($_GET['edit']) && $_POST['edit'] != "")
+        {
+            $this->view->show("admintkb");
+        }
+        else
+        {
+            $this->view->show("admintkb");
+        }
+    }
 }

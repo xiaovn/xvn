@@ -193,8 +193,16 @@ Class memberController extends baseController
     }
     public function account()
     {
-        $this->view->data['member_heading'] = 'This is the member Signup';
-        $this->view->show('member_account');
+        if(isset($_SESSION['LoggedIn']) && $_SESSION['LoggedIn'] == 1)
+        {
+            $this->view->data['member_heading'] = 'This is the member Signup';
+            $this->view->show('member_account');
+        }
+        else
+        {
+            $this->redirect->redirect("member","login");
+        }
+
     }
     public function thongtin()
     {

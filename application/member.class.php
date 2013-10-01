@@ -91,20 +91,6 @@ Class member{
             return "";
         }
     }
-    public function bank($xid,$info)
-    {
-        if(isset($xid) && $xid != "" && isset($info) && $info != "")
-        {
-            global $db;
-            $db->query("SELECT ".$info." FROM xdata_bank WHERE xid = ".$xid);
-            $ifo = $db->fetch_object($first_row = true);
-            return $ifo->$info;
-        }
-        else
-        {
-            return "";
-        }
-    }
     public function get_score($xid,$appid)
     {
         if(isset($xid) && $xid != "" && isset($appid) && $appid != "")
@@ -363,6 +349,27 @@ Class member{
             {
                 $mem = $db->fetch_object($first_row = true);
                 return $mem->xid;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        else
+        {
+            return null;
+        }
+    }
+    public function bank($xid,$info)
+    {
+        if(isset($xid) && $xid != "" && isset($info) && $info != "")
+        {
+            global $db;
+            $db->query("SELECT * FROM xdata_bank WHERE xid = '".$xid."'" );
+            if($db->num_row())
+            {
+                $mem = $db->fetch_object($first_row = true);
+                return $mem->xcoin;
             }
             else
             {

@@ -52,7 +52,7 @@ include_once 'mainnav.php';
 include_once 'breadcrumb.php';
 ?>
 
-<h2>Dashboard <span>for your next cool web APP</span></h2>
+<h2>Trang tổng quan <span>Hệ thống quản lý cho quản trị viên</span></h2>
 <div class="innerLR">
 
 <div class="row-fluid">
@@ -64,17 +64,15 @@ include_once 'breadcrumb.php';
         <!-- Website Traffic Chart -->
         <div class="widget widget-body-white" data-toggle="collapse-widget">
             <div class="widget-head">
-                <h4 class="heading glyphicons cardio"><i></i>Website Traffic</h4>
+                <h4 class="heading glyphicons cardio"><i></i>Lưu lượng sử dụng dịch vụ</h4>
             </div>
             <div class="widget-body">
                 <div id="chart_simple" style="height: 253px;"></div>
                 <div class="separator top">
                     <div class="pull-left">
-                        <div class="toggle-button hidden-phone" data-toggleButton-height="30" data-toggleButton-width="90"><input type="checkbox" checked="checked" /></div>
-                        <div class="toggle-button" data-toggleButton-style-enabled="primary" data-toggleButton-height="30" data-toggleButton-width="90"><input type="checkbox" /></div>
                     </div>
                     <div class="pull-right">
-                        <a href="google_analytics.html?lang=en" class="btn btn-primary">Google Analytics API</a>
+                        <a href="#" class="btn btn-primary">Xem chi tiết</a>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -86,7 +84,7 @@ include_once 'breadcrumb.php';
     <div class="span3">
         <a href="" class="widget-stats widget-stats-2">
             <div class="sparkline"></div>
-            <span class="txt"><span class="count text-large text-primary inline-block">566</span> Visits</span>
+            <span class="txt"><span class="count text-large text-primary inline-block">5866</span> truy cập</span>
             <div class="clearfix"></div>
         </a>
         <div class="separator bottom"></div>

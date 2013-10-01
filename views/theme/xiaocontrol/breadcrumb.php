@@ -9,11 +9,11 @@
  */
 ?>
 <ul class="breadcrumb">
-    <li>You are here</li>
-    <li><a href="index.html?lang=en" class="glyphicons dashboard"><i></i> Quick Admin</a></li>
+    <li>Bạn đang thao tác tại</li>
+    <li><a href="" class="glyphicons dashboard"><i></i> X.E.M Admin</a></li>
     <li class="divider"></li>
-    <li>Dashboard</li>
-    <li class="pull-right hidden-phone"><a href="" class="glyphicons shield">Get Help<i></i></a></li>
+    <li>Tổng quan</li>
+    <li class="pull-right hidden-phone"><a href="" class="glyphicons shield">Trợ giúp<i></i></a></li>
     <li class="pull-right hidden-phone divider"></li>
-    <li class="pull-right hidden-phone"><a href="" class="glyphicons adjust_alt">Filter<i></i></a></li>
+    <li class="pull-right hidden-phone"><a href="" class="glyphicons adjust_alt">Cài đặt<i></i></a></li>
 </ul>
