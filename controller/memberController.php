@@ -244,7 +244,7 @@ Class memberController extends baseController
         }
         elseif(isset($para[1]) && $para[1] == "huyfollow")
         {
-            $follow = $_POST['follow'];
+            $follow = $_POST['huyfollow'];
             global $db;
             $db->query("DELETE FROM xdata_follow WHERE xid='".$_SESSION['xID']."' AND follow = '".$follow."'");
         }
