@@ -16,40 +16,67 @@ require_once "header.php";
 <!--            alert("The DOM is now loaded and can be manipulated.");-->
 <!--        });-->
 <!--    </script>-->
+    <script>
+        $( document ).ready(function() {
+            $( ".xbtn-huy-theo-doi" ).mouseover(function() {
+                $( ".xbtn-huy-theo-doi" ).text( "Hủy theo dõi" );
+            });
+            $( ".xbtn-huy-theo-doi" ).mouseout(function() {
+                $( ".xbtn-huy-theo-doi" ).text( "Đang theo dõi" );
+            });
+            $(".xbtntheodoi").click(function()
+            {
+                var id = $(this).attr("id");
+                var dataString = 'follow='+ id ;
+                var parent = $(this);
+
+
+                //$(this).fadeOut(300);
+                //$( "#appid\\["+ id +"\\]").fadeOut(500);
+                $.ajax({
+                    type: "POST",
+                    url: "<?php echo XC_URL;?>/member/follow/follow",
+                    data: dataString,
+                    cache: false,
+
+                    success: function(html)
+                    {
+                        $( ".xbtntheodoi" ).replaceWith( "<a style='float: right;' id='<?php echo $memberid?>' class='btn xbtn-huy-theo-doi btn-primary'>Đang theo dõi</a>" );
+                    }
+                });
+
+
+                return false;
+
+            });
+            $(".xbtn-huy-theo-doi").click(function()
+            {
+                var xid = $(this).attr("id");
+                var dataString = 'huyfollow='+ xid ;
+                $.ajax({
+                    type: "POST",
+                    url: "<?php echo XC_URL;?>/member/follow/huyfollow",
+                    data: dataString,
+                    cache: false,
+
+                    success: function(html)
+                    {
+                        $( ".xbtn-huy-theo-doi" ).replaceWith( "<a style='float: right;' id='<?php echo $memberid?>' class='btn xbtntheodoi btn-primary'>Theo dõi</a>" );
+                    }
+                });
+
+
+                return false;
+
+            });
+        });
+    </script>
     </head>
 <body>
 
     <!-- Main Container Fluid -->
 <div class="container-fluid">
-<script>
-    $(function() {
-        $(".xbtntheodoi").click(function()
-        {
-            var id = $(this).attr("id");
-            var dataString = 'follow='+ id ;
-            var parent = $(this);
 
-
-            //$(this).fadeOut(300);
-            //$( "#appid\\["+ id +"\\]").fadeOut(500);
-            $.ajax({
-                type: "POST",
-                url: "<?php echo XC_URL;?>/member/follow/follow",
-                data: dataString,
-                cache: false,
-
-                success: function(html)
-                {
-                    $( ".xbtntheodoi" ).replaceWith( "<a style='float: right;' id='<?php echo $memberid?>' class='btn xbtn-huy-theo-doi btn-primary'>Hủy theo dõi</a>" );
-                }
-            });
-
-
-            return false;
-
-        });
-    });
-</script>
 <!-- Content -->
 <div id="content">
 
@@ -87,7 +114,7 @@ require_once "nav.php";
                     elseif(member::getInstance()->checkfollow($_SESSION['xID'],$memberid) == 2)
                     {
                         ?>
-                        <a style="float: right;" id="<?php echo $memberid?>" class="btn xbtn-huy-theo-doi btn-primary">Hủy theo dõi</a>
+                        <a style="float: right;" id="<?php echo $memberid?>" class="btn xbtn-huy-theo-doi btn-primary">Đang theo dõi</a>
                         <?php
                     }
                 else

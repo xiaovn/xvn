@@ -89,7 +89,6 @@ Class memberController extends baseController
             $this->view->data['memberid'] = $id_mem;
             $this->view->data['hoctap'] = school::getInstance()->get_learning_year($id_mem,date("Y"));
             $this->view->data['theodoi'] = $this->model->get("followerModel")->theodoi($id_mem);
-
             $this->view->show('member_view');
         }
         else
@@ -245,7 +244,7 @@ Class memberController extends baseController
         }
         elseif(isset($para[1]) && $para[1] == "huyfollow")
         {
-            $follow = $_POST['follow'];
+            $follow = $_POST['huyfollow'];
             global $db;
             $db->query("DELETE FROM xdata_follow WHERE xid='".$_SESSION['xID']."' AND follow = '".$follow."'");
         }
@@ -297,19 +296,8 @@ Class memberController extends baseController
     {
         if(isset($_SESSION['LoggedIn']) && $_SESSION['LoggedIn'] == 1)
         {
-            /*$xid = $_SESSION['xID'];
-            $ho = $_POST['xFirstname'];
-            $ten = $_POST['xName'];
-            $tenkhac = $_POST['xOthername'];
-            $tthonnhan = $_POST['xOthername'];
-            $tongiao = $_POST['xOthername'];
-            $dienthoai = $_POST['noidung'];
-            $didong = $_POST['noidung'];
-            $slogan = $_POST['noidung'];
-            $this->view->data['members'] =  $this->model->get("memberModel")->get_mem();*/
             $this->view->data['member_heading'] = 'This is the member Index';
             $this->view->data['hoctap'] = school::getInstance()->get_learning_year($_SESSION['xID'],date("Y"));
-            //$this->view->data['suaim'] =  $this->model->get("changepassModel")->changeim($xid,$ho,$ten,$tenkhac,$tthonnhan,$tongiao,$dienthoai,$didong,$slogan);
             $this->view->show('changett');
         }
         else

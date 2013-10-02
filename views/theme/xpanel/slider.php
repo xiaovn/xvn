@@ -24,7 +24,7 @@ include "config.php";
          data-y="47"
          data-speed="300"
          data-start="800"
-         data-easing="easeOutExpo">OVER <span style="color: #ffcc00;">8000</span> SATISFIED CUSTOMERS</div>
+         data-easing="easeOutExpo">CỔNG THÔNG TIN <span style="color: #ffcc00;"></span>DÀNH CHO HỌC SINH - SINH VIÊN</div>
 
     <div class="caption randomrotate"
          data-x="center"
@@ -48,7 +48,7 @@ include "config.php";
          data-y="140"
          data-speed="600"
          data-start="1300"
-         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/3.jpg" style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
+         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/ph1.jpg" style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
 
     <div class="caption randomrotate"
          data-x="center"
@@ -144,7 +144,7 @@ include "config.php";
          data-y="187"
          data-speed="300"
          data-start="2100"
-         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/3.jpg"  style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
+         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/lol1.jpg"  style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
 
     <div class="caption randomrotate"
          data-x="center"
@@ -173,77 +173,158 @@ include "config.php";
          data-y="303"
          data-speed="300"
          data-start="500"
-         data-easing="easeOutExpo" data-end="8800" data-endspeed="300" data-endeasing="easeInSine" >TIMELINED CAPTIONS</div>
+         data-easing="easeOutExpo" data-end="8800" data-endspeed="300" data-endeasing="easeInSine" >Event</div>
 
     <div class="caption big_white lfl stl"
          data-x="30"
          data-y="343"
          data-speed="300"
          data-start="800"
-         data-easing="easeOutExpo" data-end="9100" data-endspeed="300" data-endeasing="easeInSine" >MOVE CAPTIONS IN AND OUT ON ONE SLIDE</div>
+         data-easing="easeOutExpo" data-end="9100" data-endspeed="300" data-endeasing="easeInSine" >Even Phượng Hồng</div>
 
     <div class="caption lft ltb"
          data-x="600"
          data-y="center"
          data-speed="600"
          data-start="1100"
-         data-easing="easeOutExpo" data-end="3100" data-endspeed="600" data-endeasing="easeInSine" ><img src="<?php echo $template_path;?>images/3.jpg"  style="width: 500px;" class="thumb containerBg" alt="Image 12"></div>
+         data-easing="easeOutExpo" data-end="3100" data-endspeed="600" data-endeasing="easeInSine" ><img src="<?php echo $template_path;?>images/ph1.jpg"  style="width: 500px;" class="thumb containerBg" alt="Image 12"></div>
 
     <div class="caption big_white sft stb"
          data-x="820"
          data-y="300"
          data-speed="300"
          data-start="1400"
-         data-easing="easeOutExpo" data-end="3300" data-endspeed="300" data-endeasing="easeInSine" >STRAWBERRY COCTAIL</div>
+         data-easing="easeOutExpo" data-end="3300" data-endspeed="300" data-endeasing="easeInSine" >Event:Gửi lời tri ân đến thầy cô</div>
 
     <div class="caption big_black sfb stb"
          data-x="820"
          data-y="330"
          data-speed="300"
          data-start="1700"
-         data-easing="easeOutExpo" data-end="3200" data-endspeed="300" data-endeasing="easeInSine" >$ 7.49</div>
+         data-easing="easeOutExpo" data-end="3200" data-endspeed="300" data-endeasing="easeInSine" >Hãy tham gia ngay</div>
 
     <div class="caption lft ltb"
          data-x="600"
          data-y="center"
          data-speed="600"
          data-start="3600"
-         data-easing="easeOutExpo" data-end="5600" data-endspeed="600" data-endeasing="easeInSine" ><img src="<?php echo $template_path;?>images/2.jpg" style="width: 500px;" class="thumb containerBg" alt="Image 12"></div>
+         data-easing="easeOutExpo" data-end="5600" data-endspeed="600" data-endeasing="easeInSine" ><img src="<?php echo $template_path;?>images/1.jpg" style="width: 500px;" class="thumb containerBg" alt="Image 12"></div>
 
     <div class="caption big_white sft stb"
          data-x="820"
          data-y="300"
          data-speed="300"
          data-start="3900"
-         data-easing="easeOutExpo" data-end="5800" data-endspeed="300" data-endeasing="easeInSine" >COKE & RUM</div>
+         data-easing="easeOutExpo" data-end="5800" data-endspeed="300" data-endeasing="easeInSine" >Event:Gửi lời tri ân đến thầy cô</div>
 
     <div class="caption big_black sfb stb"
          data-x="820"
          data-y="330"
          data-speed="300"
          data-start="4200"
-         data-easing="easeOutExpo" data-end="5700" data-endspeed="300" data-endeasing="easeInSine" >$5.99</div>
+         data-easing="easeOutExpo" data-end="5700" data-endspeed="300" data-endeasing="easeInSine" >Hãy tham gia ngay</div>
 
     <div class="caption lft ltb"
          data-x="600"
          data-y="center"
          data-speed="600"
          data-start="6100"
-         data-easing="easeOutExpo" data-end="8100" data-endspeed="300" data-endeasing="easeInSine" ><img src="<?php echo $template_path;?>images/10.jpg"  style="width: 500px;" class="thumb containerBg" alt="Image 12"></div>
+         data-easing="easeOutExpo" data-end="8100" data-endspeed="300" data-endeasing="easeInSine" ><img src="<?php echo $template_path;?>images/2.jpg"  style="width: 500px;" class="thumb containerBg" alt="Image 12"></div>
 
     <div class="caption big_white sft stb"
          data-x="820"
          data-y="300"
          data-speed="300"
          data-start="6400"
-         data-easing="easeOutExpo" data-end="8300" data-endspeed="300" data-endeasing="easeInSine">MOJITO COCTAIL</div>
+         data-easing="easeOutExpo" data-end="8300" data-endspeed="300" data-endeasing="easeInSine">Event:Gửi lời tri ân đến thầy cô</div>
 
     <div class="caption big_black sfb stb"
          data-x="820"
          data-y="330"
          data-speed="300"
          data-start="6700"
-         data-easing="easeOutExpo" data-end="8200" data-endspeed="300" data-endeasing="easeInSine" >$ 6.79</div>
+         data-easing="easeOutExpo" data-end="8200" data-endspeed="300" data-endeasing="easeInSine" >Hãy tham gia ngay</div>
+</li>
+<li data-transition="papercut" data-slotamount="15" data-masterspeed="300" data-delay="9400">
+
+    <img src="<?php echo $template_path;?>images/bg-dark.png" />
+
+    <div class="caption large_text lfl stl"
+         data-x="30"
+         data-y="303"
+         data-speed="300"
+         data-start="500"
+         data-easing="easeOutExpo" data-end="8800" data-endspeed="300" data-endeasing="easeInSine" >Event: Đấu trường công lý</div>
+
+    <div class="caption big_white lfl stl"
+         data-x="30"
+         data-y="343"
+         data-speed="300"
+         data-start="800"
+         data-easing="easeOutExpo" data-end="9100" data-endspeed="300" data-endeasing="easeInSine" >Khu Vực Tây Nguyên</div>
+
+    <div class="caption lft ltb"
+         data-x="600"
+         data-y="center"
+         data-speed="600"
+         data-start="1100"
+         data-easing="easeOutExpo" data-end="3100" data-endspeed="600" data-endeasing="easeInSine" ><img src="<?php echo $template_path;?>images/lol1.jpg"  style="width: 500px;" class="thumb containerBg" alt="Image 12"></div>
+
+    <div class="caption big_white sft stb"
+         data-x="820"
+         data-y="300"
+         data-speed="300"
+         data-start="1400"
+         data-easing="easeOutExpo" data-end="3300" data-endspeed="300" data-endeasing="easeInSine" >Đấu trường công lý</div>
+
+    <div class="caption big_black sfb stb"
+         data-x="820"
+         data-y="320"
+         data-speed="300"
+         data-start="1500"
+         data-easing="easeOutExpo" data-end="3200" data-endspeed="300" data-endeasing="easeInSine" >Khu vực Tây Nguyên</div>
+
+    <div class="caption lft ltb"
+         data-x="600"
+         data-y="center"
+         data-speed="600"
+         data-start="3600"
+         data-easing="easeOutExpo" data-end="5600" data-endspeed="600" data-endeasing="easeInSine" ><img src="<?php echo $template_path;?>images/lol2.jpg" style="width: 500px;" class="thumb containerBg" alt="Image 12"></div>
+
+    <div class="caption big_white sft stb"
+         data-x="820"
+         data-y="300"
+         data-speed="300"
+         data-start="3900"
+         data-easing="easeOutExpo" data-end="5800" data-endspeed="300" data-endeasing="easeInSine" >Đấu trường công lý</div>
+
+    <div class="caption big_black sfb stb"
+         data-x="820"
+         data-y="330"
+         data-speed="300"
+         data-start="4200"
+         data-easing="easeOutExpo" data-end="5700" data-endspeed="300" data-endeasing="easeInSine" >Khu vực Tây Nguyên</div>
+
+    <div class="caption lft ltb"
+         data-x="600"
+         data-y="center"
+         data-speed="600"
+         data-start="6100"
+         data-easing="easeOutExpo" data-end="8100" data-endspeed="300" data-endeasing="easeInSine" ><img src="<?php echo $template_path;?>images/lol3.jpg"  style="width: 500px;" class="thumb containerBg" alt="Image 12"></div>
+
+    <div class="caption big_white sft stb"
+         data-x="820"
+         data-y="300"
+         data-speed="300"
+         data-start="6400"
+         data-easing="easeOutExpo" data-end="8300" data-endspeed="300" data-endeasing="easeInSine">Đấu trường công lý</div>
+
+    <div class="caption big_black sfb stb"
+         data-x="820"
+         data-y="330"
+         data-speed="300"
+         data-start="6700"
+         data-easing="easeOutExpo" data-end="8200" data-endspeed="300" data-endeasing="easeInSine" >Khu vực Tây Nguyên</div>
 </li>
 </ul>
 <div class="tp-bannertimer tp-bottom"></div>
