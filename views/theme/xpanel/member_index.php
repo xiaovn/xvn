@@ -46,7 +46,7 @@ require_once "nav.php";
             <div class="thumbnail widget-thumbnail">
                 <img src="<?php echo XC_URL;?>/avatar/<?php echo member::getInstance()->account($_SESSION['xID'],"avatar");?>"  alt="100%x200 Image Holder" />
                 <div class="caption">
-                    <h4><?php echo $_SESSION['xUser']?></h4>
+                    <h4><?php echo $_SESSION['xUser'];?></h4>
                     <p><?php echo member::getInstance()->get_member_info($_SESSION['xID'],"slogan");?></p>
 
                     <!-- Social Icons -->
@@ -321,13 +321,29 @@ $theodoitoi = $theodoi['list2'];
             <div class="separator bottom"></div>
             <div class="glyphicons glyphicon-large magic group-column">
                 <i></i>
-                <h4>Thành tích mới nhất</h4>
-                <div class="span2" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-5" data-delegate="#gallery-5">
-                    <a class="thumb" href="<?php echo $template_path;?>images/medal/1.png" data-gallery="gallery"><img src="<?php echo $template_path;?>images/medal/1.png" alt="photo"></a>
-                </div>
-                <p style="padding-left: 70px"> <b>Cao thủ văn chương</b>
-                    <br>
-                    Huy chương dành cho các thành viên có lượng bài viếtt được yêu thích nhiều nhất trong tháng.
+                <h4>Huy hiệu</h4>
+                <p><?php
+                    if($huyhieu)
+                    {
+                        foreach($huyhieu as $medal)
+                        {
+
+                            ?>
+
+                                <div class="span2" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-5" data-delegate="#gallery-5">
+                                    <a class="thumb" href="" title="<?php echo member::getInstance()->medal($medal->medalid,"medalname");?>"><img src="<?php echo XC_URL;?>/avatar/<?php echo member::getInstance()->medal($medal->medalid,"medalicon");?>" alt="photo">
+                                    </a>
+                                </div>
+                        <?php
+                        }
+                    }
+                    else
+                    {
+                        echo "Chưa có huy hiệu";
+                    }
+                    ?>
+                <br>
+                <a href="#">Xem thêm...</a>
                 </p>
             </div>
 
