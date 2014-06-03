@@ -9,6 +9,7 @@
  */
 Class indexController Extends baseController {
 	public function index() {
+	$_SESSION['current_menu'] = "home";
 		/*** set a template variable ***/
 			$this->view->data['welcome'] = 'Hello Developerssss!';
 		/*** load the index template ***/

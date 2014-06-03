@@ -44,6 +44,30 @@ Class application{
         else return "";
 
     }
+    public function get_question_list($testid)
+    {
+        global $db;
+        $db->query("SELECT * FROM tracnghiem_tests_questions WHERE testid = '".$testid."'");
+        return $db->fetch_object();
+    }
+    public function get_question($questionid)
+    {
+        global $db;
+        $db->query("SELECT * FROM tracnghiem_questions WHERE questionid = '".$questionid."'");
+        return $db->fetch_object($first_row = true);
+    }
+    public function get_answer($questionid)
+    {
+        global $db;
+        $db->query("SELECT * FROM tracnghiem_answers WHERE questionid = '".$questionid."'");
+        return $db->fetch_object();
+    }
+    public function get_tests()
+    {
+        global $db;
+        $db->query("SELECT * FROM tracnghiem_tests");
+        return $db->fetch_object();
+    }
     public function get_blog($xid)
     {
         global $db;
@@ -193,5 +217,68 @@ Class application{
             $result['found'] = 0;
         }
         return $result;
+    }
+    public function get_app_by_category($catid)
+    {
+        global $db;
+        $db->query("SELECT * FROM xdata_application WHERE appcategory = '".$catid."'");
+        return $db->fetch_object();
+    }
+    public function get_num_app_by_category($catid)
+    {
+        global $db;
+        $db->query("SELECT * FROM xdata_application WHERE appcategory = '".$catid."'");
+        return $db->num_row();
+    }
+    public function get_app_category_list()
+    {
+        global $db;
+        $db->query("SELECT * FROM xdata_application_cat");
+        return $db->fetch_object();
+    }
+    public function get_app_comment($appid,$top)
+    {
+        global $db;
+        $db->query("SELECT * FROM xdata_app_comment WHERE appid = '".$appid."' AND status = 1 ORDER BY id DESC LIMIT ".$top);
+        return $db->fetch_object();
+    }
+    public function get_logs_application($appid)
+    {
+        global $db;
+        $db->query("SELECT * FROM xdata_logs WHERE appid = '".$appid."' ORDER BY id DESC");
+        return $db->fetch_object();
+    }
+    public function type_log($typeid)
+    {
+        global $db;
+        $db->query("SELECT * FROM xdata_log_types WHERE typeid = '".$typeid."'");
+        $a = $db->fetch_object($first_row = true);
+        return $a->typename;
+    }
+    public function type_log_icon($typeid)
+    {
+        global $db;
+        $db->query("SELECT * FROM xdata_log_types WHERE typeid = '".$typeid."'");
+        $a = $db->fetch_object($first_row = true);
+        return $a->typeicon;
+    }
+    public function get_registed_list($appid)
+    {
+        global $db;
+        $db->query("SELECT * FROM xdata_app_log WHERE appid = '".$appid."' ORDER BY id DESC LIMIT 4");
+        return $db->fetch_object();
+    }
+    public function check_regis_app($appid,$xid)
+    {
+        global $db;
+        $db->query("SELECT * FROM xdata_app_log WHERE appid = '".$appid."' AND xid = '".$xid."'");
+        if($db->num_row())
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

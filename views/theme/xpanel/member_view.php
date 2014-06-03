@@ -10,12 +10,7 @@
 require_once "header.php";
 ?>
     <link href="<?php echo $template_path;?>css/style-default.css" rel="stylesheet" />
-<!--    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>-->
-<!--    <script>-->
-<!--        $(document).ready(function () {-->
-<!--            alert("The DOM is now loaded and can be manipulated.");-->
-<!--        });-->
-<!--    </script>-->
+
     <script>
         $( document ).ready(function() {
             $( ".xbtn-huy-theo-doi" ).mouseover(function() {
@@ -29,11 +24,7 @@ require_once "header.php";
                 var id = $(this).attr("id");
                 var dataString = 'follow='+ id ;
                 var parent = $(this);
-
-
-                //$(this).fadeOut(300);
-                //$( "#appid\\["+ id +"\\]").fadeOut(500);
-                $.ajax({
+               $.ajax({
                     type: "POST",
                     url: "<?php echo XC_URL;?>/member/follow/follow",
                     data: dataString,

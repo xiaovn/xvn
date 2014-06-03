@@ -12,6 +12,46 @@ a:focus {
 .content{
     line-height: 22px;
 }
+.questions
+{
+    border: solid 1px #DDD;
+    margin: 0 auto 1.8em auto;
+    padding: 10px;
+}
+.questionno{
+    font-size:14px;color:red;
+}
+.qtext
+{
+    margin-left: 30px;
+    margin-top: 10px;
+}
+.ablock
+{
+    border-top: dotted 1px #999999;
+    margin-top: 10px;
+}
+.answer
+{
+    margin-top: 10px;
+}
+.options
+{
+    padding-bottom: 10px;
+}
+.optionstext
+{
+    padding-left: 20px;
+}
+.timeout
+{
+    z-index: 9999;
+    position: fixed;
+    bottom: 300px;
+    right: 0px;
+    width: 45px;
+    height: 72px;
+}
 button:focus {
   outline: none !important;
 }

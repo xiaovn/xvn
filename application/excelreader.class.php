@@ -108,6 +108,7 @@ Class ExcelReader {
             $a = null;
         }
         $_SESSION['outputdata'] = $a;
+        $_SESSION['global_size'] = count($a);
         return $a;
     }
 

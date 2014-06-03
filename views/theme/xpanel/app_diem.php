@@ -148,14 +148,14 @@ require_once "header.php";
                         <!-- Table heading -->
                         <thead>
                         <tr>
-                            <th class="center">Tiết</th>
-                            <th class="center">Thứ 2</th>
-                            <th class="center">Thứ 3</th>
-                            <th class="center">Thứ 4</th>
-                            <th class="center">Thứ 5</th>
-                            <th class="center">Thứ 6</th>
-                            <th class="center">Thứ 7</th>
-                            <th class="center">Chủ nhật</th>
+                            <th class="center">Môn</th>
+                            <th class="center">Điểm miệng</th>
+                            <th class="center">Điểm 15'</th>
+                            <th class="center">Điểm 1 tiết</th>
+                            <th class="center">Điểm thi</th>
+                            <th class="center">TBM HK1</th>
+                            <th class="center">TBM HK2</th>
+                            <th class="center">TBM Cả năm</th>
                         </tr>
                         </thead>
                         <!-- // Table heading END -->
@@ -166,28 +166,28 @@ require_once "header.php";
                         <!-- Table pricing row -->
                         <tr class="pricing">
                             <td class="center">
-                                <span>1</span>
-                            </td>
-                            <td class="center">
                                 <span>Toán</span>
                             </td>
                             <td class="center">
-                                <span>Lý</span>
+                                <span>10 - 7</span>
                             </td>
                             <td class="center">
-                                <span>Hóa</span>
+                                <span>6 - 8 - 8</span>
                             </td>
                             <td class="center">
-                                <span>Sinh</span>
+                                <span>7.5 - 6 - 6</span>
                             </td>
                             <td class="center">
-                                <span>Văn</span>
+                                <span>8.5</span>
                             </td>
                             <td class="center">
-                                <span>Tiếng Anh</span>
+                                <span>7.7</span>
                             </td>
                             <td class="center">
-                                <span>CD</span>
+                                <span></span>
+                            </td>
+                            <td class="center">
+                                <span></span>
                             </td>
                         </tr>
                         <!-- // Table pricing row END -->
@@ -195,108 +195,54 @@ require_once "header.php";
                         <!-- Table row -->
                         <tr>
                             <td class="center">
-                                <span>1</span>
-                            </td>
-                            <td class="center">
                                 <span>Toán</span>
                             </td>
                             <td class="center">
-                                <span>Lý</span>
+                                <span>10 - 7</span>
                             </td>
                             <td class="center">
-                                <span>Hóa</span>
+                                <span>6 - 8 - 8</span>
                             </td>
                             <td class="center">
-                                <span>Sinh</span>
+                                <span>7.5 - 6 - 6</span>
                             </td>
                             <td class="center">
-                                <span>Văn</span>
+                                <span>8.5</span>
                             </td>
                             <td class="center">
-                                <span>Tiếng Anh</span>
+                                <span>7.7</span>
                             </td>
                             <td class="center">
-                                <span>CD</span>
+                                <span></span>
                             </td>
-
+                            <td class="center">
+                                <span></span>
+                            </td>
                         </tr>
                         <tr class="pricing">
                             <td class="center">
-                                <span>1</span>
-                            </td>
-                            <td class="center">
                                 <span>Toán</span>
                             </td>
                             <td class="center">
-                                <span>Lý</span>
+                                <span>10 - 7</span>
                             </td>
                             <td class="center">
-                                <span>Hóa</span>
+                                <span>6 - 8 - 8</span>
                             </td>
                             <td class="center">
-                                <span>Sinh</span>
+                                <span>7.5 - 6 - 6</span>
                             </td>
                             <td class="center">
-                                <span>Văn</span>
+                                <span>8.5</span>
                             </td>
                             <td class="center">
-                                <span>Tiếng Anh</span>
+                                <span>7.7</span>
                             </td>
                             <td class="center">
-                                <span>CD</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="center">
-                                <span>1</span>
+                                <span></span>
                             </td>
                             <td class="center">
-                                <span>Toán</span>
-                            </td>
-                            <td class="center">
-                                <span>Lý</span>
-                            </td>
-                            <td class="center">
-                                <span>Hóa</span>
-                            </td>
-                            <td class="center">
-                                <span>Sinh</span>
-                            </td>
-                            <td class="center">
-                                <span>Văn</span>
-                            </td>
-                            <td class="center">
-                                <span>Tiếng Anh</span>
-                            </td>
-                            <td class="center">
-                                <span>CD</span>
-                            </td>
-
-                        </tr>
-                        <tr class="pricing">
-                            <td class="center">
-                                <span>1</span>
-                            </td>
-                            <td class="center">
-                                <span>Toán</span>
-                            </td>
-                            <td class="center">
-                                <span>Lý</span>
-                            </td>
-                            <td class="center">
-                                <span>Hóa</span>
-                            </td>
-                            <td class="center">
-                                <span>Sinh</span>
-                            </td>
-                            <td class="center">
-                                <span>Văn</span>
-                            </td>
-                            <td class="center">
-                                <span>Tiếng Anh</span>
-                            </td>
-                            <td class="center">
-                                <span>CD</span>
+                                <span></span>
                             </td>
                         </tr>
                         <!-- // Table row END -->
@@ -308,7 +254,13 @@ require_once "header.php";
                 </div>
             </div>
         </div>
+        <div class="widget widget-heading-simple widget-body-gray">
+            <div class="widget-head"><h4 class="heading glyphicons warning_sign strong"><i></i>Lưu ý</h4></div>
+            <div class="widget-body"><p class="margin-none">Các điểm khác điểm trung bình là điểm của học kỳ hiện tại, để xem các học kỳ khác phụ huynh và học sinh chọn trong menu bên trên.</p></div>
         </div>
+
+        </div>
+
     </div>
     <script>
         $('#ckbxemnangcao').change(function() {

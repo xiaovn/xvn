@@ -655,7 +655,8 @@ class SMTP {
                 array("error" => "RSET failed",
                     "smtp_code" => $code,
                     "smtp_msg" => substr($rply,4));
-            if($this->do_debug >= 1) {
+            if($this->do_debug >= 1)
+            {
                 echo "SMTP -> ERROR: " . $this->error["error"] . ": " . $rply . $this->CRLF . '<br />';
             }
             return false;

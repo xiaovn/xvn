@@ -10,7 +10,7 @@
 
 ?>
 <!-- Brand -->
-<a href="index.html?lang=en" class="appbrand">X.E.M. ADMIN</a>
+<a href="#" class="appbrand">X.E.M. ADMIN</a>
 
 <!-- Scrollable menu wrapper with Maximum height -->
 <div class="slim-scroll" data-scroll-height="800px">
@@ -50,14 +50,37 @@
                 <li class=""><a href="<?php echo $siteurl;?>/admin/student/?report=book">Báo cáo</a></li>
             </ul>
         </li>
+        <li class="dropdown submenu">
+            <a data-toggle="dropdown" class="dropdown-toggle">Quản lý thời khóa biểu</a>
+            <ul class="dropdown-menu submenu-show submenu-hide pull-right">
+                <li class=""><a href="<?php echo $siteurl;?>/admin/thoikhoabieu/import">Nhập thời khóa biểu mới</a></li>
+                <li class=""><a href="<?php echo $siteurl;?>/admin/thoikhoabieu/view">Thời khóa biểu hiện tại</a></li>
+                <li class=""><a href="<?php echo $siteurl;?>/admin/thoikhoabieu/export">Xuất TKB hiện tại</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown submenu">
+            <a data-toggle="dropdown" class="dropdown-toggle">Quản lý điểm</a>
+            <ul class="dropdown-menu submenu-show submenu-hide pull-right">
+                <li class=""><a href="<?php echo $siteurl;?>/admin/diem/import">Nhập điểm</a></li>
+                <li class=""><a href="<?php echo $siteurl;?>/admin/diem/view">Xem điểm</a></li>
+                <li class=""><a href="<?php echo $siteurl;?>/admin/diem/export">Xuất điểm</a></li>
+            </ul>
+        </li>
         <!-- // Components Submenu Level 2 END -->
     </ul>
 </li>
 <li class="dropdown dd-1">
-    <a href="" data-toggle="dropdown" class="glyphicons settings"><i></i>Cấu hình <span class="icon-chevron-right"></span></a>
+    <a href="" data-toggle="dropdown" class="glyphicons settings"><i></i>Thiết lập <span class="icon-chevron-right"></span></a>
     <ul class="dropdown-menu pull-left">
-
-        <li><a href="../admin/system" class="glyphicons history"><i></i>Hệ thống</a></li>
+        <li><a href="<?php echo XC_URL;?>/admin/system" class="glyphicons history"><i></i>Hệ thống</a></li>
+        <li><a href="<?php echo XC_URL;?>/admin/school" class="glyphicons history"><i></i>Thông tin trường</a></li>
+        <li><a href="<?php echo XC_URL;?>/admin/manager" class="glyphicons history"><i></i>Quản trị viên</a></li>
+        <li><a href="<?php echo XC_URL;?>/admin/gvcn" class="glyphicons history"><i></i>Giáo viên chủ nhiệm</a></li>
+        <li><a href="<?php echo XC_URL;?>/admin" class="glyphicons history"><i></i>Lớp</a></li>
+        <li><a href="<?php echo XC_URL;?>/admin" class="glyphicons history"><i></i>Lịch học</a></li>
+        <li><a href="<?php echo XC_URL;?>/admin" class="glyphicons history"><i></i>Môn học</a></li>
+        <li><a href="<?php echo XC_URL;?>/admin" class="glyphicons history"><i></i>Phòng học</a></li>
     </ul>
 </li>
 <li class="glyphs">

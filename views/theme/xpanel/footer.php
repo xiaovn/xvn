@@ -17,7 +17,7 @@
             <div class="span2">
                 <h4>Liên kết</h4>
                 <ul>
-                    <li><a href="http://diemthi.xiao.vn">Trang chủ</a></li>
+                    <li><a href="http://ves.xiao.vn">Trang chủ</a></li>
                     <li><a href="#" >Thông tin</a></li>
                     <li><a href="#">Tài khoản</a></li>
                     <li><a href="#">Blog</a></li>
@@ -27,7 +27,7 @@
             <div class="span4">
                 <h4>Về chúng tôi</h4>
                 <div class="box-generic">
-                    Xiao Media Inc. được thành lập với sứ mệnh mang đến sự khác biệt trong Giáo dục và Đào tạo bằng những công nghệ hiện đại và khoa học. Chúng tôi sẵn sàng đem đến cho những chủ nhân tương lai của đất nước những điều kiện tốt nhất để sẵn sàng cho mọi thử thách...
+                    Xiao Media Corporation được thành lập với sứ mệnh mang đến sự khác biệt trong Giáo dục và Đào tạo bằng những công nghệ hiện đại và khoa học. Chúng tôi sẵn sàng đem đến cho những chủ nhân tương lai của đất nước những điều kiện tốt nhất để sẵn sàng cho mọi thử thách...
                 </div>
             </div>
             <div class="span3">
@@ -58,8 +58,8 @@
 
         <!--  Copyright Line -->
         <div class="copy">
-            &copy; 2013 - <a href="http://xiao.vn">Xiao Media Inc.</a>
-            <span class="appbrand">Xiao Education Management</span>
+            &copy; 2013 - <a href="http://xiao.vn">Xiao Media Corp.</a>
+            <span class="appbrand">Vietnam e-Learning System</span>
         </div>
         <!--  End Copyright Line -->
 
@@ -93,7 +93,6 @@
 <!-- // Themer END -->
 
 <!-- JQuery -->
-<script src="<?php echo $template_path;?>js/jquery-1.10.1.min.js" ></script>
 <script src="<?php echo $template_path;?>js/jquery-migrate-1.2.1.min.js" ></script>
 
 <!-- Code Beautify -->
@@ -172,10 +171,20 @@
 <script>
     var themerPrimaryColor = primaryColor;
 </script>
+
 <script src="<?php echo $template_path;?>js/themer.js" ></script>
-<!-- <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyARi0YZiwE498oj9SgIQGeZeaQ2Auwp8PU&v=3.5&sensor=false"></script> -->
 <script src="<?php echo $template_path;?>js/contact.js"></script>
-<script type="text/javascript" src="/xvn/chat/external.php?type=djs" charset="utf-8"></script>
-<script type="text/javascript" src="/xvn/chat/external.php?type=js" charset="utf-8"></script>
+<script type="text/javascript" src="/chat/external.php?type=djs" charset="utf-8"></script>
+<script type="text/javascript" src="/chat/external.php?type=js" charset="utf-8"></script>
+
+
+
+
+
+
+
+<!-- Gridalicious -->
+<script src="<?php echo $template_path;?>js/jquery.gridalicious.min.js"  type="text/javascript"></script>
+
 </body>
 </html>

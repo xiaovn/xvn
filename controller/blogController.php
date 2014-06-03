@@ -39,9 +39,10 @@ Class blogController Extends baseController {
         $this->view->data['blog_heading'] = 'This is the blog timeline';
         $this->view->show('blog_timeline');
     }
-    public function view()
+    public function view($para)
     {
-        $id_blog = $_GET['id'];
+        $id_blog = $para[1];
+        //$id_blog = $_GET['id'];
 
         if(isset($_POST['noidung'])&& $_POST['noidung']!="")
         {
@@ -53,7 +54,7 @@ Class blogController Extends baseController {
             $comment_approved = 0;
             $comment_date = date("Y-m-d H:i:s");
             $this->model->get('blogModel')->guibinhluan($comment_blog_id,$comment_author,$comment_author_email,$comment_author_ip,$comment_content,$comment_approved,$comment_date);
-            $this->redirect->redirect("blog","view?id=".$id_blog);
+            $this->redirect->redirect("blog","view/".$id_blog);
         }
         $blog_binhluan = $this->model->get('commentModel')->get_binhluan($id_blog);
         $this->view->data['binhluan'] = $blog_binhluan;

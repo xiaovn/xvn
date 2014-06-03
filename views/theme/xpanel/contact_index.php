@@ -115,11 +115,9 @@ require_once "header.php";
                 <div class="span5">
                     <div class="well margin-none">
                         <address class="margin-none">
-                            <h2>Mr. Hoc Nguyen</h2>
-                            <strong>Technology Director</strong> at
-                            <strong><a href="#">Xiao JSC</a></strong><br>
-                            <abbr title="Work email">e-mail:</abbr> <a href="mailto:nguyenhoc@xiao.vn">mailto:nguyenhoc@xiao.vn</a><br />
-                            <abbr title="Work Phone">phone:</abbr> (084) 938-600-656<br/>
+                            <h2><a href="">Technology Support</a></h2>
+                            <abbr title="Work email">e-mail:</abbr> <a href="mailto:support@xiao.vn">support@xiao.vn</a><br />
+                            <abbr title="Work Phone">phone:</abbr> (084) 935-765-797<br/>
                             <abbr title="Work Fax">fax:</abbr> (084) 59-3-533-555
                             <div class="separator line"></div>
                             <p class="margin-none"><strong>Hỗ trợ 24/24:</strong><br/>Về các vấn đề tài khoản, thanh toán, ứng dụng và hướng dẫn sử dụng. Các vấn đề khác xin vui lòng gọi đường dây nóng: (084) 59-3-53-2222.</p>

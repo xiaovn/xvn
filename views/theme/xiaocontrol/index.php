@@ -52,7 +52,7 @@ include_once 'mainnav.php';
 include_once 'breadcrumb.php';
 ?>
 
-<h2>Trang tổng quan <span>Hệ thống quản lý cho quản trị viên</span></h2>
+<h2>Trang tổng quan trường THPT Nguyễn Trãi<span>Hệ thống quản lý cho quản trị viên</span></h2>
 <div class="innerLR">
 
 <div class="row-fluid">
@@ -89,14 +89,14 @@ include_once 'breadcrumb.php';
         </a>
         <div class="separator bottom"></div>
         <a href="" class="widget-stats widget-stats-2 widget-stats-gray widget-stats-easy-pie">
-            <div data-percent="90" class="easy-pie inverse easyPieChart"><span class="value">90</span>%</div>
-            <span class="txt"><span class="count text-large inline-block">130</span> ROI</span>
+            <div data-percent="0" class="easy-pie inverse easyPieChart"><span class="value">0</span>%</div>
+            <span class="txt"><span class="count text-large inline-block">0</span> Giao dịch</span>
             <div class="clearfix"></div>
         </a>
         <div class="separator bottom"></div>
         <a href="" class="widget-stats widget-stats-2 widget-stats-easy-pie txt-single">
             <div data-percent="35" class="easy-pie primary easyPieChart"><span class="value">35</span>%</div>
-            <span class="txt">Server workload</span>
+            <span class="txt">Trạng thái máy chủ</span>
             <div class="clearfix"></div>
         </a>
     </div>
@@ -107,7 +107,7 @@ include_once 'breadcrumb.php';
 
 <!-- Widget Heading -->
 <div class="widget-head">
-    <h4 class="heading glyphicons user"><i></i>Manage Employees</h4>
+    <h4 class="heading glyphicons user"><i></i>Quản lý Giáo Viên</h4>
 </div>
 <!-- // Widget Heading END -->
 
@@ -120,139 +120,41 @@ include_once 'breadcrumb.php';
             <div class="widget-search separator bottom">
                 <button type="button" class="btn btn-inverse pull-right"><i class="icon-search"></i></button>
                 <div class="overflow-hidden">
-                    <input type="text" value="" placeholder="Find someone ..">
+                    <input type="text" value="" placeholder="Nhập từ khóa để tìm ..">
                 </div>
             </div>
             <select style="width: 100%;">
-                <optgroup label="Department">
-                    <option value="design">Design</option>
-                    <option value="development">Development</option>
+                <optgroup label="Tổ chuyên môn">
+                    <option value="design">Toán</option>
+                    <option value="development">Vật lý</option>
                 </optgroup>
             </select>
         </form>
     </div>
-    <span class="results">1490 Employees Found <i class="icon-circle-arrow-down"></i></span>
+    <?php $listteach = member::getInstance()->get_member_list("2267588");?>
+    <span class="results">Đã tìm thấy <?php echo member::getInstance()->memcount("2267588");?> giáo viên <i class="icon-circle-arrow-down"></i></span>
     <ul class="list unstyled">
-        <li class="active">
-            <div class="media innerAll">
-                <div class="media-object pull-left thumb"><img src="<?php echo $admintemplate_path;?>/asset/images/avatar-51x51.jpg" alt="Image" /></div>
-                <div class="media-body">
-                    <span class="strong">Adrian Demian</span>
-                    <span class="muted">contact@mosaicpro.biz</span>
-                    <i class="icon-envelope"></i>
-                    <i class="icon-phone"></i>
-                    <i class="icon-skype"></i>
+        <?php
+        $i = 0;
+        foreach($listteach as $teach)
+        {
+            ?>
+            <li <?php if($i == 0){?>class="active"<?php }?>>
+                <div class="media innerAll">
+                    <div class="media-object pull-left thumb"><img src="<?php echo $admintemplate_path;?>/asset/images/avatar-51x51.jpg" alt="Image" /></div>
+                    <div class="media-body">
+                        <span class="strong"><?php echo member::getInstance()->info($teach->xid,"firstname")." ".member::getInstance()->info($teach->xid,"name");?></span>
+                        <span class="muted"><?php echo $teach->email;?></span>
+                        <i class="icon-envelope"></i>
+                        <i class="icon-phone"></i>
+                        <i class="icon-skype"></i>
+                    </div>
                 </div>
-            </div>
-        </li>
-        <li>
-            <div class="media innerAll">
-                <div class="media-object pull-left thumb"><img src="<?php echo $admintemplate_path;?>/asset/images/avatar-51x51.jpg" alt="Image" /></div>
-                <div class="media-body">
-                    <span class="strong">Ken Zaki</span>
-                    <span class="muted">contact@mosaicpro.biz</span>
-                    <i class="icon-envelope"></i>
-                    <i class="icon-phone"></i>
-                    <i class="icon-skype"></i>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="media innerAll">
-                <div class="media-object pull-left thumb"><img src="<?php echo $admintemplate_path;?>/asset/images/avatar-51x51.jpg" alt="Image" /></div>
-                <div class="media-body">
-                    <span class="strong">Adrian Demian</span>
-                    <span class="muted">contact@mosaicpro.biz</span>
-                    <i class="icon-envelope"></i>
-                    <i class="icon-phone"></i>
-                    <i class="icon-skype"></i>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="media innerAll">
-                <div class="media-object pull-left thumb"><img src="<?php echo $admintemplate_path;?>/asset/images/avatar-51x51.jpg" alt="Image" /></div>
-                <div class="media-body">
-                    <span class="strong">Adrian Demian</span>
-                    <span class="muted">contact@mosaicpro.biz</span>
-                    <i class="icon-envelope"></i>
-                    <i class="icon-phone"></i>
-                    <i class="icon-skype"></i>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="media innerAll">
-                <div class="media-object pull-left thumb"><img src="<?php echo $admintemplate_path;?>/asset/images/avatar-51x51.jpg" alt="Image" /></div>
-                <div class="media-body">
-                    <span class="strong">Adrian Demian</span>
-                    <span class="muted">contact@mosaicpro.biz</span>
-                    <i class="icon-envelope"></i>
-                    <i class="icon-phone"></i>
-                    <i class="icon-skype"></i>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="media innerAll">
-                <div class="media-object pull-left thumb"><img src="<?php echo $admintemplate_path;?>/asset/images/avatar-51x51.jpg" alt="Image" /></div>
-                <div class="media-body">
-                    <span class="strong">Adrian Demian</span>
-                    <span class="muted">contact@mosaicpro.biz</span>
-                    <i class="icon-envelope"></i>
-                    <i class="icon-phone"></i>
-                    <i class="icon-skype"></i>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="media innerAll">
-                <div class="media-object pull-left thumb"><img src="<?php echo $admintemplate_path;?>/asset/images/avatar-51x51.jpg" alt="Image" /></div>
-                <div class="media-body">
-                    <span class="strong">Adrian Demian</span>
-                    <span class="muted">contact@mosaicpro.biz</span>
-                    <i class="icon-envelope"></i>
-                    <i class="icon-phone"></i>
-                    <i class="icon-skype"></i>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="media innerAll">
-                <div class="media-object pull-left thumb"><img src="<?php echo $admintemplate_path;?>/asset/images/avatar-51x51.jpg" alt="Image" /></div>
-                <div class="media-body">
-                    <span class="strong">Adrian Demian</span>
-                    <span class="muted">contact@mosaicpro.biz</span>
-                    <i class="icon-envelope"></i>
-                    <i class="icon-phone"></i>
-                    <i class="icon-skype"></i>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="media innerAll">
-                <div class="media-object pull-left thumb"><img src="<?php echo $admintemplate_path;?>/asset/images/avatar-51x51.jpg" alt="Image" /></div>
-                <div class="media-body">
-                    <span class="strong">Adrian Demian</span>
-                    <span class="muted">contact@mosaicpro.biz</span>
-                    <i class="icon-envelope"></i>
-                    <i class="icon-phone"></i>
-                    <i class="icon-skype"></i>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="media innerAll">
-                <div class="media-object pull-left thumb"><img src="<?php echo $admintemplate_path;?>/asset/images/avatar-51x51.jpg" alt="Image" /></div>
-                <div class="media-body">
-                    <span class="strong">Adrian Demian</span>
-                    <span class="muted">contact@mosaicpro.biz</span>
-                    <i class="icon-envelope"></i>
-                    <i class="icon-phone"></i>
-                    <i class="icon-skype"></i>
-                </div>
-            </div>
-        </li>
+            </li>
+            <?php
+            $i++;
+        }
+        ?>
     </ul>
 </div>
 <div class="span8 detailsWrapper">
@@ -263,8 +165,8 @@ include_once 'breadcrumb.php';
         <div class="title">
             <div class="row-fluid">
                 <div class="span8">
-                    <h3 class="text-primary">Adrian Demian</h3>
-                    <span class="muted">Senior Designer</span>
+                    <h3 class="text-primary">Đào Duy Lực</h3>
+                    <span class="muted">Hiệu trưởng</span>
                 </div>
                 <div class="span4 text-right">
                     <p class="muted">4 projects <a href=""><i class="icon-circle-arrow-right"></i></a></p>
@@ -281,36 +183,36 @@ include_once 'breadcrumb.php';
                     <div class="separator bottom"></div>
                     <!-- // Profile Photo END -->
                     <ul class="icons-ul">
-                        <li><i class="icon-envelope icon-li icon-fixed-width"></i> contac@mosaicpro.biz</li>
-                        <li><i class="icon-phone icon-li icon-fixed-width"></i> 00353 9191238101</li>
-                        <li><i class="icon-skype icon-li icon-fixed-width"></i> mosaicpro</li>
+                        <li><i class="icon-envelope icon-li icon-fixed-width"></i> daoduyluc@nguyentrai</li>
+                        <li><i class="icon-phone icon-li icon-fixed-width"></i> +84 000000000000</li>
+                        <li><i class="icon-user icon-li icon-fixed-width"></i> 2243729543</li>
                     </ul>
                 </div>
                 <div class="span8">
-                    <h5 class="strong">About</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                    <h5 class="strong">Giới thiệu</h5>
+                    <p>...</p>
                     <div class="row-fluid">
                         <div class="span4">
-                            <h5 class="strong">Reports</h5>
-                            <a href="" class="btn btn-primary btn-small btn-block"><i class="icon-download-alt icon-fixed-width"></i> June</a>
-                            <a href="" class="btn btn-default btn-small btn-block"><i class="icon-download-alt icon-fixed-width"></i> May</a>
-                            <a href="" class="btn btn-default btn-small btn-block"><i class="icon-download-alt icon-fixed-width"></i> April</a>
+                            <h5 class="strong">Báo cáo</h5>
+                            <a href="#" class="btn btn-primary btn-small btn-block"><i class="icon-download-alt icon-fixed-width"></i> Tháng 12</a>
+                            <a href="#" class="btn btn-default btn-small btn-block"><i class="icon-download-alt icon-fixed-width"></i> Tháng 11</a>
+                            <a href="#" class="btn btn-default btn-small btn-block"><i class="icon-download-alt icon-fixed-width"></i> Tháng 10</a>
                             <div class="separator bottom"></div>
                         </div>
                         <div class="span7 offset1">
-                            <h5 class="strong">Skills</h5>
-                            <div class="progress progress-mini progress-primary count-outside add-outside"><div class="count">100%</div><div class="bar" style="width: 100%;"></div><div class="add">HTML</div></div>
-                            <div class="progress progress-mini progress-primary count-outside add-outside"><div class="count">90%</div><div class="bar" style="width: 90%;"></div><div class="add">CSS</div></div>
-                            <div class="progress progress-mini progress-primary count-outside add-outside"><div class="count">93%</div><div class="bar" style="width: 93%;"></div><div class="add">jQuery</div></div>
-                            <div class="progress progress-mini progress-primary count-outside add-outside"><div class="count">79%</div><div class="bar" style="width: 79%;"></div><div class="add">PHP</div></div>
-                            <div class="progress progress-mini count-outside add-outside"><div class="count">20%</div><div class="bar" style="width: 20%;"></div><div class="add">WP</div></div>
+                            <h5 class="strong">Đánh giá của học sinh</h5>
+                            <div class="progress progress-mini progress-primary count-outside add-outside"><div class="count">100%</div><div class="bar" style="width: 100%;"></div><div class="add">GD</div></div>
+                            <div class="progress progress-mini progress-primary count-outside add-outside"><div class="count">90%</div><div class="bar" style="width: 90%;"></div><div class="add">ĐG 2</div></div>
+                            <div class="progress progress-mini progress-primary count-outside add-outside"><div class="count">93%</div><div class="bar" style="width: 93%;"></div><div class="add">ĐG 3</div></div>
+                            <div class="progress progress-mini progress-primary count-outside add-outside"><div class="count">79%</div><div class="bar" style="width: 79%;"></div><div class="add">ĐG 4</div></div>
+                            <div class="progress progress-mini count-outside add-outside"><div class="count">20%</div><div class="bar" style="width: 20%;"></div><div class="add">ĐG 5</div></div>
                             <div class="separator bottom"></div>
                         </div>
                     </div>
-                    <h5 class="text-uppercase strong text-primary"><i class="icon-group text-regular icon-fixed-width"></i> MosaicPro <span class="text-lowercase strong padding-none">Team</span> <span class="text-lowercase padding-none">(2 people)</span></h5>
+                    <h5 class="text-uppercase strong text-primary"><i class="icon-group text-regular icon-fixed-width"></i> Huy hiệu <span class="text-lowercase strong padding-none">thành tích</span> <span class="text-lowercase padding-none">(2 huy hiệu)</span></h5>
                     <ul class="team">
-                        <li><span class="crt">1</span><span class="strong">Adrian Demian</span><span class="muted">Senior Designer</span></li>
-                        <li><span class="crt">2</span><span class="strong">Laza Bogdan</span><span class="muted">Senior Developer</span></li>
+                        <li><span class="crt">1</span><span class="strong">Cống Hiến</span><span class="muted">Sự nghiệp giáo dục</span></li>
+                        <li><span class="crt">2</span><span class="strong">Gương Mẫu</span><span class="muted">Sống đẹp, dạy tốt</span></li>
                     </ul>
                 </div>
             </div>
@@ -1175,6 +1077,12 @@ include_once 'breadcrumb.php';
 
 </div>
 <div class="clearfix"></div>
+<script src="<?php echo $admintemplate_path;?>/asset/js/jquery.flot.js"></script>
+<script src="<?php echo $admintemplate_path;?>/asset/js/jquery.flot.pie.js" ></script>
+<script src="<?php echo $admintemplate_path;?>/asset/js/jquery.flot.tooltip.js"></script>
+<script src="<?php echo $admintemplate_path;?>/asset/js/jquery.flot.selection.js"></script>
+<script src="<?php echo $admintemplate_path;?>/asset/js/jquery.flot.resize.js" ></script>
+<script src="<?php echo $admintemplate_path;?>/asset/js/jquery.flot.orderBars.js" ></script>
 <!-- // Sidebar menu & content wrapper END -->
 <?php
 include_once 'footer.php';

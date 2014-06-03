@@ -46,7 +46,10 @@ include "config.php"
     <link rel="stylesheet" type="text/css" href="<?php echo $template_path;?>css/settings.css"  media="screen" />
     <!-- Main Theme Stylesheet :: CSS -->
     <link href="<?php echo $template_path;?>css/login.css" rel="stylesheet" />
-
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<link type="text/css" rel="stylesheet" id="arrowchat_css" media="all" href="/chat/external.php?type=css" charset="utf-8" />
+    <script type="text/javascript" src="/chat/includes/js/jquery.js"></script>
+    <script type="text/javascript" src="/chat/includes/js/jquery-ui.js"></script>
     <!-- LESS.js Library -->
     <script src="<?php echo $template_path;?>js/less.min.js" ></script>
 </head>

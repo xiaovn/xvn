@@ -74,7 +74,7 @@ require_once "header.php";
                     <div class="widget-body">
                         <div class="row-fluid">
                             <div class="span4 center">
-                                <a href="" class="thumb"><img src="<?php echo $template_path;?>images/2-1.jpg" alt="Image" /></a>
+                                <a href="blog/view/<?php echo $post->id;?>" class="thumb"><img src="<?php echo $upload_path;?>blog/images/<?php echo $post->blog_feature_image;?>" alt="Image" /></a>
                             </div>
                             <div class="span8">
                                 <h5 class="strong text-uppercase"><?php echo $post->blogtitle?></h5>
@@ -83,7 +83,7 @@ require_once "header.php";
                                 <span class="glyphicons single regular comments"><i></i> <?php echo $post->commentcount?> bình luận</span>
                                 <div class="separator bottom"></div>
                                 <p><?php echo strip_tags(substr($post->blogcontent,0,400));?></p>
-                                <p class="margin-none strong"><a href="" class="glyphicons single chevron-right"><i></i>chi tiết</a></p>
+                                <p class="margin-none strong"><a href="blog/view/<?php echo $post->id;?>" class="glyphicons single chevron-right"><i></i>chi tiết</a></p>
                             </div>
                         </div>
                     </div>
@@ -103,12 +103,12 @@ require_once "header.php";
                                     <div class="separator bottom"></div>
                                     <p><?php echo strip_tags(substr($post->blogcontent,0,400));?></p>
                                     <p class="margin-none strong">
-                                        <a href="" class="glyphicons single chevron-right"><i></i>chi tiết</a>
+                                        <a href="blog/view/<?php echo $post->id;?>" class="glyphicons single chevron-right"><i></i>chi tiết</a>
                                         <span class="glyphicons single regular comments"><i></i> <?php echo $post->commentcount?> bình luận</span>
                                     </p>
                                 </div>
                                 <div class="span6 center">
-                                    <a href="" class="thumb"><img src="<?php echo $template_path;?>images/4-1.jpg" alt="Image" /></a>
+                                    <a href="blog/view/<?php echo $post->id;?>" class="thumb"><img src="<?php echo $upload_path;?>blog/images/<?php echo $post->blog_feature_image;?>" alt="Image" /></a>
                                 </div>
                             </div>
                         </div>

@@ -38,4 +38,8 @@ Class control{
             $db->query($sql);
             return $db->fetch_object();
     }
+    public function calc_discount($var1, $var2)
+    {
+        $sub = $var1/$var2;
+    }
 }

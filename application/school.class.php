@@ -94,6 +94,18 @@ Class school{
             return "";
         }
     }
+    public function dsmonhoc()
+    {
+            global $db;
+            $db->query("SELECT * FROM xdata_monhoc WHERE mamon != '8258378' ORDER BY tenmon");
+            return $db->fetch_object($first_row = false);
+    }
+    public function dsnhommon()
+    {
+        global $db;
+        $db->query("SELECT * FROM xdata_nhommon ORDER BY manhommon");
+        return $db->fetch_object($first_row = false);
+    }
     public function nhommon($manhom,$info)
     {
         if(isset($manhom) && $manhom != "" && isset($info) && $info != "")
@@ -165,7 +177,7 @@ Class school{
     public function tkb($lop,$nhommon)
     {
         global $db;
-        $db->query("SELECT * FROM xdata_tkb WHERE lop=".$lop." AND nhommon = ".$nhommon);
+        $db->query("SELECT * FROM xdata_tkb WHERE lop='".$lop."' AND nhommon = ".$nhommon);
         return $db->fetch_object();
     }
     public function tkbdata($tkbs)

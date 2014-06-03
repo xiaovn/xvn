@@ -14,7 +14,7 @@
         <div class="container-960">
 
             <!-- Brand -->
-            <a href="<?php echo XC_URL?>" class="appbrand pull-left">X.E.M Online</a>
+            <a href="<?php echo XC_URL?>" class="appbrand pull-left">VES System</a>
 
             <ul class="topnav pull-right">
 
@@ -64,15 +64,16 @@
 
         <ul class="topnav pull-left">
 
-            <li class="dropdown dd-1 active">
+            <li class="dropdown dd-1 <?php if($_SESSION['current_menu'] == "home"){ echo "active";}?>">
                 <a href="<?php echo XC_URL?>" class="glyphicons home"><i></i>Trang chủ </span></a>
             </li>
-            <li>
+            <li class="<?php if($_SESSION['current_menu'] == "member"){ echo "active";}?>">
                 <a href="<?php echo XC_URL?>/member" class="glyphicons circle_info"><i></i> Thông tin</a></li>
-            <li><a href="<?php echo XC_URL?>/member/account" class="glyphicons credit_card"><i></i> Tài khoản</a></li>
-            <li class="dropdown dd-1">
+            <li class="<?php if($_SESSION['current_menu'] == "account"){ echo "active";}?>"><a href="<?php echo XC_URL?>/member/account" class="glyphicons credit_card"><i></i> Tài khoản</a></li>
+            <li class="dropdown dd-1 <?php if($_SESSION['current_menu'] == "ungdung"){ echo "active";}?>">
                 <a href="" data-toggle="dropdown" class="glyphicons shopping_cart"><i></i>Ứng dụng <span class="caret"></span></a>
                 <ul class="dropdown-menu pull-left">
+                    <li class=""><a href="<?php echo XC_URL?>/ungdung">Tất cả ứng dụng</a></li>
                     <li class=""><a href="<?php echo XC_URL?>/ungdung/thoikhoabieu">Thời khóa biểu</a></li>
                     <li class=""><a href="<?php echo XC_URL?>/ungdung/diemthi">Điểm thi</a></li>
                     <li class=""><a href="<?php echo XC_URL?>/ungdung/thuvien">Thư viện</a></li>
@@ -82,14 +83,14 @@
                     <li class=""><a href="<?php echo XC_URL?>/ungdung/hoctructuyen">Bạn bè</a></li>
                 </ul>
             </li>
-            <li class="dropdown dd-1">
+            <li class="dropdown dd-1 <?php if($_SESSION['current_menu'] == "blog"){ echo "active";}?>">
                 <a href="" data-toggle="dropdown" class="glyphicons notes"><i></i>Blog <span class="caret"></span></a>
                 <ul class="dropdown-menu pull-left">
                     <li class=""><a href="<?php echo XC_URL?>/blog" >Tất cả</a></li>
                     <li class=""><a href="<?php echo XC_URL?>/blog/timeline">Dòng thời gian</a></li>
                 </ul>
             </li>
-            <li><a href="<?php echo XC_URL?>/contact" class="glyphicons iphone"><i></i> Liên hệ</a></li>
+            <li class="<?php if($_SESSION['current_menu'] == "contact"){ echo "active";}?>"><a href="<?php echo XC_URL?>/contact" class="glyphicons iphone"><i></i> Liên hệ</a></li>
 
         </ul>
 

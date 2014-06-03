@@ -14,5 +14,12 @@ Class applicationModel Extends baseModel
         $app = $db->query('SELECT * FROM xdata_application');
         return $db->fetch_object();
     }
+    public function get_app_detail($appid)
+    {
+        global $db;
+        $app = $db->query("SELECT * FROM xdata_application WHERE appid =
+        '".$appid."'");
+        return $db->fetch_object($first_row = true);
+    }
 }
 ?>

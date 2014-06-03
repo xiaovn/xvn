@@ -171,15 +171,6 @@
 <!-- Google JSAPI -->
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
-<!--  Flot Charts Plugin -->
-<script src="<?php echo $admintemplate_path;?>asset/js/jquery.flot.js"></script>
-<script src="<?php echo $admintemplate_path;?>asset/js/jquery.flot.pie.js"></script>
-<script src="<?php echo $admintemplate_path;?>asset/js/jquery.flot.tooltip.js"></script>
-<script src="<?php echo $admintemplate_path;?>asset/js/jquery.flot.selection.js"></script>
-<script src="<?php echo $admintemplate_path;?>asset/js/jquery.flot.resize.js"></script>
-<script src="<?php echo $admintemplate_path;?>asset/js/jquery.flot.orderBars.js"></script>
-<script src="<?php echo $admintemplate_path;?>asset/js/jquery.flot.orderBars.js"></script>
-
 <!-- Charts Helper Demo Script -->
 <script src="<?php echo $admintemplate_path;?>asset/js/charts.helper.js?1377052935"></script>
 

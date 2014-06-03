@@ -47,6 +47,7 @@ include 'config.php';
     <script src="<?php echo $admintemplate_path;?>asset/js/jquery-1.10.1.min.js"></script>
     <script src="<?php echo $admintemplate_path;?>asset/js/jquery-migrate-1.2.1.min.js"></script>
 
+
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
     <script src="<?php echo $admintemplate_path;?>asset/js/html5shiv.js"></script>

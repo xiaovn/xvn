@@ -21,7 +21,7 @@ Class tkbModel extends baseModel
     public function gettkb($malop)
     {
         global $db;
-        $db->query("SELECT * FROM xdata_tkb WHERE lop=".$malop);
+        $db->query("SELECT * FROM xdata_tkb WHERE lop='".$malop."'");
         return $db->fetch_object();
     }
     //Show thông tin trong bảng xdata_tkb

@@ -70,6 +70,12 @@ Class member{
             return "";
         }
     }
+    public function get_member_list($type)
+    {
+        global $db;
+        $db->query("SELECT * FROM xdata_account WHERE xgroup  = '".$type."'");
+        return $db->fetch_object();
+    }
     public function get_member_info($xid,$xfunc)
     {
         global $db;
@@ -112,6 +118,7 @@ Class member{
             return "0";
         }
     }
+
     public function get_rank_of_xid($xid, $appid)
     {
 
@@ -419,5 +426,11 @@ Class member{
         {
             return false;
         }
+    }
+    public function get_tnrank($top = 10)
+    {
+        global $db;
+        $db->query("SELECT * FROM tracnghiem_elo ORDER BY elo DESC LIMIT ".$top);
+        return $db->fetch_object();
     }
 }

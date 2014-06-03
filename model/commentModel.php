@@ -11,7 +11,7 @@ Class commentModel extends baseModel
     public function get_binhluan($comment_blog_id)
     {
         global $db;
-        $view = $db->query("SELECT * FROM xdata_blog_comment where comment_blog_id = ".$comment_blog_id);
+        $view = $db->query("SELECT * FROM xdata_blog_comment where comment_blog_id = ".$comment_blog_id." ORDER BY commentid DESC");
         return $db->fetch_object($first_row = false);
     }
 }

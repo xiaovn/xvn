@@ -23,7 +23,7 @@ Class contactController extends baseController
         {
             $to = "xiao-all@xiao.vn";
             $name = "Xiao All";
-            $this->mail->sendersmtp($name,$to,"newregister","","");
+            //$this->mail->sendersmtp($name,$to,"newregister","","");
             $this->view->data['contact_heading'] = 'Liên hệ/Trợ giúp';
             $this->view->show('contact_index');
         }

@@ -87,6 +87,7 @@ Class baseMailler {
         }
         return file_get_contents($path);
     }
+
     public function sendersmtp($name,$to,$type,$content,$value)
     {
         include_once "phpmailer.class.php";
@@ -117,7 +118,36 @@ Class baseMailler {
                 $tpl = str_replace('%%GLOBAL_EmailFooter%%', "Thông báo này được gửi đến email: ".$to." vì đã đăng ký nhận tin", $tpl);
                 $mail->Body = $tpl;
             }
-                default:
+            case "forgotpass":
+            {
+                $mail->From = "passport@xiao.vn";
+                $mail->Subject = "Forgot password - Xiao Media Account Gateway!";
+                $mail->AddReplyTo("passport@xiao.vn","Xiao Media Corporation");
+                $mail->FromName = "Xiao Passport Gateway"; // Name to indicate where the email came from when the recepient received
+                $mail->AddAddress($to,$name);
+                $tpl = $this->mail("forgotpass_email");
+                $tpl = str_replace('%%GLOBAL_EmailHeader%%', "Cổng tài khoản Xiao", $tpl);
+                $tpl = str_replace('%%GLOBAL_PasswordLink%%', $value, $tpl);
+                $tpl = str_replace('%%GLOBAL_EmailFooter%%', "Thông báo này được gửi đến email: ".$to." vì đã đăng ký nhận tin", $tpl);
+                $mail->Body = $tpl;
+            }
+            case "newpass":
+            {
+                $mail->From = "passport@xiao.vn";
+                $mail->Subject = "Forgot password - Xiao Media Account Gateway!";
+                $mail->AddReplyTo("passport@xiao.vn","Xiao Media Corporation");
+                $mail->FromName = "Xiao Passport Gateway"; // Name to indicate where the email came from when the recepient received
+                $mail->AddAddress($to,$name);
+                $tpl = $this->mail("newpass_email");
+                $tpl = str_replace('%%GLOBAL_EmailHeader%%', "Cổng tài khoản Xiao", $tpl);
+                $tpl = str_replace('%%GLOBAL_NameTo%%', $name, $tpl);
+                $tpl = str_replace('%%GLOBAL_NewPassword%%', $value, $tpl);
+                $tpl = str_replace('%%GLOBAL_LoginLink%%', XC_URL."/member/login", $tpl);
+                $tpl = str_replace('%%GLOBAL_SupportLink%%', XC_URL."/support", $tpl);
+                $tpl = str_replace('%%GLOBAL_EmailFooter%%', "Thông báo này được gửi đến email: ".$to." vì đã đăng ký nhận tin", $tpl);
+                $mail->Body = $tpl;
+            }
+            default:
                 break;
         }
         $mail->WordWrap = 50;
@@ -131,6 +161,7 @@ Class baseMailler {
             return true;
         }
     }
+
 }
 
 ?>

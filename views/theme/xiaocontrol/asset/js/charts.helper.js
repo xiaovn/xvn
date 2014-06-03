@@ -347,7 +347,7 @@ var charts =
 	            lines: {
             		show: true,
             		fill: false,
-            		lineWidth: 4,
+            		lineWidth: 5,
             		steps: false
             	},
 	            points: {
@@ -363,7 +363,7 @@ var charts =
 	        shadowSize:1,
 	        tooltip: true, //activate tooltip
 			tooltipOpts: {
-				content: "%s : %y.3",
+				content: "%s : %y.0",
 				shifts: {
 					x: -30,
 					y: -50
@@ -380,22 +380,42 @@ var charts =
 
 			if (this.plot == null)
 			{
-				for (var i = 0; i < 14; i += 0.5) 
-				{
-			        this.data.sin.push([i, Math.sin(i)]);
-			        this.data.cos.push([i, Math.cos(i)]);
-			    }
+
+                this.data.sin.push([1, 1021]);
+                this.data.cos.push([1, 934]);
+                this.data.sin.push([2, 1366]);
+                this.data.cos.push([2, 1325]);
+                this.data.sin.push([3, 1221]);
+                this.data.cos.push([3, 1187]);
+                this.data.sin.push([4, 1321]);
+                this.data.cos.push([4, 1217]);
+                this.data.sin.push([5, 1402]);
+                this.data.cos.push([5, 1390]);
+                this.data.sin.push([6, 1200]);
+                this.data.cos.push([6, 1104]);
+                this.data.sin.push([7, 1321]);
+                this.data.cos.push([7, 1066]);
+                this.data.sin.push([8, 1377]);
+                this.data.cos.push([8, 1271]);
+                this.data.sin.push([9, 1741]);
+                this.data.cos.push([9, 1650]);
+                this.data.sin.push([10, 1261]);
+                this.data.cos.push([10, 1227]);
+                this.data.sin.push([11, 1877]);
+                this.data.cos.push([11, 1605]);
+                this.data.sin.push([12, 1877]);
+                this.data.cos.push([12, 1723]);
 			}
 			this.plot = $.plot(
 				$("#chart_simple"),
 	           	[{
-	    			label: "Sin", 
+	    			label: "Truy cập",
 	    			data: this.data.sin,
 	    			lines: {fillColor: "#DA4C4C"},
 	    			points: {fillColor: "#fff"}
 	    		}, 
 	    		{	
-	    			label: "Cos", 
+	    			label: "Sử dụng",
 	    			data: this.data.cos,
 	    			lines: {fillColor: "#444"},
 	    			points: {fillColor: "#fff"}

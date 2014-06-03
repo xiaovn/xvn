@@ -17,14 +17,14 @@ include "config.php";
 
 <li data-transition="flyin" data-slotamount="10" data-masterspeed="300">
 
-    <img src="bg3.png">
+    <img src="<?php echo $template_path;?>images/slider/sl1bgs.jpg">
 
     <div class="caption large_text sfb"
          data-x="center"
          data-y="47"
          data-speed="300"
          data-start="800"
-         data-easing="easeOutExpo">CỔNG THÔNG TIN <span style="color: #ffcc00;"></span>DÀNH CHO HỌC SINH - SINH VIÊN</div>
+         data-easing="easeOutExpo">VES - <span style="color: #ffcc00;">VIETNAM E-LEARNING SYSTEM</span></div>
 
     <div class="caption randomrotate"
          data-x="center"
@@ -32,7 +32,7 @@ include "config.php";
          data-y="131"
          data-speed="600"
          data-start="1100"
-         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/1.jpg" style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
+         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/slider/sl11.jpg" style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
 
     <div class="caption randomrotate"
          data-x="center"
@@ -40,7 +40,7 @@ include "config.php";
          data-y="206"
          data-speed="600"
          data-start="1200"
-         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/2.jpg" style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
+         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/slider/sl12.jpg" style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
 
     <div class="caption randomrotate"
          data-x="center"
@@ -48,7 +48,7 @@ include "config.php";
          data-y="140"
          data-speed="600"
          data-start="1300"
-         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/ph1.jpg" style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
+         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/slider/sl13.png" style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
 
     <div class="caption randomrotate"
          data-x="center"
@@ -56,7 +56,7 @@ include "config.php";
          data-y="226"
          data-speed="300"
          data-start="1400"
-         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/4.jpg"  style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
+         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/slider/sl14.jpg"  style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
 
     <div class="caption randomrotate"
          data-x="center"
@@ -64,7 +64,7 @@ include "config.php";
          data-y="256"
          data-speed="600"
          data-start="1500"
-         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/5.jpg" style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
+         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/slider/sl15.jpg" style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
 
     <div class="caption randomrotate"
          data-x="center"
@@ -72,7 +72,7 @@ include "config.php";
          data-y="229"
          data-speed="300"
          data-start="1600"
-         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/6.jpg" style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
+         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/slider/sl16.jpg" style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
 
     <div class="caption randomrotate"
          data-x="center"
@@ -80,7 +80,7 @@ include "config.php";
          data-y="224"
          data-speed="300"
          data-start="1700"
-         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/7.jpg" style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
+         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/slider/sl17.jpg" style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
 
     <div class="caption randomrotate"
          data-x="center"
@@ -88,7 +88,7 @@ include "config.php";
          data-y="166"
          data-speed="300"
          data-start="1800"
-         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/8.jpg" style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
+         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/slider/sl18.png" style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
 
     <div class="caption randomrotate"
          data-x="center"
@@ -96,7 +96,7 @@ include "config.php";
          data-y="129"
          data-speed="300"
          data-start="1600"
-         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/9.jpg" style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
+         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/slider/sl12.jpg" style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
 
     <div class="caption randomrotate"
          data-x="center"
@@ -104,7 +104,7 @@ include "config.php";
          data-y="244"
          data-speed="300"
          data-start="1700"
-         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/10.jpg" style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
+         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/slider/sl17.jpg" style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
 
     <div class="caption randomrotate"
          data-x="center"
@@ -112,7 +112,7 @@ include "config.php";
          data-y="166"
          data-speed="300"
          data-start="1800"
-         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/11.jpg" style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
+         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/slider/sl12.jpg" style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
 
     <div class="caption randomrotate"
          data-x="center"
@@ -120,7 +120,7 @@ include "config.php";
          data-y="126"
          data-speed="600"
          data-start="1500"
-         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/12.jpg" style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
+         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/slider/sl11.jpg" style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
 
     <div class="caption randomrotate"
          data-x="center"
@@ -128,7 +128,7 @@ include "config.php";
          data-y="113"
          data-speed="300"
          data-start="1900"
-         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/1.jpg" style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
+         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/slider/sl18.png" style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
 
     <div class="caption randomrotate"
          data-x="center"
@@ -136,7 +136,7 @@ include "config.php";
          data-y="225"
          data-speed="300"
          data-start="2000"
-         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/2.jpg"  style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
+         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/slider/sl14.jpg"  style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
 
     <div class="caption randomrotate"
          data-x="center"
@@ -144,7 +144,7 @@ include "config.php";
          data-y="187"
          data-speed="300"
          data-start="2100"
-         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/lol1.jpg"  style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
+         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/slider/sl15.jpg"  style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
 
     <div class="caption randomrotate"
          data-x="center"
@@ -152,7 +152,7 @@ include "config.php";
          data-y="247"
          data-speed="300"
          data-start="2100"
-         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/4.jpg"  style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
+         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/slider/sl13.png"  style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
 
     <div class="caption randomrotate"
          data-x="center"
@@ -160,11 +160,9 @@ include "config.php";
          data-y="200"
          data-speed="300"
          data-start="2200"
-         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/5.jpg"  style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
+         data-easing="easeOutExpo"><img src="<?php echo $template_path;?>images/slider/sl16.jpg"  style="width: 100px;" class="thumb containerBg" alt="Image 12"></div>
 </li>
 
-<!-- THE SECOND SLIDE -->
-<li data-transition="papercut" data-slotamount="15" data-masterspeed="300" data-delay="9400">
 
     <img src="<?php echo $template_path;?>images/bg-dark.png" />
 
@@ -247,84 +245,43 @@ include "config.php";
 </li>
 <li data-transition="papercut" data-slotamount="15" data-masterspeed="300" data-delay="9400">
 
-    <img src="<?php echo $template_path;?>images/bg-dark.png" />
+    <img src="<?php echo $template_path;?>images/slider/sl2bg.jpg" />
 
     <div class="caption large_text lfl stl"
          data-x="30"
          data-y="303"
          data-speed="300"
          data-start="500"
-         data-easing="easeOutExpo" data-end="8800" data-endspeed="300" data-endeasing="easeInSine" >Event: Đấu trường công lý</div>
+         data-easing="easeOutExpo" data-end="8800" data-endspeed="300" data-endeasing="easeInSine" >Luyện thi trắc nghiệm trực tuyến</div>
 
     <div class="caption big_white lfl stl"
          data-x="30"
          data-y="343"
          data-speed="300"
          data-start="800"
-         data-easing="easeOutExpo" data-end="9100" data-endspeed="300" data-endeasing="easeInSine" >Khu Vực Tây Nguyên</div>
+         data-easing="easeOutExpo" data-end="9100" data-endspeed="300" data-endeasing="easeInSine" >Giải pháp hiệu quả cho luyện thi trắc nghiệm</div>
 
     <div class="caption lft ltb"
          data-x="600"
          data-y="center"
          data-speed="600"
          data-start="1100"
-         data-easing="easeOutExpo" data-end="3100" data-endspeed="600" data-endeasing="easeInSine" ><img src="<?php echo $template_path;?>images/lol1.jpg"  style="width: 500px;" class="thumb containerBg" alt="Image 12"></div>
+         data-easing="easeOutExpo" data-end="3100" data-endspeed="600" data-endeasing="easeInSine" ><img src="<?php echo $template_path;?>images/slider/sl21.jpg"  style="width: 500px;" class="thumb containerBg" alt="Image 12"></div>
 
     <div class="caption big_white sft stb"
          data-x="820"
          data-y="300"
          data-speed="300"
          data-start="1400"
-         data-easing="easeOutExpo" data-end="3300" data-endspeed="300" data-endeasing="easeInSine" >Đấu trường công lý</div>
+         data-easing="easeOutExpo" data-end="3300" data-endspeed="300" data-endeasing="easeInSine" >Thư viện đề thi đồ sộ</div>
 
     <div class="caption big_black sfb stb"
          data-x="820"
          data-y="320"
          data-speed="300"
          data-start="1500"
-         data-easing="easeOutExpo" data-end="3200" data-endspeed="300" data-endeasing="easeInSine" >Khu vực Tây Nguyên</div>
+         data-easing="easeOutExpo" data-end="3200" data-endspeed="300" data-endeasing="easeInSine" >Tự chấm điểm và thông báo xếp hạng</div>
 
-    <div class="caption lft ltb"
-         data-x="600"
-         data-y="center"
-         data-speed="600"
-         data-start="3600"
-         data-easing="easeOutExpo" data-end="5600" data-endspeed="600" data-endeasing="easeInSine" ><img src="<?php echo $template_path;?>images/lol2.jpg" style="width: 500px;" class="thumb containerBg" alt="Image 12"></div>
-
-    <div class="caption big_white sft stb"
-         data-x="820"
-         data-y="300"
-         data-speed="300"
-         data-start="3900"
-         data-easing="easeOutExpo" data-end="5800" data-endspeed="300" data-endeasing="easeInSine" >Đấu trường công lý</div>
-
-    <div class="caption big_black sfb stb"
-         data-x="820"
-         data-y="330"
-         data-speed="300"
-         data-start="4200"
-         data-easing="easeOutExpo" data-end="5700" data-endspeed="300" data-endeasing="easeInSine" >Khu vực Tây Nguyên</div>
-
-    <div class="caption lft ltb"
-         data-x="600"
-         data-y="center"
-         data-speed="600"
-         data-start="6100"
-         data-easing="easeOutExpo" data-end="8100" data-endspeed="300" data-endeasing="easeInSine" ><img src="<?php echo $template_path;?>images/lol3.jpg"  style="width: 500px;" class="thumb containerBg" alt="Image 12"></div>
-
-    <div class="caption big_white sft stb"
-         data-x="820"
-         data-y="300"
-         data-speed="300"
-         data-start="6400"
-         data-easing="easeOutExpo" data-end="8300" data-endspeed="300" data-endeasing="easeInSine">Đấu trường công lý</div>
-
-    <div class="caption big_black sfb stb"
-         data-x="820"
-         data-y="330"
-         data-speed="300"
-         data-start="6700"
-         data-easing="easeOutExpo" data-end="8200" data-endspeed="300" data-endeasing="easeInSine" >Khu vực Tây Nguyên</div>
 </li>
 </ul>
 <div class="tp-bannertimer tp-bottom"></div>

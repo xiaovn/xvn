@@ -36,6 +36,14 @@
                 </ul>
             </li>
             <!-- // Components Submenu Level 2 END -->
+            <li class="dropdown submenu">
+                <a data-toggle="dropdown" class="dropdown-toggle">Quản lý thời khóa biểu</a>
+                <ul class="dropdown-menu submenu-show submenu-hide pull-right">
+                    <li class=""><a href="<?php echo $siteurl;?>/admin/student">Danh sách học sinh</a></li>
+                    <li class=""><a href="<?php echo $siteurl;?>/admin/student/?action=new">Thêm học sinh</a></li>
+                    <li class=""><a href="<?php echo $siteurl;?>/admin/student/?report=book">Thống kê học sinh</a></li>
+                </ul>
+            </li>
         </ul>
     </li>
     <li class="dropdown dd-1">

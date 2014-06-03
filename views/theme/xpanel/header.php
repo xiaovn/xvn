@@ -16,7 +16,7 @@ include "config.php"
 <!--[if gt IE 8]> <html class="front ie gt-ie8 fluid top-full sticky-top"> <![endif]-->
 <!--[if !IE]><!--><html class="front fluid top-full sticky-top"><!-- <![endif]-->
 <head>
-	<title>X.E.M. - Xiao Education Management</title>
+	<title>Vietnam e-Learning System - Xiao Media Corporation</title>
 
 	<!-- Meta -->
 	<meta charset="UTF-8" />
@@ -47,9 +47,10 @@ include "config.php"
 	<link rel="stylesheet" type="text/css" href="<?php echo $template_path;?>css/settings.css"  media="screen" />
 	<!-- Main Theme Stylesheet :: CSS -->
     <link href="<?php echo $template_path;?>css/bootstrap-toggle-buttons.css" rel="stylesheet" />
-  <!-- LESS.js Library -->
-	<script src="<?php echo $template_path;?>js/less.min.js" ></script>
-    <link type="text/css" rel="stylesheet" id="arrowchat_css" media="all" href="/xvn/chat/external.php?type=css" charset="utf-8" />
-    <script type="text/javascript" src="/xvn/chat/includes/js/jquery.js"></script>
-    <script type="text/javascript" src="/xvn/chat/includes/js/jquery-ui.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
+    <!-- LESS.js Library -->
+    <script src="<?php echo $template_path;?>js/less.min.js" ></script>
+
+    <link type="text/css" rel="stylesheet" id="arrowchat_css" media="all" href="./chat/external.php?type=css" charset="utf-8" />
+    <script type="text/javascript" src="./chat/includes/js/jquery.js"></script>
+    <script type="text/javascript" src="./chat/includes/js/jquery-ui.js"></script>
+    <script src="<?php echo $template_path;?>js/jquery.min.js" type="text/javascript"></script>

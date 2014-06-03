@@ -34,7 +34,7 @@ require_once "header.php";
                                 <div class="widget-body">
                                     <div class="row-fluid">
                                         <div class="span12" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-5" data-delegate="#gallery-5">
-                                            <a class="thumb" href="<?php echo $template_path;?>images/cv.png" data-gallery="gallery"><img src="<?php echo $template_path;?>images/cv.png" alt="photo"></a>
+                                            <a class="thumb" href="" data-gallery="gallery"><img src="<?php echo $upload_path;?>blog/images/<?php echo $xem->blog_feature_image;?>" alt="photo"></a>
                                             <div class="separator bottom"></div>
                                         </div>
                                         <div class="span12">

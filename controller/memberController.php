@@ -11,6 +11,7 @@ Class memberController extends baseController
 {
     public function index()
     {
+		$_SESSION['current_menu'] = "member";	
         $xid = $_SESSION['xID'];
         if(isset($_SESSION['LoggedIn']) && $_SESSION['LoggedIn'] == 1)
         {
@@ -28,6 +29,7 @@ Class memberController extends baseController
     }
     public function edit()
     {
+	$_SESSION['current_menu'] = "member";
         $xid = $_SESSION['xID'];
         $xgroup = $_SESSION['xGroup'];
         $xtype = "";
@@ -54,34 +56,8 @@ Class memberController extends baseController
         $this->view->data['title3'] = $a[3];
         $this->view->show('test_view');
     }
-    public function nguyenhoc()
-    {
-        //PA là tham số trên đầu vòa trên trình duyệt
-        $xid = $_GET['xid'];
-        //$xid = '7221111111';
-        $error = "";
-        if(isset($xid) && $xid != "")
-        {
-            $hoc = $this->model->get('ngocvietModel')->mo_bung_thang_hoc($xid);
-            // CÓ được dữ liệu rồi giờ sẽ xử lý dữ liệu đó để hiển thị ra ngoài view
-            $this->view->data['ten'] = $hoc->name;
-            $this->view->data['thangkhung'] = $hoc;
-            //Giả sử chỉ cần một biến là tên thôi.
-            $this->view->show('ngocviet');
-            //Ăn thôi
-        }
-        else
-        {
-            //Khi xid không hợp lệ
-            $error = "Không thực hiện được!";
-        }
-        if(strlen($error)>1)
-        {
-            $this->view->data['error'] = $error;
-        }
-        $this->view->show('nguyenhoc');
-    }
     public function view($args){
+	$_SESSION['current_menu'] = "member";
         $id_mem = member::getInstance()->checkuser($args[1]);
         if($id_mem)
         {
@@ -99,6 +75,7 @@ Class memberController extends baseController
     }
     public function editavatar()
     {
+	$_SESSION['current_menu'] = "member";
         $prefix = "xiao_member_";
         $avatar_file = "";
         if(isset($_POST ['upload']))
@@ -146,6 +123,7 @@ Class memberController extends baseController
         }
     }
     public function addfriend($memid){
+	$_SESSION['current_menu'] = "member";
         $xid2 = $memid[1];
         $xid1 = $_SESSION['xID'];
         if(member::getInstance()->checkfriend($xid1,$xid2))
@@ -194,6 +172,7 @@ Class memberController extends baseController
     }
     public function account()
     {
+		$_SESSION['current_menu'] = "account";
         if(isset($_SESSION['LoggedIn']) && $_SESSION['LoggedIn'] == 1)
         {
             $this->view->data['member_heading'] = 'This is the member Signup';
@@ -207,6 +186,7 @@ Class memberController extends baseController
     }
     public function thongtin()
     {
+	$_SESSION['current_menu'] = "member";
         //$xid = '2254489252';
         $xid = $_SESSION['xID'];
         $this->view->data['hoten'] = member::getInstance()->get_member_info($xid,'name');
@@ -250,10 +230,16 @@ Class memberController extends baseController
         else
         {}
     }
-    public function quenpass()
+    public function forgotpass()
     {
-        $this->view->data['quen'] = $this->model->get("memberModel")->get_quen_pass();
-        $this->view->show('quenmk');
+		if(isset($_SESSION['xID']) && $_SESSION['xID'] != "")
+		{	
+			$this->redirect->redirect("member","index");
+		}
+		else
+		{
+			$this->view->show('member_resetpass');
+		}
     }
     public function changepass()
     {
@@ -303,6 +289,10 @@ Class memberController extends baseController
         {
             $this->redirect->redirect("member","login");
         }
+
+    }
+    public function changeuser()
+    {
 
     }
     public function testmember()
